@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/bootstrap.min.css" />
+    <style>
+        .img{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+            transition: all 1s;
+            box-shadow: 3px 3px 3px black;
+        }
+
+        .img:hover{
+            scale: .1;
+            opacity: 0;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div>
+            <img class="img" src="./src/tree-736881_640.jpg" alt="dever">
+        </div>
+    </div>
+  </body>
+</html>
