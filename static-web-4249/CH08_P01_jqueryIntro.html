@@ -15,6 +15,7 @@
             height: 200px;
             background-color: red;
             margin: 40px;
+            transition: all 1s;
         }
     </style>
   </head>
@@ -45,9 +46,10 @@
       $(".color").click(function(){
             var text = $(this).text()
             console.log(text);
-            $(".box").css({background:text})
+            $(".box").css({background:text,borderRadius:"50%"})
       })
     });
     // alert("happier... 2 ");
   </script>
 </html>
+ 

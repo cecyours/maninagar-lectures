@@ -8,9 +8,25 @@
   </head>
   <body>
     <div class="container my-2">
-      
+      <h1></h1>
+      <input type="text" class="form-control" id="username" />
+
+      <div class="resetBtn">Reset</div>
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+  <script>
+    $(document).ready(function () {
+      $("#username").on("input",function () {
+        var name = $(this).val();
+
+        $("h1").text(name);
+      });
+
+      $(".resetBtn").click(function(){
+            $("#username").val("new Value")
+      })
+    });
+  </script>
 </html>
