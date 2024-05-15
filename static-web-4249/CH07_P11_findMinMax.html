@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container my-2">
+      <form id="userform" action="">
+        <input
+          type="number"
+          placeholder="number 1"
+          id="num1"
+          class="form-control"
+        />
+        <input
+          type="number"
+          placeholder="number 2"
+          id="num2"
+          class="form-control"
+        />
+        <input type="submit">
+      </form>
+      <p id="result"></p>
+    </div>
+  </body>
+  <script>
+        userform.onsubmit = function(event){
+            event.preventDefault()
+
+            var n1 = parseInt(document.getElementById("num1").value)
+            var n2 = parseInt(document.getElementById("num2").value)
+            var output = document.getElementById("result")
+
+            if(n1>n2)
+            {
+                output.innerText = n1+" is greater than "+n2
+            }
+            else{
+                output.innerText = n2+" is greater than "+n1
+
+            }
+        }
+  </script>
+</html>
