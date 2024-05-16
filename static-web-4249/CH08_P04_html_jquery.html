@@ -6,9 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="./src/bootstrap.min.css" />
     <style>
-        li{
-            transition: all 1s;
-        }
+      li {
+        transition: all 1s;
+      }
     </style>
   </head>
   <body>
@@ -16,11 +16,14 @@
       <div class="row">
         <div class="col-md-6">
           <input type="text" class="form-control moviename" />
-          <button class="btn btn-success btnAdd">add</button>
+          <button class="btn btn-success btnAdd my-2">add</button>
+          <button class="btn btn-success btnAlert my-2">alert</button>
         </div>
         <div class="col-md-6">
           <ol class="movieslist"></ol>
         </div>
+
+        <p class="output"></p>
       </div>
     </div>
   </body>
@@ -28,14 +31,20 @@
 
   <script>
     $(document).ready(function () {
+
+    $(".btnAlert").click(function(){ 
+        $(".output").html(`<h1>Hello World</h1>`)
+        // $(".output").text(`<h1>Hello World</h1>`)
+    })
+
       $(".btnAdd").click(function () {
         var movie = $(".moviename").val();
 
         // const li = `<li> ${movie} </li>`;
-        const li = "<li>"+movie+"</li>";
+        const li = "<li>" + movie + "</li>";
         $(".movieslist").append(li);
 
-        $(".moviename").val("")
+        $(".moviename").val("");
       });
     });
   </script>
