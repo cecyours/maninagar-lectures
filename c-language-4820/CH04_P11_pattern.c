@@ -7,10 +7,10 @@ void main()
     {
         for (j = 1; j <= 10; j++)
         {
-            if (i == j || i < j && i%3==0)
+            if ( i < j)
                 printf(" * ");
             else
-                printf("   ");
+                printf("  ");
         }
         printf("\n");
     }
