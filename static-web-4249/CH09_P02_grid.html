@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/bootstrap.min.css" />
+    <style>
+      .box {
+        height: 100px;
+        width: 100%;
+        overflow: hidden;
+      }
+      img{
+        
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-2">
+      <div class="row">
+        <div class=" col-5 col-md-6 col-lg-10 bg-danger ">
+          <div class="box"></div>
+        </div>
+        <div class="col-7 col-md-6 col-lg-2 bg-primary">
+          <div class="box">
+            <img src="./src/imgs/tree-736881_640.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row gap-2 mt-2">
+        <div class="col-md-4 bg-success">
+            <div class="box">
+                <div class="row border border-danger justify-content-between">
+                    <div class="col-md-4 bg-light"><div class="box"></div></div>
+                    <div class="col-md-4 bg-light"><div class="box"></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 bg-warning">
+            <div class="box"></div>
+        </div>
+        <div class="col-md-12 bg-dark">
+            <div class="box"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</html>
