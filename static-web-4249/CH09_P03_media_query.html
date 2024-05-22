@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/bootstrap.min.css" />
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+      }
+
+    
+
+      @media screen and (max-width: 700px) {
+        .box {
+          background-color: yellow;
+          border-radius: 50%;
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        .box {
+          background-color: blue;
+          border-radius: 10%;
+
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-2">
+      <div class="box"></div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</html>
