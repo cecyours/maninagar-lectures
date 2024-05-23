@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <link rel="icon" href="./src/images/icons/icons8-home-100.png" />
+    <link rel="stylesheet" href="./src/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+  </head>
+  <body>
+    <div class="header"></div>
+    <section class="main"></section>
+    <div class="footer"></div>
+  </body>
+
+  <script src="./src/js/jquery.min.js"></script>
+  <script src="./src/js/bootstrap.min.js"></script>
+  <script src="./src/js/main.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "./statics/header.html",
+        success: function (response) {
+          $(".header").html(response); 
+          $(".nav-link").removeClass("active"); 
+          $(".services-page").addClass("active");
+        },
+      }); 
+    });
+  </script>
+</html>
