@@ -8,4 +8,6 @@ $(document).ready(function () {
       $(".footer").html(response)
     },
   });
+
+
 });

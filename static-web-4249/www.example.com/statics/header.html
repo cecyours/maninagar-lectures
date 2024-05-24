@@ -66,13 +66,22 @@
       </form>
       <div class="ms-auto me-2">
         <button
+          id="btnLogin"
           class="btn pr-btn"
           data-bs-toggle="modal"
           data-bs-target="#loginModal"
         >
           Login
         </button>
-        <button class="btn pr-btn">Register</button>
+        <button
+          class="btn pr-btn"
+          id="btnSignUp"
+          class="btn pr-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#signUpModal"
+        >
+          Register
+        </button>
       </div>
     </div>
   </div>
@@ -80,7 +89,7 @@
 
 <div>
   <div
-    class="modal fade modal-lg"
+    class="modal fade"
     id="loginModal"
     tabindex="-1"
     aria-labelledby="loginModalLabel"
@@ -89,7 +98,9 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 text-pr-color" id="loginModalLabel">login</h1>
+          <h1 class="modal-title fs-5 text-pr-color" id="loginModalLabel">
+            login
+          </h1>
           <button
             type="button"
             class="btn-close"
@@ -97,18 +108,170 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">...</div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn pr-btn"
-            data-bs-dismiss="modal"
+        <div class="modal-body">
+          <form action="">
+            <div class="mb-2">
+              <label for="login_username" class="form-label">Username: </label>
+              <input type="text" class="form-control" id="login_username" />
+            </div>
+
+            <div class="mb-2">
+              <label for="login_password" class="form-label">password: </label>
+              <input type="password" class="form-control" id="login_password" />
+            </div>
+          </form>
+        </div>
+        <div class="p-3 d-flex justify-content-between">
+          <span class="float-start"
+            >New User,<button
+              class="btn text-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#signUpModal"
+            >
+              Register here
+            </button></span
           >
-            Close
-          </button>
-          <button type="button" class="btn  pr-btn  text-pr-color">Save changes</button>
+          <button type="button" class="btn pr-btn text-pr-color" id="btnLoginForm">Login</button>
         </div>
       </div>
     </div>
   </div>
+
+  <div
+    class="modal fade modal-lg"
+    id="signUpModal"
+    tabindex="-1"
+    aria-labelledby="signUpModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-pr-color" id="signUpModalLabel">
+            Sign Up
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="row">
+              <div class="mb-2 col-md-6">
+                <label for="signup_username" class="form-label"
+                  >Username:
+                </label>
+                <input type="text" class="form-control" id="signup_username" />
+              </div>
+
+              <div class="mb-2 col-md-6">
+                <label for="signup_email" class="form-label">Email: </label>
+                <input type="email" class="form-control" id="signup_email" />
+              </div>
+              <div class="mb-2 col-md-6">
+                <label for="signup_password" class="form-label"
+                  >Date of Birth:
+                </label>
+                <input type="date" class="form-control" id="signup_password" />
+              </div>
+              <div class="mb-2 col-md-6">
+                <label for="signup_state" class="form-label">State: </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="signup_state"
+                  list="state-list"
+                />
+                <datalist id="state-list">
+                  <option>Gujarat</option>
+                  <option>Rajstan</option>
+                  <option>Maharastra</option>
+                </datalist>
+              </div>
+              <div class="mb-2 col-md-6">
+                <label for="signup_password" class="form-label"
+                  >password:
+                </label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signup_password"
+                />
+              </div>
+              <div class="mb-2 col-md-6">
+                <label for="signup_cpassword" class="form-label"
+                  >Confirm password:
+                </label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signup_cpassword"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="p-3 d-flex justify-content-between">
+          <span class="float-start"
+            >Already User,<button
+              class="btn text-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+
+            >
+              Login here
+            </button></span
+          >
+          <button type="button" class="btn pr-btn text-pr-color">
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="toast align-items-center"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+    id="myToast"
+  >
+    <div class=" justify-content-between p-2">
+      <div class="toast-body w-100 d-inline"></div>
+      
+
+        <button
+        type="button"
+        class="btn-close float-end border p-1 rounded-pill btn-close-toast me-2 m-auto"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+        ></button>
+     
+    </div>
+  </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    function showToast(msg, classList = "green", timeout=3000) {
+      $(".toast").show();
+      $(".toast-body").html(msg);
+      $(".toast-body").addClass(classList);
+
+      setTimeout(() => {
+        $(".toast").slideUp(500);
+      }, timeout);
+    }
+ 
+    $("#btnLoginForm").click(function(){
+        showToast("How are you","text-danger")
+    })
+    $(".btn-close-toast").click(function () {
+      $(".toast").slideUp(200);
+    });
+  });
+</script>
