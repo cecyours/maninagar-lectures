@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/bootstrap.min.css" />
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box-1{
+            border: 10px red solid;
+        }
+
+        .box-2{
+            border: 10px blue solid;
+            position: absolute;
+            top: 0;
+            left: 180px; 
+            z-index: -10;
+        }
+        .box-3{
+            border: 10px blue solid;
+            border-left: 10px transparent solid;
+            position: absolute;
+            top: 0;
+            left: 180px; 
+            z-index: 10;
+            transform: rotate(-25deg);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container my- position-relative">
+
+        <div class="box box-2">A</div>
+        <div class="box box-3"></div>
+        <div class="box box-1">B</div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</html>
