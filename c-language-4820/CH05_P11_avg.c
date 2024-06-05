@@ -23,5 +23,5 @@ void main()
     }
 
     printf("the total is : %d\n",sum);
-    printf("the avg is : %f\n",sum/n(float));
+    printf("the avg is : %f\n",sum/n);
 }
