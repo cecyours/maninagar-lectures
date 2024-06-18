@@ -6,7 +6,7 @@ void main()
 
     int *ptr_a, *ptr_b, *ptr_c;
 
-    ptr_a= &a;
+    ptr_a = &a;
     ptr_b = &b;
     ptr_c = &c;
 
