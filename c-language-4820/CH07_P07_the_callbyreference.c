@@ -6,7 +6,7 @@ void increment(float *salary)
 
     *salary = *salary + *salary * 0.10;
 
-    printf("salary during funcation call : %.2f, %p\n", *salary,salary);
+    printf("salary during function call : %.2f, %p\n", *salary,salary);
 
 }
 
