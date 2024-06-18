@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container my-2">
+        <div class="output">happier</div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script>
+        const arr = [2,3,4,5,6,7,8,9]
+        const l = arr.length
+        
+        var elements = "";
+        var sum = 0;
+        for(let i=0;i<l;i++)
+        {   
+            var old = sum;
+            sum = arr[i]+old;
+            elements+= `<br> ${arr[i]} + ${old} = ${sum}`;
+        }
+        document.querySelector(".output").innerHTML = elements
+        // console.log(document.querySelector(".output").innerHTML)
+  </script>
+</html>
