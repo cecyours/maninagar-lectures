@@ -33,4 +33,6 @@ void main()
     printf("str 1 in upr : %s\n", strupr(str1));
 
     printf("compare 2 string : %d\n",strcmp(str1,str2));
+
+
 }
