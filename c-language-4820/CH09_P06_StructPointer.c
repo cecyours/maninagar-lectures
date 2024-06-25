@@ -12,4 +12,4 @@ void main()
 
     printf("Data using s : %d, %s\n",s.id, s.name);
     printf("Data using ptr : %d, %s\n",ptr->id, ptr->name);
-}
+} 

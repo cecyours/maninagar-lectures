@@ -1,8 +1,7 @@
 #include<stdio.h>
 
-
-struct StcData{
-
+struct stcData
+{
     int a;
     char b;
 };
@@ -13,23 +12,18 @@ union UnData
     char b;
 };
 
-
 void main()
 {
-    struct StcData s;
+    struct stcData s;
     union UnData u;
 
-    s.a = 18;
-    s.b = 'H';
-
-    s.a = 90;
+    s.a = 11;
+    s.b = 'b';
 
     printf("using structue : %d, %c \n",s.a, s.b);
 
-    u.a = 87;
-    u.b = 'A';
-
-    u.a = 66;
+    u.a = 12;
+    u.b = 'c';
+    
     printf("using union : %d, %c \n",u.a, u.b);
-
 }
