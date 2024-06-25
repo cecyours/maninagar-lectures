@@ -38,13 +38,9 @@ void main(){
 
         f[i].f_total_price = f[i].f_unit_quantity*f[i].f_price;
     }
-
-
-
        printf("\n\n\n========= RECORD =============\n\n\n");
 
     printf("%3s | %15s | %6s | %6s | %5s | %8s \n", "Sr.", "Name", "Price", "Unit","Qnt.","Total");
-
 
     for (i = 0; i < n; i++)
     {
