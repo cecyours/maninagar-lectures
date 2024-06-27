@@ -7,6 +7,6 @@ void main()
     scanf("%d,%d,%d", &P,&R,&T);
 
     SI = (P*R*T)/100;
-    printf("SI = %.2f",SI);
+    printf("SI = %.2 f",SI);
 
 }
