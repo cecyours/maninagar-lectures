@@ -7,9 +7,7 @@ void main()
     printf("enter any two numbers : ");
     scanf("%d,%d",&a,&b);
 
-
-
     printf("minimum value is : %d\n",min(a,b));
     printf("maximum value is : %d",max(a,b));
-    
+
 }
