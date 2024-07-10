@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.md": "markdown",
+        "CH04_T04_WHILE.C": "cpp"
+    }
+}
