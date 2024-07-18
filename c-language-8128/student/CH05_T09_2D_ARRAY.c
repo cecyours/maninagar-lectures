@@ -15,9 +15,9 @@ void main()
     }
     printf("\n-------------------\n");
 
-    printf("your entered arry is : ");
+    printf("your entered array is : \n");
 
-    
+
     for (i = 0; i < n; i++)
     {
         for (j = 0; j < m; j++)
