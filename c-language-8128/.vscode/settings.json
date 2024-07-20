@@ -2,6 +2,8 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "*.md": "markdown",
-        "CH04_T04_WHILE.C": "cpp"
+        "CH04_T04_WHILE.C": "cpp",
+        "6_01.C": "cpp",
+        "6_S01.C": "cpp"
     }
 }
