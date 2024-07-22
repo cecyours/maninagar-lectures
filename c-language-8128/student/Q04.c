@@ -13,7 +13,6 @@ void main()
     
     for ( i = 0; i < n; i++)
     {
-
         printf("%c",pass[rand()%36]);
     }
     
