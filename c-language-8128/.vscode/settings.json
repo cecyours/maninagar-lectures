@@ -4,7 +4,8 @@
         "*.md": "markdown",
         "CH04_T04_WHILE.C": "cpp",
         "6_01.C": "cpp",
-        "6_S01.C": "cpp"
+        "6_S01.C": "cpp",
+        "6_02.C": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
