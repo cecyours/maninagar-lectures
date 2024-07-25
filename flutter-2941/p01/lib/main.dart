@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:p01/master/BasicScreen.dart';
+import 'package:p01/mehta/home.dart';
 
 void main()=>runApp(MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Mari Screen",
-      home: new(),
+      home:  home(),
     );
 
   }
