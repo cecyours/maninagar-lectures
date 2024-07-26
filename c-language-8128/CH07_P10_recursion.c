@@ -16,6 +16,5 @@ void greeting(int count)
 
 void main()
 {
-
     greeting(1);
 }
