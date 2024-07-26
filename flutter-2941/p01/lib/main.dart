@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:p01/mehta/home.dart';
+import 'package:p01/mehta/pratice.dart';
 
 void main()=>runApp(MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Mari Screen",
-      home:  home(),
+      home:  Pratice(),
     );
 
   }
