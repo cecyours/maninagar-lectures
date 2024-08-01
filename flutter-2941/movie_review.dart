@@ -42,5 +42,9 @@ void main() {
   print("Movie name : ${m.movieName}");
   print("Rating : ${m.getAvgRating()}");
 
-  m.review.map((r) => {print("Review : ${r.person}")});
+  for(var i=0;i<m.review.length;i++)
+  {
+    print("\n\nReview : ${m.review[i].person}, ${m.review[i].rating}");
+    print("${m.review[i].comment}");
+  }
 }
