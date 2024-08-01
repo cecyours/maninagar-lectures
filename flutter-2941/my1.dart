@@ -10,7 +10,7 @@ void main() {
 
   if (n1 != null && n2 != null && choice != null) {
     int n = int.parse(n1);
-    int m = int.parse(n1);
+    int m = int.parse(n2);
     int i = int.parse(choice);
 
     switch (i) {
@@ -19,7 +19,7 @@ void main() {
         print("Add $n + $m = $ans ");
         break;
       case 2:
-        int? ans1 = m - n;
+        int? ans1 = n-m;
         print("Subs $n - $m = $ans1");
         break;
 
