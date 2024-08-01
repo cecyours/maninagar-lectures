@@ -4,6 +4,7 @@
         "*.md": "markdown",
         "random": "cpp",
         "limits": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "typeinfo": "cpp"
     }
 }
