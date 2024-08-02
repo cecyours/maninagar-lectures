@@ -75,4 +75,4 @@ void main()
     {
         printf("%2d | %15s | %3.2lf | %3s \n", s[i].s_id, s[i].s_name, s[i].s_marks, s[i].s_grade);
     }
-}
+} 
