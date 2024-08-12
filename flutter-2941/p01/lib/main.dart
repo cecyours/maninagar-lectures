@@ -12,6 +12,7 @@ import 'package:p01/mehta/home.dart';
 import 'package:p01/mehta/pratice.dart';
 
 import 'mehta/Grid_Image.dart';
+import 'mehta/Grid_name_desc.dart';
 
 void main()=>runApp(MyApp());
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Mari Screen",
-      home:  GridImage(),
+      home:  GridNameDesc(),
     );
 
   }
