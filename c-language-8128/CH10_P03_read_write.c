@@ -23,7 +23,8 @@ void main()
     printf("saved !!\n");
 
     printf("reading... old data...\n");
-    fseek(file,0,0);
+    // fseek(file,0,0);
+    rewind(file); // set to beging at file !!
     while((ch=fgetc(file))!=-1)
     {
         printf("%c",ch);
