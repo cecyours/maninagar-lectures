@@ -4,7 +4,7 @@ void main()
     FILE *file;
     char name[100];
     char f_name[100];
-    char n, i;
+    char n, i;  
 
     printf("Enter file name to create : ");
     scanf("%s", &f_name);

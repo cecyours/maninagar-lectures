@@ -7,12 +7,14 @@ import 'package:p01/master/CH04_P02_ListView.dart';
 import 'package:p01/master/CH04_P03_GridView.dart';
 import 'package:p01/master/CH04_P04_VideoPlayer.dart';
 import 'package:p01/master/Grid_User_Vid.dart';
+import 'package:p01/master/ch04_expanded_and_aspect_ratio.dart';
 import 'package:p01/mehta/Grid%20_Vid_pratice.dart';
 import 'package:p01/mehta/home.dart';
 import 'package:p01/mehta/pratice.dart';
 
 import 'mehta/Grid_Image.dart';
 import 'mehta/Grid_name_desc.dart';
+import 'mehta/expanded_and_aspect_ratio.dart';
 
 void main()=>runApp(MyApp());
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Mari Screen",
-      home:  GridNameDesc(),
+      home:  ExpandedAndAspectRatio(),
     );
 
   }
