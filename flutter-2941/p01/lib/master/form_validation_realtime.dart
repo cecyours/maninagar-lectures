@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class FormValidation extends StatefulWidget {
+class FormValidationRealtime extends StatefulWidget {
   @override
   _FormValidation createState() => _FormValidation();
 }
 
-class _FormValidation extends State<FormValidation> {
+class _FormValidation extends State<FormValidationRealtime> {
   final _formKey = GlobalKey<FormState>();
   final usernameController = TextEditingController();
   final emailController = TextEditingController();
@@ -15,7 +15,22 @@ class _FormValidation extends State<FormValidation> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    usernameController.addListener(validator);
   }
+@override
+  void dispose() {
+    // TODO: implement dispose
+  usernameController.dispose();
+    super.dispose();
+  }
+  void validator() {
+    final form = _formKey.currentState;
+
+    if (form != null) {
+      form.validate();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,10 +104,8 @@ class _FormValidation extends State<FormValidation> {
                 ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? false) {
-
                         ScaffoldMessenger.maybeOf(context)?.showSnackBar(
-                          SnackBar(content: Text("Submiting !!"))
-                        );
+                            SnackBar(content: Text("Submiting !!")));
                       }
                     },
                     child: Text("Submit"))

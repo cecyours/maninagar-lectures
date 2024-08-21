@@ -10,6 +10,7 @@ import 'package:p01/master/Grid_User_Vid.dart';
 import 'package:p01/master/ch04_expanded_and_aspect_ratio.dart';
 import 'package:p01/master/ch04_p06_textfield.dart';
 import 'package:p01/master/form_validation.dart';
+import 'package:p01/master/form_validation_realtime.dart';
 import 'package:p01/mehta/Grid%20_Vid_pratice.dart';
 import 'package:p01/mehta/home.dart';
 import 'package:p01/mehta/pratice.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Mari Screen",
-      home:  FormValidation1(),
+      home:  FormValidationRealtime(),
     );
 
   }
