@@ -66,7 +66,7 @@ void deleteBox(int data)
 
     if (head == NULL)
     {
-        printf("there is no data to search !!");
+        printf("there is no data to delete !!");
         return;
     }
 
@@ -74,19 +74,16 @@ void deleteBox(int data)
 
     while (tempBox)
     {
-        
-        if(tempBox->next)
+
+        if (tempBox->next)
         {
-            if(tempBox->next->data==data)
+            if (tempBox->next->data == data)
             {
                 tempBox->next = tempBox->next->next;
             }
         }
-        tempBox= tempBox->next;
-        
+        tempBox = tempBox->next;
     }
-    
-
 }
 void display()
 {
@@ -118,13 +115,47 @@ void display()
 }
 void main()
 {
-    insert(19);
-    insert(29);
-    insert(38);
-    insert(48);
-    display();
+    int choice;
+    int data;
 
-    search(48);
-    deleteBox(38);
-    display();
+    do
+    {
+        printf("\n\n == == === Options == == === \n");
+        printf("\n Enter 1 for insert : ");
+        printf("\n Enter 2 for search : ");
+        printf("\n Enter 3 for delete : ");
+        printf("\nEnter 4 for display : ");
+        printf("\n   Enter 5 for exit : ");
+        printf("\n\n Enter choice : ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("Enter data to insert : ");
+            scanf("%d", &data);
+            insert(data);
+            break;
+
+        case 2:
+            printf("Enter data to search : ");
+            scanf("%d", &data);
+            search(data);
+            break;
+
+        case 3:
+            printf("Enter data to delete : ");
+            scanf("%d", &data);
+            deleteBox(data);
+            break;
+
+        case 4:
+            display();
+            break;
+
+        default:
+            exit(0);    
+            break;
+        }
+    } while (1);
 }
