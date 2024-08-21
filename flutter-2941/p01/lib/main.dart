@@ -6,6 +6,7 @@ import 'package:p01/master/CH04_P01_Stack.dart';
 import 'package:p01/master/CH04_P02_ListView.dart';
 import 'package:p01/master/CH04_P03_GridView.dart';
 import 'package:p01/master/CH04_P04_VideoPlayer.dart';
+import 'package:p01/master/CH04_P08_navigator.dart';
 import 'package:p01/master/Grid_User_Vid.dart';
 import 'package:p01/master/ch04_expanded_and_aspect_ratio.dart';
 import 'package:p01/master/ch04_p06_textfield.dart';
@@ -19,6 +20,7 @@ import 'mehta/Grid_Image.dart';
 import 'mehta/Grid_name_desc.dart';
 import 'mehta/expanded_and_aspect_ratio.dart';
 import 'mehta/form_validation.dart';
+import 'mehta/navigator_screen1.dart';
 import 'mehta/textfield_button.dart';
 
 void main()=>runApp(MyApp());
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Mari Screen",
-      home:  FormValidationRealtime(),
+      home:  NavigatorScreen1(),
     );
 
   }
