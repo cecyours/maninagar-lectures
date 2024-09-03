@@ -15,6 +15,7 @@ import 'package:p01/master/form_validation_realtime.dart';
 import 'package:p01/mehta/Grid%20_Vid_pratice.dart';
 import 'package:p01/mehta/home.dart';
 import 'package:p01/mehta/pratice.dart';
+import 'Screen_Navigator/Screen_main.dart';
 import 'master/Screen_01.dart';
 import 'mehta/Bottom_Navigator.dart';
 import 'mehta/Grid_Image.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Mari Screen",
-      home:  LogIn(),
+      home:  ScreenMain(),
     );
 
   }

@@ -4,12 +4,12 @@ import 'package:p01/Screen_Navigator/Screen_nav_03.dart';
 import 'Screen_nav_01.dart';
 import 'Screen_nav_02.dart';
 
-class ScreenMain01 extends StatefulWidget {
+class ScreenMain extends StatefulWidget {
   @override
-  _ScreenMain01 createState() => _ScreenMain01();
+  _ScreenMain createState() => _ScreenMain();
 }
 
-class _ScreenMain01 extends State<ScreenMain01> {
+class _ScreenMain extends State<ScreenMain> {
   int ind = 0;
   List<Widget> picture = <Widget>[
     ScreenNav01(),
