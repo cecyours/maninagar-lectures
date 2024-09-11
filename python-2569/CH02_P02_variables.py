@@ -1,7 +1,5 @@
-
 # int 
 i = 39
-
 print(type(i),i)
 
 # float
@@ -16,11 +14,9 @@ print(type(i),i)
 s = 'a';
 print(type(s),s)
 
-
 # boolean
 b = 3==4
 print(type(b),b)
-
 
 # list
 names = ["Rupesh Bhai","Kuch Nai","Denver"];
@@ -33,5 +29,13 @@ names = ("Rupesh Bhai","Kuch Nai","Denver");
 # names[0]="master"
 print(type(names),names)
 
-#t
+#dict
+data = dict({"name":"gk","roll":399})
+print(type(data),data)
+
+
+#set
+s = set({4,5,7,1,2,3,4,5,6,7,8,9,0,0,9,8,7,6,5,4,3,2,1});
+print(type(s),s)
+
 
