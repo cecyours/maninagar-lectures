@@ -1,8 +1,8 @@
 import 'package:ch05/topics/p02_counter.dart';
+import 'package:ch05/topics/p02_screen1.dart';
+import 'package:ch05/topics/p02_screen2.dart';
 import 'package:flutter/material.dart';
 
-import 'p02_screen1.dart';
-import 'p02_screen2.dart';
 
 class P02MainScreen extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _P02MainScreen extends State<P02MainScreen> {
         title: Text("App Screen"),
       ),
       body: P02Counter(
-        count: 1,
+        dataNotifier: DataNotifier(1,Colors.white70),
         child: picture[i],
       ),
       bottomNavigationBar: BottomNavigationBar(

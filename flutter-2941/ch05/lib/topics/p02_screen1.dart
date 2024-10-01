@@ -9,9 +9,24 @@ class P02Screen1 extends StatefulWidget {
 class _P02Screen1 extends State<P02Screen1> {
   @override
   Widget build(BuildContext context) {
+    P02Counter ?p02counter = P02Counter.maybeOf(context);
     return Material(
       child: Center(
-        child: Text("hello world 1 ${P02Counter.maybeOf(context)}"),
+        child: Column(
+            children: [
+              Text("hello worldxx 1 ${P02Counter.maybeOf(context)?.dataNotifier.count}"),
+              ElevatedButton(onPressed: (){
+                if(P02Counter.maybeOf(context)?.dataNotifier!=null)
+                  {
+                    P02Counter.maybeOf(context)?.dataNotifier.increment();
+                    print("Dnev passed");
+                  }
+                else{
+                  print("Dnev failed");
+                }
+              }, child: Text("Master"))
+            ],
+        ),
       ),
     );
   }
