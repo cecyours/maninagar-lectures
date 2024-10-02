@@ -12,6 +12,7 @@ public:
         if (r < 0)
         {
             cerr << "roll no must be greater than 0;" << endl;
+            return;
         }
         rollNo = r;
     }
