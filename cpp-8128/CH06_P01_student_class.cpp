@@ -52,6 +52,7 @@ public:
 
 int main()
 {
+    int id;
     Student s("Neha",100);
 
     s.setName("Master Redu");
