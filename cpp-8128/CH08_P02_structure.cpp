@@ -24,8 +24,7 @@ int main()
         
         cout<<"Enter id : ";
         cin>>s[i].id;
-
-
+        
         cout<<"Enter name : ";
         cin>>s[i].name;
     }
