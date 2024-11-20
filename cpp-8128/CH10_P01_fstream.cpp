@@ -23,8 +23,19 @@ int main()
             cout<<"exiting...."<<endl;
             break;
         }
-        file<<line<<endl;
 
+        file<<line<<endl;
     }
     file.close();
+
+    fstream readFile;
+
+    readFile.open(fileName);
+    cout<<"\n-------------\n";
+    while((getline(readFile,line)))
+    {
+        cout<<line<<endl;
+    }
+
+    readFile.close();
 }
