@@ -11,7 +11,7 @@ int main()
     cout<<"Enter file name : ";
     cin>>fName;
 
-    file.open(fName,ios::out|ios::app);
+    file.open(fName,ios::out|ios::app|ios::in);
 
     string line;
 
@@ -19,7 +19,19 @@ int main()
     cin>>line;
 
     file<<line<<endl;
+   
+    cout<<"Writting Operation completed !!\n";
+
+    // file.seekg(6);
+    cout<<"tell me "<<file.tellg()<<endl;
+    cout<<" file : ;;;"<<file.eof()<<" \n";
+
+    while((getline(file,line)))
+    {
+        cout<<line<<endl;
+    }
+
+    cout<<" file : ;;; \n";
     file.close();
-    cout<<"Operation completed !!\n";
 
 }
