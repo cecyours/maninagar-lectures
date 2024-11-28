@@ -22,7 +22,7 @@ int main()
    
     cout<<"Writting Operation completed !!\n";
 
-    // file.seekg(6);
+    file.seekg(0);
     cout<<"tell me "<<file.tellg()<<endl;
     cout<<" file : ;;;"<<file.eof()<<" \n";
 

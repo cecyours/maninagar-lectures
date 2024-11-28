@@ -16,4 +16,17 @@ int main()
     cout<<"begin  : "<<*s.begin()<<endl;
 
     cout<<"capacity : "<<s.capacity()<<endl;   
+
+    s = "12xx3412321";
+
+    cout<<"Empty : "<<s.empty()<<endl;
+    cout<<"End : "<<*s.end()<<endl;
+    cout<<"Erase : "<<s.erase(4)<<endl;
+
+    cout<<"find : "<<s.find("s2")<<endl;
+
+    string l = "kites";
+    s.swap(l);
+    cout<<"swap : "<<l<<endl;
+    cout<<"swap : "<<s<<endl;
 }
