@@ -20,6 +20,12 @@
             margin: 1px;
             padding: 10px;
         }
+        a{
+            text-decoration: none;
+        }
+        .page{
+            display: none;
+        }
     </style>
 </head>
   <body>
@@ -28,14 +34,14 @@
             
             <div class="my-2">
                 <nav class="d-flex gap-4">
-                    <li class="nav-item">Home</li>
-                    <li class="nav-item">about</li>
-                    <li class="nav-item">contact</li>
+                    <li class="nav-item btn " data-target="home"> <span>Home </span></li>
+                    <li class="nav-item btn" data-target="about"> <span >about</span></li>
+                    <li class="nav-item btn" data-target="contact"><span >contact</span></li>
                 </nav>
             </div>
 
-            <div class="page">
-                <h1>Hello Counter !!</h1>
+            <div class="page home">
+                <h1>Hello Home !!</h1>
                 <hr/>
                 <div class="d-flex align-items-center gap-5">
                     <div>
@@ -49,6 +55,14 @@
                     </div>
                 </div>
             </div>
+
+            <div class="page about">
+                <h1>About</h1>
+            </div>
+
+            <div class="page contact">
+                <h1>Contact</h1>
+            </div>
         </div>  
   </body>
   
@@ -57,6 +71,33 @@
 
     $(document).ready(function () {
         
+         function loadPage(t)
+         {      
+            $(".page").slideUp(100)
+            $("."+t).slideDown(200)
+         }
+        
+        const pageRequest = window.location.href?.split("?")[1]?.split("=")
+
+
+        
+        if(pageRequest!==undefined && pageRequest[0]=="page")
+        {
+            console.log({pageRequest:pageRequest[1]})
+            $("."+pageRequest[1]).slideDown(200)
+        }
+        else{
+            loadPage("home")
+        }
+        $(".nav-item").click(function(){
+            
+            var t = $(this).data("target")
+            console.log({target:t})
+            window.history.pushState(null, "","?page="+t)
+            loadPage(t)
+        })
+
+    
         $(".btn-plus").click(function(){
              var counter = parseInt($(".counter").text())+1
             $(".counter").text(counter)
