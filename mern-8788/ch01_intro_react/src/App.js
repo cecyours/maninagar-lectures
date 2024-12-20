@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "./App.css"
 import Login from './components/Login';
+import SignUp from './components/SignUp';
 function App() {
   const [counter,setCounter] = useState(0)
 
@@ -19,23 +20,23 @@ function App() {
   }
   return (
     <div className="container mt-4">
-      <Login/>
-      <div className="row gap-5 mt-5 d-none">
-        <div className="col d-flex justify-content-center border p-3 rounded-3">
-            <button className="btn btn-primary" onClick={handleAdd}>+</button>
+        <SignUp/>
+        <div className="row gap-5 mt-5 d-none">
+          <div className="col d-flex justify-content-center border p-3 rounded-3">
+              <button className="btn btn-primary" onClick={handleAdd}>+</button>
+          </div>
+
+          <div className="col d-flex justify-content-center border p-3 rounded-3">
+            <h1>{counter}</h1>
+          </div>
+
+          <div className="col d-flex justify-content-center border p-3 rounded-3">
+
+          
+          <button className="btn btn-secondary" onClick={handleSub}>-</button>
+
+          </div>
         </div>
-
-        <div className="col d-flex justify-content-center border p-3 rounded-3">
-          <h1>{counter}</h1>
-        </div>
-
-        <div className="col d-flex justify-content-center border p-3 rounded-3">
-
-        
-        <button className="btn btn-secondary" onClick={handleSub}>-</button>
-
-        </div>
-      </div>
     </div>
   )
 }
