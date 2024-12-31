@@ -45,5 +45,31 @@ public class CH05_P01_StringMethods {
         System.out.println(cb);
 
 
+        System.out.println("hashCode : "+s1.hashCode());
+
+
+        s1 = "Hello peter, how peter rare you peter";
+        System.out.println(" indexOf : "+s1.indexOf("peter"));
+        System.out.println(" middle : "+s1.indexOf("peter",s1.indexOf("peter")+1));
+        System.out.println(" lastIndexOf : "+s1.lastIndexOf("peter"));
+
+
+        s1 = new String("Hello World");
+        s2 = new String("Hello World");
+
+        System.out.println(" compare : "+(s1.intern()==s2.intern()));
+
+        String names[] = {"Iron man","Master","thor","What if"};
+
+        System.out.println(" list : "+String.join(",", names));
+
+        String search = ".*man.*"; // Regular expression to check if "man" exists as a substring
+        String data = "i am man worker";
+        System.out.println(data.matches(search)); // Outputs: true
+        
+        
+        s1 = "012345678";
+        int i = s1.offsetByCodePoints(1, 3);
+        System.out.println(" offsetByCodePoints :"+s1.charAt(i));
     }   
 }
