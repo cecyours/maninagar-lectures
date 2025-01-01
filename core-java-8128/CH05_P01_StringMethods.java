@@ -82,7 +82,31 @@ public class CH05_P01_StringMethods {
         String myStr = "Quest complete! Earned 30 gold and 500 experience.";
         String regex = "[0-9]+";
 
-        System.out.println(""+myStr.replaceAll(regex, "\\$$0.00"));
+        System.out.println("" + myStr.replaceAll(regex, "\\$$0.00"));
 
+        s1 = "Hello World 123";
+
+        System.out.println("substring : " + s1.substring(4));
+        System.out.println("subSequence : " + s1.subSequence(4,7));
+
+        s1 ="gk master";
+
+        char letters[] = s1.toCharArray();
+
+        System.out.print("{ ");
+        for (char c : letters) {
+            
+            System.out.print("'"+c+"', ");
+        }
+
+        System.out.println("}");
+
+         Integer n = 29;
+
+         String myRoleNo = n+""; // n.toString()
+
+         String newN = String.valueOf(n);
+
+         System.out.println(" Hello "+n+", "+myRoleNo +" => "+newN);
     }
 }
