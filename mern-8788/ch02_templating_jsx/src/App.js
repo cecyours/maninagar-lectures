@@ -4,6 +4,8 @@ import "./App.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import CreateElement from "./pages/CreateElement";
 import Expressions from "./pages/Expressions";
+import Logicaloperators from "./pages/Logicaloperators";
+import SpecifyingAttributes from "./pages/SpecifyingAttributes";
 
 function App() {
   const items = [
@@ -16,11 +18,11 @@ function App() {
       title: "Expressions",
     },
     {
-      url: "/ logical operators",
+      url: "/logical-operators",
       title: "Logical operators",
     },
     {
-      url: "/specifying attributes",
+      url: "/specifying-attributes",
       title: "Specifying attributes",
     },
     {
@@ -50,6 +52,8 @@ function App() {
               <Route path="/" element={<>Hello World</>}></Route>
               <Route path="/create-element" element={<CreateElement />}></Route>
               <Route path="/expressions" element={<Expressions />}></Route>
+              <Route path="/logical-operators" element={<Logicaloperators />}></Route>
+              <Route path="/specifying-attributes" element={<SpecifyingAttributes />}></Route>
             </Routes>
           </div>
         </div>
