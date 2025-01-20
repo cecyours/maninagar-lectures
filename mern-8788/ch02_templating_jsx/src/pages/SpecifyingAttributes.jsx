@@ -9,6 +9,9 @@ function SpecifyingAttributes() {
   const handleYourClick = () => {
     console.log("click 2 !!");
   };
+  const handleYouClick = () => {
+    console.log("click 3 !!");
+  };
   return (
     <div>
       <Information
@@ -26,7 +29,14 @@ function SpecifyingAttributes() {
           "<p class='bg-white border rounded-3 m-2 p-2 '>Hello World</p>"
         }
       />
-      
+
+      <Information
+        onClick={handleYouClick}
+        className={"bg-warning  rounded-5 mt-4"}
+        innerComponent={
+          "<p class='bg-white border rounded-3 m-2 p-2 '>Hello</p>"
+        }
+      />
     </div>
   );
 }
