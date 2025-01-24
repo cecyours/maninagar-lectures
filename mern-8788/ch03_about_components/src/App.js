@@ -3,11 +3,32 @@ import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import DemoButtons from "./pages/DemoButtons";
+import DemoModal from "./pages/DemoModal";
+import ClassComponents from "./pages/ClassComponents";
+import DemoPureClassComponent from "./pages/DemoPureClassComponent";
+import ComponentComposition from "./pages/ComponentComposition";
 function App() {
   const items = [
     {
-      url: "/components",
+      url: "/components/buttons",
       title: "Button Components",
+    },
+    {
+      url: "/components/modal",
+      title: "Modal Components",
+    },
+    {
+      url: "/class-components",
+      title: "Class Components",
+    },
+    {
+      url: "/pure-class-components",
+      title: "Pure Class Components",
+    },
+
+    {
+      url: "/component-composition",
+      title: "Component Composition",
     },
   ];
   return (
@@ -20,7 +41,7 @@ function App() {
             style={{ width: "300px" }}
           >
             <h3 className="text-center mb-4 border-bottom pb-2">
-              Templating JSX
+              Components JSX
             </h3>
             <ul className="nav nav-pills flex-column">
               {items.map((item, i) => (
@@ -41,7 +62,23 @@ function App() {
             <div className="container border-start">
               <Routes>
                 <Route path="/" element={<>Hello World</>}></Route>
-                <Route path="/components" element={<DemoButtons/>}></Route>
+                <Route
+                  path="/components/buttons"
+                  element={<DemoButtons />}
+                ></Route>
+                <Route path="/components/modal" element={<DemoModal />}></Route>
+                <Route
+                  path="/class-components"
+                  element={<ClassComponents />}
+                ></Route>
+                <Route
+                  path="/pure-class-components"
+                  element={<DemoPureClassComponent />}
+                ></Route>
+                <Route
+                  path="/component-composition"
+                  element={<ComponentComposition />}
+                ></Route>
               </Routes>
             </div>
           </div>
