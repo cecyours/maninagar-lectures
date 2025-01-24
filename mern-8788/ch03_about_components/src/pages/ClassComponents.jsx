@@ -9,7 +9,7 @@ export default class ClassComponents extends Component {
   }
 
   handleInput = (e) => {
-    this.setState({ name: e.target.value });
+    this.setState({ name: e.target.value });    
   };
 
   render() {
