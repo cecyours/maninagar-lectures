@@ -3,21 +3,25 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DemoState from "./components/DemoState";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import PassingData from "./components/PassingData";
+import DemoReadPassProps from "./pages/DemoReadPassProps";
+import PropValidator from "./pages/PropValidator";
 
 function App() {
-    
   const items = [
-    
     {
       url: "/components/state",
       title: "Demo state",
-    },  
-    {
-      url: "/components/passingdata",
-      title: "Passing Data",
     },
-  ]
+
+    {
+      url: "/read-and-pass-props",
+      title: "Read & Passing Props",
+    },
+    {
+      url: "/validate-props",
+      title: "Validate Props",
+    },
+  ];
   return (
     <>
       <BrowserRouter>
@@ -48,13 +52,15 @@ function App() {
             <div className="container border-start">
               <Routes>
                 <Route path="/" element={<>Hello World</>}></Route>
+                <Route path="/components/state" element={<DemoState />}></Route>
                 <Route
-                  path="/components/state"
-                  element={<DemoState />}
+                  path="/read-and-pass-props"
+                  element={<DemoReadPassProps />}
                 ></Route>
+
                 <Route
-                  path="/components/Passingdata"
-                  element={<PassingData />}
+                  path="/validate-props"
+                  element={<PropValidator />}
                 ></Route>
               </Routes>
             </div>
