@@ -1,24 +1,19 @@
 import logo from "./logo.svg";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import RenderList from "./pages/RenderList";
-import InfiniteScroll from "./pages/InfiniteScrollDemo";
+import InputEvents from "./pages/InputEvents";
 
 function App() {
   const items = [
     {
-      url: "/render-list",
-      title: "RenderList",
-    },
-    {
-      url: "/infinite-list",
-      title: "Infinite Render",
+      url: "/input-events",
+      title: "Input Events",
     },
   ];
   return (
     <>
-    <BrowserRouter>
+      <BrowserRouter>
         <div className="d-flex" style={{ minHeight: "100vh" }}>
           {/* Sidebar */}
           <div
@@ -26,7 +21,7 @@ function App() {
             style={{ width: "300px" }}
           >
             <h3 className="text-center mb-4 border-bottom pb-2">
-              RenderList JSX
+              Event Handling
             </h3>
             <ul className="nav nav-pills flex-column">
               {items.map((item, i) => (
@@ -46,17 +41,13 @@ function App() {
             <div className="container border-start">
               <Routes>
                 <Route path="/" element={<>Hello World</>}></Route>
-                <Route path="/render-list" element={<RenderList/>}></Route>
-                <Route path="/infinite-list" element={<InfiniteScroll/>}></Route>
-                
+                <Route path="/input-events" element={<InputEvents />}></Route>
               </Routes>
             </div>
           </div>
         </div>
       </BrowserRouter>
-  
     </>
   );
 }
-
 export default App;

@@ -1,18 +1,17 @@
 {
-  "name": "ch05_rendering_lists_optimize",
+  "name": "ch06-event-handleling",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "5.3.3",
+    "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
-    "prop-types": "15.8.1",
-    "react": "19.0.0",
-    "react-bootstrap": "2.10.8",
-    "react-dom": "19.0.0",
-    "react-infinite-scroll-component": "^6.1.0",
-    "react-router-dom": "7.1.1",
+    "prop-types": "^15.8.1",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.8",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "4.2.4"
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
