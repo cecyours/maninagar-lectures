@@ -1,5 +1,5 @@
 package Student_protected;
-import Student_protected.*;
+
 public class CH08_T03_PROTECTED {
     protected void show()
     {

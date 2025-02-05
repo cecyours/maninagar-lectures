@@ -14,7 +14,7 @@ interface yourWork{
     public void show();
     public boolean isVerified();
 }
-class Task12 implements MyWork, yourWork{
+class Task12 implements MyWork, yourWork {
 
     public void show()
     {

@@ -5,18 +5,22 @@ function InputEvents() {
 
   const handleChange = (e) => {
     setValue(e.target.value);
-  };
+    setTimeout(() => {
+      console.log({ key: e.key,value:e.target.value });
+    }, 2000);
+  };  
 
-  const handleKeyDown = (e) => {
-    console.log(e.key);
+  const handleKeyDown = (event) => {
+    
 
-    if (e.key == "Enter") {
-      if (e.target.style.color == "red") {
-        e.target.style.color = "green";
+    if (event.key == "Enter") {
+      if (event.target.style.color == "red") {
+        event.target.style.color = "green";
       } else {
-        e.target.style.color = "red";
+        event.target.style.color = "red";
       }
     }
+
   };
   return (
     <div>

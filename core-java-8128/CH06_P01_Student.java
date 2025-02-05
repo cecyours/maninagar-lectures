@@ -1,3 +1,5 @@
+import cec.Student;
+
 public class CH06_P01_Student {
 
     public static void main(String[] args) {

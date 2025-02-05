@@ -3,11 +3,16 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import InputEvents from "./pages/InputEvents";
+import ButtonEvents from "./pages/ButtonEvents";
 
 function App() {
   const items = [
     {
       url: "/input-events",
+      title: "Input Events",
+    },
+    {
+      url: "/button-events",
       title: "Input Events",
     },
   ];
@@ -42,6 +47,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<>Hello World</>}></Route>
                 <Route path="/input-events" element={<InputEvents />}></Route>
+                <Route path="/button-events" element={<ButtonEvents />}></Route>
               </Routes>
             </div>
           </div>
