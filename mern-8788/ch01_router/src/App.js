@@ -1,23 +1,15 @@
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import Welcome from "./pages/Welcome";
-import Header from "./components/Header";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import About from "./pages/About";
-function App() {
+import React from "react";
+
+function MyApp() {
+  const username = "Mr. Coder"
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/welcome" element={<Welcome />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <h1>Hello World {username}</h1>
+      <div>
+        {username}
+      </div>
+    </>
   );
 }
 
-export default App;
+export default MyApp;
