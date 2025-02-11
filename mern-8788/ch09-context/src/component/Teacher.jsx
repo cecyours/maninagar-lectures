@@ -1,10 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext } from "react";
+import { MyInputContext } from "../context/MyInputContext";
 
 function Teacher() {
-    const {input,setInput} = useContext)
+  const { input, setInput } = useContext(MyInputContext);
   return (
-    <div>Teacher</div>
-  )
+    <div>
+      <input value={input} onChange={(e) => setInput(e.target.value)} />
+    </div>
+  );
 }
 
-export default Teacher
+export default Teacher;
