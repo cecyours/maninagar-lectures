@@ -32,5 +32,13 @@ public class CH15_P02_Sets {
 
         l.add("kites");
         System.out.println("Check : "+list.containsAll(l));
+
+
+        Object data[] = list.toArray();
+        for (Object s :data) {
+
+            System.out.println(s);
+        }   
+
     }
 }
