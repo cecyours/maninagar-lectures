@@ -45,13 +45,27 @@ public class CH15_P05_IterationForEach {
         ListIterator<String> listIt = list.listIterator();
 
         String key;
-        while (listIt.hasNext() || listIt.hasPrevious()) {
+        while (true) {
 
             System.out.print("Enter Option : ");
             key = sc.nextLine();
 
             if (key == "p") {
 
+                if (listIt.hasPrevious()) {
+                    System.out.println(listIt.previous());
+                } else {
+                    System.out.println("No Previous Elements");
+                }
+            } else if (key == "n") {
+
+                if (listIt.hasNext()) {
+                    System.out.println(listIt.next());
+                } else {
+                    System.out.println("No Next Elements");
+                }
+            } else {
+                break;
             }
         }
 
