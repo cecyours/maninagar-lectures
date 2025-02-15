@@ -50,14 +50,14 @@ public class CH15_P05_IterationForEach {
             System.out.print("Enter Option : ");
             key = sc.nextLine();
 
-            if (key == "p") {
+            if (key.equals("p")) {
 
                 if (listIt.hasPrevious()) {
                     System.out.println(listIt.previous());
                 } else {
                     System.out.println("No Previous Elements");
                 }
-            } else if (key == "n") {
+            } else if (key.equals("n")) {
 
                 if (listIt.hasNext()) {
                     System.out.println(listIt.next());
