@@ -69,6 +69,11 @@ public class CH15_P05_IterationForEach {
             }
         }
 
+        Enumeration<String> d = Collections.enumeration(list);
+
+        while (d.hasMoreElements()) {
+            System.out.println("Value : " + d.nextElement());
+        }
         sc.close();
     }
 }
