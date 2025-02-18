@@ -4,6 +4,7 @@ import ContactUs from "./componets/ContactUs";
 import Product from "./componets/Product";
 import "bootstrap/dist/css/bootstrap.min.css";
 import InputStates from "./componets/InputStates";
+import StudentExample from "./componets/StudentExample";
 export default function App() {
   return (
     <div className="container bg-danger bg-opacity-25 p-2 rounded-3">
@@ -12,7 +13,10 @@ export default function App() {
       <div className="mb-5 bg-white p-2 rounded-3">
         <InputStates />
       </div>
-      <div className="mb-5">
+      <div>
+        <StudentExample></StudentExample>
+      </div>
+      {/*  <div className="mb-5">
         <AboutUs />
       </div>
       <div className="mb-5">
@@ -20,7 +24,7 @@ export default function App() {
       </div>
       <div className="mb-5">
         <ContactUs />
-      </div>
+      </div> */}
     </div>
   );
 }

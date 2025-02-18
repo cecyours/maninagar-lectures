@@ -17,6 +17,6 @@ function InputStates() {
     </div>
   );
 }
-// tailwind
+
 
 export default InputStates;
