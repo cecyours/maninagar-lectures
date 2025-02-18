@@ -1,5 +1,5 @@
 export function getRandomArray() {
-  const data = Array.from({ length: 5000 }).map(()=>{
+  const data = Array.from({ length: 5 }).map(()=>{
     return parseInt(Math.random()*100);
   })
   

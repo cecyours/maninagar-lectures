@@ -2,19 +2,26 @@ import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Suspense, lazy } from "react";
-import RandomArray from "./Components/RandomArray";
 
-// const RandomArray = lazy(() => import("./Components/RandomArray"));
+// import RandomArray from "./Components/RandomArray";
+
+const RandomArray = lazy(() => import("./Components/RandomArray"));
+const Users = lazy(() => import("./pages/Users"));
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-        {/* <Suspense fallback={<>Loading self</>}> */}
-          <RandomArray />
-        {/* </Suspense> */}
-      </header>
+    <div className="App container">
+      <Suspense
+        fallback={
+          <div>
+            <div className="spinner-border" role="status"></div>
+          </div>
+        }
+      >
+        <div className=" ">
+          {/* <RandomArray /> */}
+          <Users />
+        </div>
+      </Suspense>
     </div>
   );
 }
