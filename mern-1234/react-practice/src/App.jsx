@@ -5,17 +5,19 @@ import Product from "./componets/Product";
 import "bootstrap/dist/css/bootstrap.min.css";
 import InputStates from "./componets/InputStates";
 import StudentExample from "./componets/StudentExample";
+import Counter from "./componets/Counter";
 export default function App() {
   return (
     <div className="container bg-danger bg-opacity-25 p-2 rounded-3">
       <h1 className="text-center">React Demo</h1>
       <hr />
-      <div className="mb-5 bg-white p-2 rounded-3">
+      <Counter/>
+      {/* <div className="mb-5 bg-white p-2 rounded-3">
         <InputStates />
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <StudentExample></StudentExample>
-      </div>
+      </div> */}
       {/*  <div className="mb-5">
         <AboutUs />
       </div>
