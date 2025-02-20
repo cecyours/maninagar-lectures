@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function Counter() {
   const [coin, setCount] = useState(0);
   const handlePlus = () => {
@@ -21,12 +20,9 @@ function Counter() {
           }}
           className="border-0 rounded-3 p-2"
         />
-        {/* <button className="btn btn-primary" onClick={handleMinus}>
-          -
-        </button> */}
+        {/* <button className="btn btn-primary" onClick={handleMinus}>    -        </button> */}
       </div>
     </div>
   );
 }
-
 export default Counter;
