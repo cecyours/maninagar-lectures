@@ -9,7 +9,7 @@ const RandomArray = lazy(() => import("./Components/RandomArray"));
 const Users = lazy(() => import("./pages/Users"));
 function App() {
   return (
-    <div className="App container">
+    <div className="container">
       <Suspense
         fallback={
           <div>
