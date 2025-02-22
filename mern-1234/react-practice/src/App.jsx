@@ -6,27 +6,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import InputStates from "./componets/InputStates";
 import StudentExample from "./componets/StudentExample";
 import Counter from "./componets/Counter";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import HomePage from "./componets/HomePage";
 export default function App() {
   return (
     <div className="container bg-danger bg-opacity-25 p-2 rounded-3">
-      <h1 className="text-center">React Demo</h1>
-      <hr />
-      <Counter/>
-      {/* <div className="mb-5 bg-white p-2 rounded-3">
-        <InputStates />
-      </div> */}
-      {/* <div>
-        <StudentExample></StudentExample>
-      </div> */}
-      {/*  <div className="mb-5">
-        <AboutUs />
-      </div>
-      <div className="mb-5">
-        <Product />
-      </div>
-      <div className="mb-5">
-        <ContactUs />
-      </div> */}
+      <BrowserRouter>
+        <div className="d-flex gap-5">
+          <Link to={`/`}>Home</Link>
+          <Link to={`/about-us`}>About us</Link>
+        </div>
+        <div className="u-nick">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="*" element={<>404 error</>} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
