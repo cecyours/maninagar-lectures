@@ -1,7 +1,6 @@
-import React, { useState, startTransition,Suspense } from "react";
-// import Numbers from "./Numbers";
-
-const Numbers = React.lazy(()=>import("./Numbers"))
+import React, { useState, startTransition, Suspense } from "react";
+//import Numbers from "./Numbers";
+const Numbers = React.lazy(() => import("./Numbers"));
 function App() {
   const [counter, setCounter] = useState(0);
 
