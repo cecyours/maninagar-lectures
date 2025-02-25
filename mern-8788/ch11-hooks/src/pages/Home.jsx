@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useUser } from "../hooks/useUser";
 
 function Home() {
+  const { user, setUser,updateUser } = useUser();
   const [number, setNumber] = useState(0);
   const [colorClass, setColorClass] = useState("bg-danger");
 
@@ -18,8 +20,8 @@ function Home() {
     console.log("i am called.");
   }, [number]);
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="border p-2 border-danger">
+      <h1>Hello World {user?.name}</h1>
       <div className="d-flex gap-2 justify-content-between">
         <div className="bg-primary p-2 border text-white rounded-3">
           <h2>Use State</h2>
@@ -32,6 +34,7 @@ function Home() {
             className="btn btn-danger"
             onClick={() => {
               setNumber((n) => n + 1);
+              updateUser({ name: "Anil Bhai", marks: 209 });
             }}
           >
             +
