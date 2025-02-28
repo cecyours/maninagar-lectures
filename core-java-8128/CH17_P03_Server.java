@@ -23,11 +23,18 @@ public class CH17_P03_Server {
         clientDin = new DataInputStream(s.getInputStream());
         clientDout = new DataOutputStream(s.getOutputStream());
 
-        // send
-        System.out.print("SERVER : ");
-        String msg = br.readLine();
-        clientDout.writeUTF(msg);
+        String rcvd="";
+        while((!rcvd.equalsIgnoreCase("exit")))
+        {   
+            
+            rcvd = clientDin.readUTF();
+            System.out.println("CLIENT : "+rcvd);
 
+
+            System.out.print("SERVER : ");
+            String msg = br.readLine();
+            clientDout.writeUTF(msg);
+        }
         ss.close();
         s.close();
     }
