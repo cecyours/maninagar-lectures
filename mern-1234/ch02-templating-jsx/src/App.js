@@ -48,7 +48,7 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className="col-md-8">
+            <div className="col-md-10">
               <div className="border rounded-3">
                 <Routes>
                   {topics.map((topic, i) => (
