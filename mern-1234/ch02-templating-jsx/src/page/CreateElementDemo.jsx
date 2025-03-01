@@ -13,10 +13,14 @@ function CreateElementDemo() {
       <hr />
       {createElement(
         "div",
-        null,
+        { className: "bg-danger text-white p-2" },
         "Hello World",
         createElement("h1", null, "Python"),
-        createElement("a", null, "Click me")
+        createElement(
+          "a",
+          { href: "https://mascev.in", target: "_blank" },
+          "Click me"
+        )
       )}
 
       {/* {createElement("h1",null,"Python")} */}
