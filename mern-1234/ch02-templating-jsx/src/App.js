@@ -38,6 +38,7 @@ function App() {
       <h1>Hello World</h1>
       <div className="container">
         <BrowserRouter>
+          <h1>My Header</h1>
           <div className="row">
             <div className="col-md-2">
               {topics.map((topic, i) => (
@@ -49,7 +50,7 @@ function App() {
               ))}
             </div>
             <div className="col-md-10">
-              <div className="border rounded-3">
+              <div className="border rounded-3 p-2">
                 <Routes>
                   {topics.map((topic, i) => (
                     <>
@@ -61,6 +62,7 @@ function App() {
             </div>
           </div>
           <div></div>
+          <h1>My Footer</h1>
         </BrowserRouter>
       </div>
     </div>
