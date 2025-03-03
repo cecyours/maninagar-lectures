@@ -14,7 +14,7 @@ public class CH17_P03_Server {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         DataInputStream clientDin;
         DataOutputStream clientDout;
-        int port = 3001;
+        int port = 3000;
         ServerSocket ss = new ServerSocket(port);
         System.out.println("Waiting for connection..");
         Socket s = ss.accept();

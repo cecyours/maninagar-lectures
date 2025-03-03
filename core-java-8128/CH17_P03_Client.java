@@ -20,7 +20,8 @@ public class CH17_P03_Client {
         String rcvd="";
 
         serverDout.writeUTF("I am Here");
-        while((!rcvd.equalsIgnoreCase("exit")))
+        String msg = "";
+        while((!msg.equalsIgnoreCase("exit")))
         {   
             
             rcvd = serverDin.readUTF();
@@ -28,7 +29,7 @@ public class CH17_P03_Client {
 
             
             System.out.print("CLIENT : ");
-            String msg = br.readLine();
+            msg = br.readLine();
             serverDout.writeUTF(msg);
         }
         server.close();

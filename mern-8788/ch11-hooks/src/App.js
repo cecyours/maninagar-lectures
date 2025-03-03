@@ -16,6 +16,7 @@ function App() {
       <BrowserRouter>
         <div className="d-flex gap-5 bg-light p-2 border rounded-3 m-2">
           <Link to={`/`}>Home</Link>
+          <Link to={`/prompt`}>User prompt Navigate</Link>
           <Link to={`/user`}>User Profile</Link>
           <Link to={`/switch`}>Switch User</Link>
           <Link to={`/logout`}>logout</Link>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/user" element={<UserProfile />} />
           <Route path="/switch" element={<AddUser />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/prompt" element={<Logout />} />
         </Routes>
       </BrowserRouter>
     </div>
