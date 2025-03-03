@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Expressions() {
   const [a, setA] = useState(null);
@@ -6,6 +6,27 @@ function Expressions() {
   const [c, setC] = useState(null);
   const [sign, setSign] = useState();
 
+  useEffect(() => {
+    if (sign && a && b) {
+      switch (sign) {
+        case "+":
+          setC(parseInt(a) + parseInt(b));
+          break;
+        case "-":
+          setC(parseInt(a) - parseInt(b));
+          break;
+        case "*":
+          setC(parseInt(a) * parseInt(b));
+          break;
+        case "/":
+          setC(parseInt(a) / parseInt(b));
+          break;
+        case "%":
+          setC(parseInt(a) % parseInt(b));
+          break;
+      }
+    }
+  }, [a, b, sign]);
   return (
     <div>
       <h2>Expression </h2>
@@ -36,7 +57,7 @@ function Expressions() {
                 className="btn btn-primary"
                 onClick={() => {
                   setSign("+");
-                  setC(parseInt(a) + parseInt(b));
+                  
                 }}
               >
                 +
@@ -45,7 +66,6 @@ function Expressions() {
                 className="btn btn-primary"
                 onClick={() => {
                   setSign("-");
-                  setC(parseInt(a) - parseInt(b));
                 }}
               >
                 -
@@ -58,9 +78,13 @@ function Expressions() {
         </div>
 
         <div className="my-5">
-          {a}
-          {sign}
-          {b}={c}
+          {a && b && c && sign && (
+            <>
+              {a}
+              {sign}
+              {b}={c}
+            </>
+          )}
         </div>
       </div>
     </div>
