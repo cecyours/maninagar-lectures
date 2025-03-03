@@ -1,3 +1,0 @@
-# maninagar-lectures 
-
-## hello there!!
