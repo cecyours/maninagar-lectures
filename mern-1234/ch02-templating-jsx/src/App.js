@@ -3,6 +3,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import CreateElementDemo from "./page/CreateElementDemo";
+import Expressions from "./page/Expressions";
 function App() {
   const topics = [
     {
@@ -13,7 +14,11 @@ function App() {
     {
       url: "/expression",
       label: "Expressions",
-      component: <>Hello Expressions</>,
+      component: (
+        <>
+          <Expressions></Expressions>
+        </>
+      ),
     },
     {
       url: "/logical-operators",
@@ -35,15 +40,16 @@ function App() {
 
   return (
     <div>
-      <h1>Hello World</h1>
-      <div className="container">
+      <div className="container my-3">
         <BrowserRouter>
-          <h1>My Header</h1>
+        <div className="my-3">
+          <h1>Chapter 02 : Templating</h1>
+        </div>
           <div className="row">
             <div className="col-md-2">
               {topics.map((topic, i) => (
                 <div key={i}>
-                  <Link to={topic.url} className="text-decoration-none border">
+                  <Link to={topic.url} className="text-decoration-none">
                     {topic.label}
                   </Link>
                 </div>
@@ -62,7 +68,6 @@ function App() {
             </div>
           </div>
           <div></div>
-          <h1>My Footer</h1>
         </BrowserRouter>
       </div>
     </div>
