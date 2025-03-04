@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import CreateElementDemo from "./page/CreateElementDemo";
 import Expressions from "./page/Expressions";
+import LogicalOperators from "./page/LogicalOperators";
 function App() {
   const topics = [
     {
@@ -23,7 +24,11 @@ function App() {
     {
       url: "/logical-operators",
       label: "logical operators",
-      component: <>Hello logical</>,
+      component: (
+        <>
+          <LogicalOperators />
+        </>
+      ),
     },
     {
       url: "/specifying-attributes",
@@ -42,9 +47,9 @@ function App() {
     <div>
       <div className="container my-3">
         <BrowserRouter>
-        <div className="my-3">
-          <h1>Chapter 02 : Templating</h1>
-        </div>
+          <div className="my-3">
+            <h1>Chapter 02 : Templating</h1>
+          </div>
           <div className="row">
             <div className="col-md-2">
               {topics.map((topic, i) => (
