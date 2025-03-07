@@ -5,6 +5,8 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import CreateElementDemo from "./page/CreateElementDemo";
 import Expressions from "./page/Expressions";
 import LogicalOperators from "./page/LogicalOperators";
+import LogicalOperationsWithToggle from "./page/LogicalOperationsWithToggle";
+import Work from "./page/Work";
 function App() {
   const topics = [
     {
@@ -26,14 +28,22 @@ function App() {
       label: "logical operators",
       component: (
         <>
-          <LogicalOperators />
+          <div>
+            <LogicalOperators />
+            <hr />
+            <LogicalOperationsWithToggle />
+          </div>
         </>
       ),
     },
     {
       url: "/specifying-attributes",
       label: "Specifying attributes",
-      component: <>Hello attributes</>,
+      component: (
+        <>
+          <Work />
+        </>
+      ),
     },
     {
       url: "/specifying-children",
