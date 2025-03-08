@@ -7,6 +7,7 @@ import Expressions from "./page/Expressions";
 import LogicalOperators from "./page/LogicalOperators";
 import LogicalOperationsWithToggle from "./page/LogicalOperationsWithToggle";
 import Work from "./page/Work";
+import ModalDemonstrate from "./page/ModalDemonstrate";
 function App() {
   const topics = [
     {
@@ -42,6 +43,15 @@ function App() {
       component: (
         <>
           <Work />
+        </>
+      ),
+    },
+    {
+      url: "/specifying-attributes-modal",
+      label: "Specifying attributes Modal",
+      component: (
+        <>
+          <ModalDemonstrate />
         </>
       ),
     },
