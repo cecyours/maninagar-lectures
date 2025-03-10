@@ -8,6 +8,7 @@ import LogicalOperators from "./page/LogicalOperators";
 import LogicalOperationsWithToggle from "./page/LogicalOperationsWithToggle";
 import Work from "./page/Work";
 import ModalDemonstrate from "./page/ModalDemonstrate";
+import ChildrensDemonstrate from "./page/ChildrensDemonstrate";
 function App() {
   const topics = [
     {
@@ -58,7 +59,11 @@ function App() {
     {
       url: "/specifying-children",
       label: "Specifying children",
-      component: <>Hello children</>,
+      component: (
+        <>
+          <ChildrensDemonstrate />
+        </>
+      ),
     },
     { url: "/fragments", label: "Fragments", component: <>Hello Fragments</> },
   ];
