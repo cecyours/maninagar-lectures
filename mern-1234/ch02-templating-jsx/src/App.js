@@ -9,6 +9,8 @@ import LogicalOperationsWithToggle from "./page/LogicalOperationsWithToggle";
 import Work from "./page/Work";
 import ModalDemonstrate from "./page/ModalDemonstrate";
 import ChildrensDemonstrate from "./page/ChildrensDemonstrate";
+import FragmentsDemontrate from "./page/FragmentsDemontrate";
+import ActionPage from "./page/ActionPage";
 function App() {
   const topics = [
     {
@@ -65,7 +67,25 @@ function App() {
         </>
       ),
     },
-    { url: "/fragments", label: "Fragments", component: <>Hello Fragments</> },
+    {
+      url: "/fragments",
+      label: "Fragments",
+      component: (
+        <>
+          <FragmentsDemontrate />
+        </>
+      ),
+    },
+
+    {
+      url: "/revision",
+      label: "Revision",
+      component: (
+        <>
+          <ActionPage />
+        </>
+      ),
+    },
   ];
 
   return (
