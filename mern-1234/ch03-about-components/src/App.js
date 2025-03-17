@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import StateExample from './components/StateExample';
 
 function App() {
   return (
@@ -14,16 +15,20 @@ function App() {
       <Header />
 
 
-      <Content />
+      <StateExample />
+
+      {/* <Content /> */}
 
 
-      <FunctionalComponents name={"CEC"} />
+      <FunctionalComponents age={345} />
+
+      {/*
       <hr />
       <ClassBasedComponents area={"Maninagar , Vatva , nikol"} />
 
       <hr />
-      <PureComponents count={4} />
-      <Footer />
+      <PureComponents count={4} /> */}
+      {/* <Footer /> */}
     </div>
   );
 }
