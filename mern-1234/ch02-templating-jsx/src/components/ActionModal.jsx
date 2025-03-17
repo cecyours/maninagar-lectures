@@ -1,6 +1,5 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
-
 function ActionModal({
   showAttr,
   onHideAttr,
@@ -8,7 +7,8 @@ function ActionModal({
   description,
   onCancel,
   onConfirm,
-}) {
+}) 
+{
   const tryHide = () => {
     onHideAttr();
   };
