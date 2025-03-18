@@ -10,7 +10,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var puppetRouter = require("./routes/puppets");
 var booksRouter = require("./routes/books");
-
+var movieRouter = require("./routes/moviesRoute")
 var app = express();
 
 mongoose
@@ -38,6 +38,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/puppets", puppetRouter);
 app.use("/books", booksRouter);
+app.use("/movies", movieRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   res.status(404).json({ page: "404" });
