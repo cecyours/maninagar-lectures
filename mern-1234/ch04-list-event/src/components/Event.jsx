@@ -19,6 +19,9 @@ const Event = (props) => {
         type="text"
         onInput={(e) => handleInput(e.target.value)}
       />
+
+
+      
       <hr />
       {value}
     </div>
