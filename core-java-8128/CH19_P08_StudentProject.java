@@ -26,7 +26,16 @@ class Window extends JFrame {
 
     JLabel lblFullName;
     JLabel lblEmail;
+
     JLabel lblPassword;
+    JPasswordField psdPassword;
+
+    JLabel lblGender;
+    JRadioButton rbMale, rbFemale, rbOther;
+    
+    JLabel lblHobbies;
+    JCheckBox cbCoding, cbDebugin, cbReading;
+
 
     public Window() {
         windowPanel = new JPanel(new BorderLayout());
@@ -77,6 +86,74 @@ class Window extends JFrame {
         gbc.gridx = 1;
         gbc.gridy = 1;
         mainPanel.add(txtUserName, gbc);
+
+
+
+
+        lblPassword = new JLabel("Enter Password:");
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        mainPanel.add(lblPassword, gbc);
+
+        psdPassword = new JPasswordField(20); // preferred width (20 columns)
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        mainPanel.add(psdPassword, gbc);
+
+
+
+        lblGender = new JLabel("Choose Gender:");
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        mainPanel.add(lblGender, gbc);
+
+        ButtonGroup bg = new ButtonGroup();
+
+        rbMale = new JRadioButton("Male");
+        rbFemale = new JRadioButton("Fe Male");
+        rbOther = new JRadioButton("Other");
+        bg.add(rbMale);
+        bg.add(rbFemale);
+        bg.add(rbOther);
+
+
+        JPanel pGender = new JPanel();
+        BoxLayout genderLayout = new BoxLayout(pGender, BoxLayout.X_AXIS);
+        pGender.setLayout(genderLayout);
+
+        pGender.add(rbMale);
+        pGender.add(rbFemale);
+        pGender.add(rbOther);
+
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        mainPanel.add(pGender, gbc);
+
+
+
+
+        lblHobbies = new JLabel("select Hobbies:");
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        mainPanel.add(lblHobbies, gbc);
+
+       
+        cbCoding = new JCheckBox("Coding");
+        cbDebugin = new JCheckBox("Debuging");
+        cbReading = new JCheckBox("Reading");
+
+
+        JPanel pHobbies = new JPanel();
+        BoxLayout lHobbies = new BoxLayout(pHobbies, BoxLayout.X_AXIS);
+        pHobbies.setLayout(lHobbies);
+
+        pHobbies.add(cbCoding);
+        pHobbies.add(cbDebugin);
+        pHobbies.add(cbReading);
+
+        gbc.gridx = 1;
+        gbc.gridy = 4;
+        mainPanel.add(pHobbies, gbc);
 
         getContentPane().add(windowPanel);
     }
