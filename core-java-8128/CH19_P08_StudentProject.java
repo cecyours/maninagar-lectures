@@ -1,7 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class CH19_P08_StudentProject {
- 
+
     public static void main(String[] args) {
 
         Window w = new Window();
@@ -11,8 +14,7 @@ public class CH19_P08_StudentProject {
     }
 }
 
-
-class Window extends JFrame {
+class Window extends JFrame implements ActionListener {
 
     JPanel windowPanel;
     JPanel mainPanel;
@@ -32,10 +34,15 @@ class Window extends JFrame {
 
     JLabel lblGender;
     JRadioButton rbMale, rbFemale, rbOther;
-    
+
     JLabel lblHobbies;
     JCheckBox cbCoding, cbDebugin, cbReading;
 
+    JLabel lblSubjects;
+    // JList<String> lstSubjects;
+    JComboBox<String> lstSubjects;
+
+    JButton btnSubmit;
 
     public Window() {
         windowPanel = new JPanel(new BorderLayout());
@@ -51,6 +58,7 @@ class Window extends JFrame {
         windowPanel.add(menuPanel, BorderLayout.NORTH);
         windowPanel.add(sidePanel, BorderLayout.EAST);
         windowPanel.add(mainPanel, BorderLayout.CENTER);
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         /* Init menu bar */
         menuBar = new JMenuBar();
@@ -87,9 +95,6 @@ class Window extends JFrame {
         gbc.gridy = 1;
         mainPanel.add(txtUserName, gbc);
 
-
-
-
         lblPassword = new JLabel("Enter Password:");
         gbc.gridx = 0;
         gbc.gridy = 2;
@@ -99,8 +104,6 @@ class Window extends JFrame {
         gbc.gridx = 1;
         gbc.gridy = 2;
         mainPanel.add(psdPassword, gbc);
-
-
 
         lblGender = new JLabel("Choose Gender:");
         gbc.gridx = 0;
@@ -116,7 +119,6 @@ class Window extends JFrame {
         bg.add(rbFemale);
         bg.add(rbOther);
 
-
         JPanel pGender = new JPanel();
         BoxLayout genderLayout = new BoxLayout(pGender, BoxLayout.X_AXIS);
         pGender.setLayout(genderLayout);
@@ -129,19 +131,14 @@ class Window extends JFrame {
         gbc.gridy = 3;
         mainPanel.add(pGender, gbc);
 
-
-
-
         lblHobbies = new JLabel("select Hobbies:");
         gbc.gridx = 0;
         gbc.gridy = 4;
         mainPanel.add(lblHobbies, gbc);
 
-       
         cbCoding = new JCheckBox("Coding");
         cbDebugin = new JCheckBox("Debuging");
         cbReading = new JCheckBox("Reading");
-
 
         JPanel pHobbies = new JPanel();
         BoxLayout lHobbies = new BoxLayout(pHobbies, BoxLayout.X_AXIS);
@@ -155,6 +152,47 @@ class Window extends JFrame {
         gbc.gridy = 4;
         mainPanel.add(pHobbies, gbc);
 
+        lblSubjects = new JLabel("Select Subjects:");
+        gbc.gridx = 0;
+        gbc.gridy = 5;
+        mainPanel.add(lblSubjects, gbc);
+
+        String s[] = { "Python", "Java", "IOT" };
+        lstSubjects = new JComboBox<>(s);
+        gbc.gridx = 1;
+        gbc.gridy = 5;
+        mainPanel.add(lstSubjects, gbc);
+
+        gbc.gridwidth = 2;
+        btnSubmit = new JButton("Submit");
+        gbc.gridx = 0;
+        gbc.gridy = 6;
+        gbc.fill = 2;
+        mainPanel.add(btnSubmit, gbc);
+
+        btnSubmit.addActionListener(this);
         getContentPane().add(windowPanel);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        System.out.println("Hello World");
+
+        System.out.println("User name : " + txtUserName.getText());
+        System.out.println(" Password : " + psdPassword.getText());
+
+        String selectedGender = "";
+
+        if (rbMale.isSelected()) {
+            selectedGender = rbMale.getText();
+        } else if (rbFemale.isSelected()) {
+            selectedGender = rbFemale.getText();
+        } else {
+            selectedGender = rbOther.getText();
+        }
+
+        System.out.println("gender : " + selectedGender);
+
     }
 }
