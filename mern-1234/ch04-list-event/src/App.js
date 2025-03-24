@@ -4,6 +4,7 @@ import List from './components/List';
 import Event from './components/Event';
 import ControlledForm from './components/ControlledForm';
 import UncontrolledForm from './components/UncontrolledForm';
+import ThemeComponents from './context/consumer/ThemeComponents';
 
 function App() {
   return (
@@ -14,7 +15,10 @@ function App() {
 
       {/* <ControlledForm /> */}
 
-      <UncontrolledForm/>
+      {/* <UncontrolledForm /> */}
+
+
+      <ThemeComponents />
     </div>
   );
 }
