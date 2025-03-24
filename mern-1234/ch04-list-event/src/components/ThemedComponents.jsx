@@ -3,9 +3,7 @@ import { useTheme } from "../context/ThemeProvider";
 
 const ThemedComponents = () => {
   const { theme, toggleTheme } = useTheme();
-
   console.log(theme);
-
   return (
     <div
       className={`d-flex flex-column justify-content-center align-items-center vh-100 ${
