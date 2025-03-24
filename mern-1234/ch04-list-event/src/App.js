@@ -9,8 +9,7 @@ import { useTheme } from './context/ThemeProvider';
 function App() {
   const { theme } = useTheme()
   return (
-    <div className={`d-flex flex-column justify-content-center align-items-center vh-100 ${theme === "light" ? "bg-light text-dark" : "bg-dark text-light"
-      }`}>
+    <div className={`d-flex flex-column justify-content-center align-items-center vh-100 `}>
       {/* <List /> */}
 
       {/* <Event name={"CEC"} /> */}

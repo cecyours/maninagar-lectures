@@ -8,7 +8,9 @@ const ThemedComponents = () => {
 
   return (
     <div
-      className={`d-flex flex-column justify-content-center align-items-center vh-100   `}
+      className={`d-flex flex-column justify-content-center align-items-center vh-100 ${
+        theme === "light" ? "bg-light text-dark" : "bg-dark text-light"
+      } `}
     >
       <h1 className="mb-4">
         {theme === "light" ? "Light Theme 🌞 🚀 " : "Dark Theme 🌙 ➕"}
