@@ -6,7 +6,7 @@ const UncontrolledForm = () => {
   console.log(inputRef);
 
   useEffect(() => {
-    inputRef.current.focus()
+    inputRef.current.focus();
   }, []);
 
   const handleSubmit = (e) => {

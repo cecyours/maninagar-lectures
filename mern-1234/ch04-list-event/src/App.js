@@ -1,31 +1,25 @@
-import { useTheme } from './context/ThemeProvider';
 import React, { Suspense } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
-import List from './components/List';
-import Event from './components/Event';
-import ControlledForm from './components/ControlledForm';
-import UncontrolledForm from './components/UncontrolledForm';
-
 
 // Import without Lazy
 import ThemedComponents from './components/ThemedComponents';
-
-
-// Import with Lazy
-const LazyThemedComponents = React.lazy(() => import('./components/ThemedComponents'))
-
-
-const SuspenseComponents = React.lazy(() => import('./components/SuspenseComponents'))
+import HooksComponents from './components/HooksHooksComponents';
 
 function App() {
-  const { theme } = useTheme()
+
   return (
     <div className={`d-flex flex-column justify-content-center align-items-center vh-100 `}>
-      <Suspense fallback={<h1> Loading..</h1>}>
+      <Router>
+        <Suspense fallback={<h1> Loading..</h1>}>
+          <Routes>
+            <Route path='/theme' element={<ThemedComponents />} />
+            <Route path='/theme2' element={<h1>Hello world</h1>} />
+            <Route path='/hooks' element={<HooksComponents />} />
 
-        <SuspenseComponents />
-      </Suspense>
+          </Routes>
+        </Suspense>
+      </Router>
     </div>
   );
 }
