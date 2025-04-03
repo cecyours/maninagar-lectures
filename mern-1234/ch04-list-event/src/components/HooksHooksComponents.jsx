@@ -5,7 +5,9 @@ function HooksComponents() {
 
   useEffect(() => {
     // console.log("I am here to show changes" + " " + count);
+
     document.title = `Title ${count}`;
+
   }, [count]);
 
   return (
