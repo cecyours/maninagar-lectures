@@ -1,9 +1,10 @@
 import React from "react";
+import UserData from "../json/user.json";
 
 const User = () => {
   return (
-    <div>
-      <h1> This is page for listing all users </h1>
+    <div className="container-fluid py-4">
+    <h1>This is user page </h1>
     </div>
   );
 };
