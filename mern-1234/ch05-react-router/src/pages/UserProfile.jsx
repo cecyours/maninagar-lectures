@@ -8,7 +8,6 @@ const UserProfile = () => {
     <div>
       <h1>This is profile page of {id} </h1>
       <hr />
-
       <h1>This is page for view details of perticuler user</h1>
     </div>
   );

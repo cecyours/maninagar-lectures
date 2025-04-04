@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link, NavLink } from "react-router-dom";
 
 function NavbarComponents() {
   return (
@@ -15,13 +16,13 @@ function NavbarComponents() {
 
         <div>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto text-white">
-              <Nav.Link className="text-white" href="/users">
+            <Nav className="me-auto text-white gap-5">
+              <Link className="text-white text-decoration-none" to="/users">
                 Users
-              </Nav.Link>
-              <Nav.Link className="text-white" href="/about-us">
+              </Link>
+              <Link className="text-white text-decoration-none"  to="/about-us">
                 About Us
-              </Nav.Link>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </div>
