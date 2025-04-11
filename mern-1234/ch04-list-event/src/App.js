@@ -1,20 +1,25 @@
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
-import List from './components/List';
-import Event from './components/Event';
-import ControlledForm from './components/ControlledForm';
-import UncontrolledForm from './components/UncontrolledForm';
+
+// Import without Lazy
+import ThemedComponents from './components/ThemedComponents';
+import HooksComponents from './components/HooksHooksComponents';
 
 function App() {
+
   return (
-    <div className=" container p-2">
-      {/* <List /> */}
+    <div className={`d-flex flex-column justify-content-center align-items-center vh-100 `}>
+      <Router>
+        <Suspense fallback={<h1> Loading..</h1>}>
+          <Routes>
+            <Route path='/theme' element={<ThemedComponents />} />
+            <Route path='/theme2' element={<h1>Hello world</h1>} />
+            <Route path='/hooks' element={<HooksComponents />} />
 
-      {/* <Event name={"CEC"} /> */}
-
-      {/* <ControlledForm /> */}
-
-      <UncontrolledForm/>
+          </Routes>
+        </Suspense>
+      </Router>
     </div>
   );
 }
