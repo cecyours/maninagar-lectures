@@ -8,9 +8,9 @@ const Counter = () => {
   return (
     <div>
       <h1>React-Redux Counter</h1>
-      <button onClick={() => dispatch(decrement())}> - </button>
+      <button onClick={() => dispatch({ type: "DECREMENT_ASYNC" })}> - </button>
       <h1>{count}</h1>
-      <button onClick={() => dispatch(increment())}> + </button>
+      <button onClick={() => dispatch({ type: "INCREMENT_ASYNC" })}> + </button>
     </div>
   );
 };
