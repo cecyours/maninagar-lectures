@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import Counter from './components/Counter';
+import UserComponents from './components/User';
 
 function App() {
   return (
     <div className="App">
-      <Counter />
+      {/* <Counter /> */}
+
+      <UserComponents />
     </div>
   );
 }

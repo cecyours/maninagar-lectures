@@ -1,18 +1,37 @@
+// redux/store.js
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from './counterSlice'
-import counterSaga from "../sagas/counterSagas";
 import createSagaMiddleware from "redux-saga";
 
+// Existing imports
+import counterReducer from './counterSlice';
+import counterSaga from '../sagas/counterSagas';
 
-const sagaMiddleware = createSagaMiddleware()
+// New user feature imports
+import userReducer from './user/userSlice';
+import userSagas from './user/userSagas';
 
+import { all } from 'redux-saga/effects';
 
+// Create saga middleware
+const sagaMiddleware = createSagaMiddleware();
+
+// Combine all sagas
+function* rootSaga() {
+    yield all([
+        counterSaga(),
+        userSagas()
+    ]);
+}
+
+// Configure store
 export const store = configureStore({
     reducer: {
-        counter: counterReducer
+        counter: counterReducer,
+        user: userReducer,
     },
-    middleware: (getDefaultMiddlware) =>
-        getDefaultMiddlware({ thunk: false }).concat(sagaMiddleware)
-})
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({ thunk: false, serializableCheck: false }).concat(sagaMiddleware),
+});
 
-sagaMiddleware.run(counterSaga)
+// Run saga middleware
+sagaMiddleware.run(rootSaga);
