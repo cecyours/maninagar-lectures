@@ -1,9 +1,9 @@
 #include<stdio.h>
-void main()
+#include"CH02_P07_header.h"
+int main()
 {
-    int a,b,substraction;
-    printf("please enter the two numbers : ");
-    scanf("%d-%d",&a,&b);
-    substraction = a-b;
-    printf("%d-%d =%d",a,b,substraction);                                                   
+int a,b;
+
+printf("please enter two numbers");
+scanf("%d,%d")
 }
