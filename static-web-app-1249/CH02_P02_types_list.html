@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .container{
+            display: flex;
+            gap: 10px;
+        }
+
+        .box{
+            background-color: antiquewhite;
+            padding: 10px;
+            width: 33%;
+            border-radius: 10px;
+        }
+
+        li:first-child
+        {
+            color: red;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h2>Order list</h2>
+        <hr>
+        <!-- order list -->
+        <ol type="A" start="2"> 
+            <!-- list item -->
+            <li>Python</li>
+            <li>Java</li>
+            <li>Html</li>
+            <li>Css</li>
+            <li>Java Script</li>
+        </ol>
+      </div>
+
+      <div class="box">
+        <h2>Unorder list</h2>
+        <hr>
+        <!-- unorder list -->
+        <ul style="list-style-type: circle;"> 
+            <!-- list item -->
+            <li>Python</li>
+            <li>Java</li>
+            <li>Html</li>
+            <li>Css</li>
+            <li>Java Script</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Description list</h2>
+
+        <hr>
+        <!-- Description list -->
+        <dl> 
+            <!-- data heading -->
+            <dt>Python</dt>
+            <!-- data description -->
+            <dd>This is the best langague for AI devlopment</dd>
+            
+
+             <!-- data heading -->
+             <dt>Java</dt>
+             <!-- data description -->
+             <dd>This is the best langague for Rubust applications</dd>
+        </dl>
+      </div>
+    </div>
+  </body>
+</html>
