@@ -1,4 +1,5 @@
 import './App.css';
+import Immutable from './components/Immutable';
 import UserComponents from './components/User';
 
 function App() {
@@ -6,7 +7,9 @@ function App() {
     <div className="App">
       {/* <Counter /> */}
 
-      <UserComponents />
+      {/* <UserComponents /> */}
+
+      <Immutable />
     </div>
   );
 }
