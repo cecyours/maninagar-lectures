@@ -10,6 +10,7 @@ import Dashboard from './pages/admin-panel/Dashboard';
 import Users from './pages/admin-panel/Users';
 import Setting from './pages/admin-panel/Setting';
 import NotFound from './components/NotFound';
+import ContactUS from './pages/ContactUs';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home user={"Vishal"} />} />
           <Route path='/users' element={<User />} />
+          <Route path='/contact-us' element={<ContactUS />} />
+
+
           <Route path='/users/:id' element={<UserProfile />} />
           {/* Routes  for admin panel */}
           <Route path='/admin' element={<Dashboard />} />

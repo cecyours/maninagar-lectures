@@ -23,6 +23,10 @@ function NavbarComponents() {
               <Link className="text-white text-decoration-none"  to="/about-us">
                 About Us
               </Link>
+
+              <Link className="text-white text-decoration-none"  to="/contact-us">
+                Contact Us
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </div>
