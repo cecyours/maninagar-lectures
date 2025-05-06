@@ -1,0 +1,13 @@
+The fs.open() method in Node.js is used to open a file, providing a file descriptor that can then be used for reading, writing, or other file operations. The flags argument in fs.open() determines the mode in which the file is opened. Here's a breakdown of the common flags:
+r: Open for reading. An exception occurs if the file does not exist.
+r+: Open for reading and writing. An exception occurs if the file does not exist.
+rs: Open for reading in synchronous mode, bypassing the local file system cache. Use with caution due to performance impact.
+rs+: Open for reading and writing in synchronous mode, also bypassing the local cache. Use with caution.
+w: Open for writing. Creates the file if it does not exist or truncates it if it does. 
+wx: Like w, but opens the file in exclusive mode, failing if the file exists.
+w+: Open for reading and writing. Creates the file if it does not exist or truncates it if it does. 
+wx+: Like w+, but opens the file in exclusive mode, failing if the file exists.
+a: Open for appending. Creates the file if it does not exist.
+ax: Like a, but opens the file in exclusive mode, failing if the file exists.
+a+: Open for reading and appending. Creates the file if it does not exist.
+ax+: Like a+, but opens the file in exclusive mode, failing if the file exists.

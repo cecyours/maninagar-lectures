@@ -1,3 +1,11 @@
+console.log("This is my file");
+
+
+debugger;
+
+
+
+
 const fs = require('fs')
 
 // writing file 
@@ -14,11 +22,11 @@ fs.writeFile('output.txt', "Hello this is newly created", (err, data) => {
 
 
 // open a file 
-fs.open('output.txt', 'r', (err, data) => {
-    if (err) throw err;
-    console.log(data);
-    console.log("File Open Succesfully");
-})
+// fs.open('output.txt', "r", (err, data) => {
+//     if (err) throw err;
+//     console.log(data);
+//     console.log("File Open Succesfully");
+// })
 
 
 // unlink file 
@@ -30,10 +38,10 @@ fs.open('output.txt', 'r', (err, data) => {
 
 
 // read directory
-fs.readdir('.', (err, data) => {
-    if (err) throw err;
-    console.log(data);
-})
+// fs.readdir('.', (err, data) => {
+//     if (err) throw err;
+//     console.log(data);
+// })
 
 
 
