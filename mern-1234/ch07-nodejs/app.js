@@ -1,27 +1,12 @@
-// const add = require("./math");
+function multiply(a, b) {
+  return a * b;
+}
 
-// console.log(add(2, 4));
+function main() {
+  debugger;
+  let x = 2;
+  let y = 3;
+  let result = multiply(x, y);
+  console.log(result);
+}
 
-
-
-// function greet(name) {
-//     let message = `Hello  ${name}`
-//     console.log(message);
-//     return message
-// }
-
-// greet("CEC")
-
-
-function add(a, b) {
-    const sum = a + b;
-    return sum;
-  }
-  
-  function calculate() {
-    const result = add(5, 3);
-    console.log("Result:", result);
-  }
-  
-  calculate();
-  
