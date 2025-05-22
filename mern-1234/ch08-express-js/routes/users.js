@@ -15,8 +15,6 @@ const students = [
   { id: 10, name: "Meera Joshi", age: 16, grade: "10th", email: "meera.joshi@example.com" },
 ];
 
-
-
 /* GET users listing. */
 router.get('/', function (req, res, next) {
   res.status(200).json(students)
