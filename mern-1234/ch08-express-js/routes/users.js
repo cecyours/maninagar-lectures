@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
 const students = [
   { id: 1, name: "Aarav Sharma", age: 17, grade: "11th", email: "aarav.sharma@example.com" },
   { id: 2, name: "Isha Verma", age: 16, grade: "10th", email: "isha.verma@example.com" },
