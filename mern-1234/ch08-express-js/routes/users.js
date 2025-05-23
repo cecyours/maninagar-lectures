@@ -20,7 +20,8 @@ router.get('/', function (req, res, next) {
 });
 
 /* GET users listing. */
-router.get('/:id', function (req, res, next) {
+router.get('/:id'
+  , function (req, res, next) {
   const { id } = req.params
   const filterdData = students.filter((students) => students.id == id)
   console.log(filterdData);
