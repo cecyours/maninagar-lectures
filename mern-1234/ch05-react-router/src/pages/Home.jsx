@@ -4,7 +4,8 @@ const Home = ({ userprops }) => {
   const [user, setUser] = useState([]);
   useEffect(() => {
     async function fetchUser() {
-      const user = await fetch(`http://localhost:9000/users `);
+      const user = await fetch(`http://localhost:9000/users`);
+      console.log(user.json(), "here i am");
       const userData = await user.json();
       setUser(userData);
     }
