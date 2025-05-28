@@ -7,9 +7,41 @@ const ContactUS = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {};
+
+    if (!data.name) {
+      newErrors.name = "Name is required";
+      isValid = false;
+    }
+
+    if (!data.email) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      newErrors.email = "Invalid email format";
+      isValid = false;
+    }
+
+    if (!data.message) {
+      newErrors.message = "message  is required";
+      isValid = false;
+    }
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+
+    if (validateForm()) {
+      console.log(data);
+    } else {
+      console.log("kuch to galat hain");
+    }
   };
   return (
     <div className="fluid-container">
@@ -17,6 +49,7 @@ const ContactUS = () => {
         <h3 className="text-center">Contact Us Form</h3>
 
         <form onSubmit={handleSubmit} action="" className="d-grid gap-4 p-4">
+          <span className="text-danger"> {errors.name}</span>
           <input
             type="text"
             placeholder="Enter Your Name"
@@ -24,6 +57,9 @@ const ContactUS = () => {
             onChange={(e) => setData({ ...data, name: e.target.value })}
             className="form-control"
           />
+
+          <span className="text-danger"> {errors.email}</span>
+
           <input
             type="text"
             placeholder="Enter Your Email"
@@ -31,6 +67,9 @@ const ContactUS = () => {
             onChange={(e) => setData({ ...data, email: e.target.value })}
             value={data.email}
           />
+
+          <span className="text-danger"> {errors.message}</span>
+
           <textarea
             type="text"
             placeholder="Enter Your Message"
