@@ -22,11 +22,11 @@ router.get('/', function (req, res, next) {
 /* GET users listing. */
 router.get('/:id'
   , function (req, res, next) {
-  const { id } = req.params
-  const filterdData = students.filter((students) => students.id == id)
-  console.log(filterdData);
-  res.status(200).json(filterdData)
-})
+    const { id } = req.params
+    const filterdData = students.filter((students) => students.id == id)
+    console.log(filterdData);
+    res.status(200).json(filterdData)
+  })
 
 /* GET users listing. */
 const path = require('path');

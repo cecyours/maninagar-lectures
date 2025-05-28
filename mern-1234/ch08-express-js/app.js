@@ -50,8 +50,6 @@ app.use('/users', usersRouter);
 app.use('/blogs', blogRouter)
 
 
-
-
 mongoose.connect('mongodb+srv://mern1234:asdasd@mern-1234.bfblx64.mongodb.net/?retryWrites=true&w=majority&appName=MERN-1234').then(() => {
   console.log("Connection Succesful");
 }).catch((err) => {
