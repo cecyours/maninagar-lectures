@@ -13,12 +13,12 @@ const ContactUS = () => {
     let isValid = true;
     const newErrors = {};
 
-    if (!data.name) {
+    if (!data.name.trim()) {
       newErrors.name = "Name is required";
       isValid = false;
     }
 
-    if (!data.email) {
+    if (!data.email.trim()) {
       newErrors.email = "Email is required";
       isValid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
@@ -26,10 +26,11 @@ const ContactUS = () => {
       isValid = false;
     }
 
-    if (!data.message) {
-      newErrors.message = "message  is required";
+    if (!data.message.trim()) {
+      newErrors.message = "Message is required";
       isValid = false;
     }
+
     setErrors(newErrors);
     return isValid;
   };
@@ -38,50 +39,95 @@ const ContactUS = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      console.log(data);
+      console.log("Form Submitted:", data);
+      alert("Thank you for contacting us!");
+      setData({ name: "", email: "", message: "" }); // Reset form
+      setErrors({});
     } else {
-      console.log("kuch to galat hain");
+      console.log("Form contains errors.");
     }
   };
+
   return (
-    <div className="fluid-container">
-      <div className="bg-primary-subtle w-50 mx-auto rounded-3 mt-4">
-        <h3 className="text-center">Contact Us Form</h3>
+    <div className="container py-5">
+      <div className="row justify-content-center">
+        <div className="col-md-8 col-lg-6">
+          <div className="card shadow-sm">
+            <div className="card-header bg-primary text-white text-center">
+              <h4 className="mb-0">Contact Us</h4>
+            </div>
+            <div className="card-body">
+              <form onSubmit={handleSubmit} noValidate>
+                <div className="mb-3">
+                  <label htmlFor="name" className="form-label">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className={`form-control ${
+                      errors.name ? "is-invalid" : ""
+                    }`}
+                    placeholder="Enter your name"
+                    value={data.name}
+                    onChange={(e) => setData({ ...data, name: e.target.value })}
+                  />
+                  {errors.name && (
+                    <div className="invalid-feedback">{errors.name}</div>
+                  )}
+                </div>
 
-        <form onSubmit={handleSubmit} action="" className="d-grid gap-4 p-4">
-          <span className="text-danger"> {errors.name}</span>
-          <input
-            type="text"
-            placeholder="Enter Your Name"
-            value={data.name}
-            onChange={(e) => setData({ ...data, name: e.target.value })}
-            className="form-control"
-          />
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className={`form-control ${
+                      errors.email ? "is-invalid" : ""
+                    }`}
+                    placeholder="Enter your email"
+                    value={data.email}
+                    onChange={(e) =>
+                      setData({ ...data, email: e.target.value })
+                    }
+                  />
+                  {errors.email && (
+                    <div className="invalid-feedback">{errors.email}</div>
+                  )}
+                </div>
 
-          <span className="text-danger"> {errors.email}</span>
+                <div className="mb-3">
+                  <label htmlFor="message" className="form-label">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows="4"
+                    className={`form-control ${
+                      errors.message ? "is-invalid" : ""
+                    }`}
+                    placeholder="Write your message"
+                    value={data.message}
+                    onChange={(e) =>
+                      setData({ ...data, message: e.target.value })
+                    }
+                  />
+                  {errors.message && (
+                    <div className="invalid-feedback">{errors.message}</div>
+                  )}
+                </div>
 
-          <input
-            type="text"
-            placeholder="Enter Your Email"
-            className="form-control"
-            onChange={(e) => setData({ ...data, email: e.target.value })}
-            value={data.email}
-          />
-
-          <span className="text-danger"> {errors.message}</span>
-
-          <textarea
-            type="text"
-            placeholder="Enter Your Message"
-            className="form-control"
-            onChange={(e) => setData({ ...data, message: e.target.value })}
-            value={data.message}
-          />
-
-          <button type="submit" className="btn btn-success">
-            Submit
-          </button>
-        </form>
+                <div className="d-grid">
+                  <button type="submit" className="btn btn-success">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

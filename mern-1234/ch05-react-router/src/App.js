@@ -28,8 +28,12 @@ function App() {
           <Route path='/admin' element={<Dashboard />} />
           <Route path='/admin/users' element={<Users />} />
           <Route path='/admin/settings' element={<Setting />} />
+
+
           {/* FOr path less route */}
           <Route path='*' element={<NotFound />} />
+
+          
 
 
         </Routes>
