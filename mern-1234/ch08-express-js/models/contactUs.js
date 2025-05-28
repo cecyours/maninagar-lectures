@@ -19,7 +19,7 @@ const contactUsSchema = new mongoose.Schema({
         type: String,
         required: true,
     }
-}, { timestamps: true }); // includes createdAt and updatedAt fields
+}, { timestamps: true });
 
 // Exporting the model
 module.exports = mongoose.model("ContactUs", contactUsSchema);
