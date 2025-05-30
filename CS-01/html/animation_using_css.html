@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+
+        @keyframes kites {
+            from{background-color: red;width: 0px;}
+            to{background-color: blue;width: 700px;}
+        }
+
+      .box {
+        background-color: red;
+        width: 200px;
+        height: 200px;
+        animation-name: kites;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      .container{
+        height: 100vh;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="d-flex justify-content-center align-items-center container" >
+      <div class="box">
+
+      </div>
+    </div>
+  </body>
+</html>
