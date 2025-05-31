@@ -20,8 +20,19 @@
 
     const ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = "blue";
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(500, 500);
+    ctx.stroke();
 
-    ctx.fillRect(150, 150, 80, 50); // x, y, width, height
+    ctx.beginPath();
+    ctx.arc(150, 150, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = "red";
+    ctx.fill();
+    ctx.stroke(); 
+
+    ctx.font = "24px Arial";
+    ctx.fillStyle = "green";
+    ctx.fillText("Hello Canvas!", 100, 50);
   </script>
 </html>
