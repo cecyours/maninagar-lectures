@@ -8,7 +8,7 @@ const contactUsSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        match: /.+\@.+\..+/ // basic email validation
+        match: /.+\@.+\..+/
     },
     phoneNumber: {
         type: String,
@@ -21,5 +21,6 @@ const contactUsSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-// Exporting the model
+
+
 module.exports = mongoose.model("ContactUs", contactUsSchema);
