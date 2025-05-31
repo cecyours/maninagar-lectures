@@ -1,10 +1,12 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 const ContactUS = () => {
   const [data, setData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: "sample",
+    email: "sample@gmail.com",
+    phoneNumber: "9876543210",
+    message: "hello from me",
   });
 
   const [errors, setErrors] = useState({});
@@ -31,16 +33,25 @@ const ContactUS = () => {
       isValid = false;
     }
 
+    if (!data.phoneNumber.trim()) {
+      newErrors.phoneNumber = "Phone Number is required";
+      isValid = false;
+    }
     setErrors(newErrors);
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      console.log("Form Submitted:", data);
-      alert("Thank you for contacting us!");
+      const response = await axios.post(
+        "http://localhost:9000/contact-us",
+        data
+      );
+
+      console.log(response.data);
+
       setData({ name: "", email: "", message: "" }); // Reset form
       setErrors({});
     } else {
@@ -98,6 +109,26 @@ const ContactUS = () => {
                   )}
                 </div>
 
+                <div className="mb-3">
+                  <label htmlFor="name" className="form-label">
+                    Phone Number
+                  </label>
+                  <input
+                    type="text"
+                    id="phoneNumber"
+                    className={`form-control ${
+                      errors.name ? "is-invalid" : ""
+                    }`}
+                    placeholder="Enter your name"
+                    value={data.phoneNumber}
+                    onChange={(e) =>
+                      setData({ ...data, phoneNumber: e.target.value })
+                    }
+                  />
+                  {errors.phoneNumber && (
+                    <div className="invalid-feedback">{errors.phoneNumber}</div>
+                  )}
+                </div>
                 <div className="mb-3">
                   <label htmlFor="message" className="form-label">
                     Message
