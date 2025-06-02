@@ -10,7 +10,6 @@ router.post('/', async function (req, res, next) {
         const insertQuery = await contactUs.create(data)
 
         console.log(insertQuery);
-
         res.status(200).json({
             success: true,
             message: "Data inserted Successfully",
@@ -23,6 +22,24 @@ router.post('/', async function (req, res, next) {
         })
     }
 });
+
+
+router.get('/', async function (req, res) {
+    try {
+        const contactUsData = await contactUs.find()
+
+        res.status(200).json({
+            success: true,
+            message: "Contact Us fetched Successfully",
+            data: contactUsData
+        })
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: "failed to fetch data"
+        })
+    }
+})
 
 
 
