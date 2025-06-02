@@ -11,6 +11,7 @@ import Users from './pages/admin-panel/Users';
 import Setting from './pages/admin-panel/Setting';
 import NotFound from './components/NotFound';
 import ContactUS from './pages/ContactUs';
+import ContactUsAdmin from './pages/admin-panel/ContactUsAdmin';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
           <Route path='/admin' element={<Dashboard />} />
           <Route path='/admin/users' element={<Users />} />
           <Route path='/admin/settings' element={<Setting />} />
+          <Route path='/admin/contact-us' element={<ContactUsAdmin />} />
+
+
 
 
           {/* FOr path less route */}
