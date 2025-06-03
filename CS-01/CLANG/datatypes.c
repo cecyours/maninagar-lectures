@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 // This program demonstrates various data types in C
-int main() {
+int main()
+{
 
     // Primary (Basic) data types
     int integerValue = 10;
@@ -11,7 +12,7 @@ int main() {
 
     // Derived data types
     int intArray[5] = {1, 2, 3, 4, 5}; // Array
-    int *ptr = &integerValue;         // Pointer
+    int *ptr = &integerValue;          // Pointer
 
     // Displaying values
     printf("Integer: %d\n", integerValue);
@@ -21,7 +22,8 @@ int main() {
 
     // Array access
     printf("Array Elements: ");
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
+    {
         printf("%d ", intArray[i]);
     }
     printf("\n");
@@ -29,6 +31,11 @@ int main() {
     // Pointer usage
     printf("Pointer Value (address of integerValue): %p\n", ptr);
     printf("Pointer Dereferenced Value: %d\n", *ptr);
+
+    // int float char double long unsigned signed short
+    // void if else for do while switch break
+    // default return case goto continue struct union enum
+    // auto static register extern sizeof typedef const volatile
 
     return 0;
 }
