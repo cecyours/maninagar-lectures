@@ -11,7 +11,7 @@ int main()
     printf("Enter Second Number : ");
     scanf("%d", &b);
   
-    c = a + b;
+    c = a / b;
 
     printf("Sum of %d and %d = %d", a, b, c);
 
