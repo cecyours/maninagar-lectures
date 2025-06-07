@@ -12,6 +12,7 @@ import Setting from './pages/admin-panel/Setting';
 import NotFound from './components/NotFound';
 import ContactUS from './pages/ContactUs';
 import ContactUsAdmin from './pages/admin-panel/ContactUsAdmin';
+import ContactUsView from './pages/ContactUsView';
 
 function App() {
   return (
@@ -22,9 +23,9 @@ function App() {
           <Route path='/' element={<Home user={"Vishal"} />} />
           <Route path='/users' element={<User />} />
           <Route path='/contact-us' element={<ContactUS />} />
-
-
           <Route path='/users/:id' element={<UserProfile />} />
+          <Route path='/contact-us/view/:id' element={<ContactUsView />} />
+
           {/* Routes  for admin panel */}
           <Route path='/admin' element={<Dashboard />} />
           <Route path='/admin/users' element={<Users />} />
@@ -37,7 +38,7 @@ function App() {
           {/* FOr path less route */}
           <Route path='*' element={<NotFound />} />
 
-          
+
 
 
         </Routes>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ContactUsAdmin = () => {
   const [data, setData] = useState([]);
@@ -30,7 +31,9 @@ const ContactUsAdmin = () => {
       )}
 
       {data.length === 0 ? (
-        <div className="text-center text-muted">No contact queries available.</div>
+        <div className="text-center text-muted">
+          No contact queries available.
+        </div>
       ) : (
         <div className="table-responsive">
           <table className="table table-bordered table-hover">
@@ -40,6 +43,7 @@ const ContactUsAdmin = () => {
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Created At</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -49,6 +53,16 @@ const ContactUsAdmin = () => {
                   <td>{entry.email}</td>
                   <td>{entry.phoneNumber}</td>
                   <td>{new Date(entry.createdAt).toLocaleString()}</td>
+                  <td className="d-flex justify-content-around">
+                    <Link
+                      className="btn btn-sm btn-primary"
+                      to={`/contact-us/view/${entry._id}`}
+                    >
+                      view
+                    </Link>
+                    <button className="btn btn-sm btn-info">Edit</button>
+                    <button className="btn btn-sm btn-danger">Delete</button>
+                  </td>
                 </tr>
               ))}
             </tbody>

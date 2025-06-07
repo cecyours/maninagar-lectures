@@ -51,7 +51,6 @@ const ContactUS = () => {
       );
 
       console.log(response.data);
-
       setData({ name: "", email: "", message: "" }); // Reset form
       setErrors({});
     } else {
