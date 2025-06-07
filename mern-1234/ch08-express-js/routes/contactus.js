@@ -2,7 +2,8 @@ var express = require('express');
 const contactUs = require('../models/contactUs');
 var router = express.Router();
 
-/* GET home page. */
+
+// create
 router.post('/', async function (req, res, next) {
     try {
         const data = req.body
@@ -23,7 +24,7 @@ router.post('/', async function (req, res, next) {
     }
 });
 
-
+// fetch all  recors
 router.get('/', async function (req, res) {
     try {
         const contactUsData = await contactUs.find()
@@ -40,6 +41,76 @@ router.get('/', async function (req, res) {
         })
     }
 })
+
+
+// getch record by  unique Id
+router.get('/:id', async function (req, res) {
+    try {
+        const { id } = req.params
+
+        const contactUsData = await contactUs.findById(id)
+        res.status(200).json({
+            success: true,
+            message: "Contact Us fetched Successfully",
+            data: [contactUsData]
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            success: false,
+            message: "failed to fetch data"
+        })
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// router.put('/:id', a sync function (req, res, next) {
+//     try {
+//         const id = req.params.id; // Get ID from URL
+//         const updatedData = req.body; // Get update data from request body
+
+//         console.log("Updating data for ID:", id);
+//         console.log("New Data:", updatedData);
+
+//         const updateQuery = await contactUs.findByIdAndUpdate(id, updatedData, {
+//             new: true, // Return the updated document
+//             runValidators: true // Ensure validation rules are enforced
+//         });
+
+//         if (!updateQuery) {
+//             return res.status(404).json({
+//                 success: false,
+//                 message: "Data not found for the given ID"
+//             });
+//         }
+
+//         res.status(200).json({
+//             success: true,
+//             message: "Data updated successfully",
+//             data: updateQuery
+//         });
+//     } catch (error) {
+//         console.error("Update Error:", error);
+//         res.status(500).json({
+//             success: false,
+//             message: "Failed to update data",
+//             error: error.message
+//         });
+//     }
+// });
+
 
 
 
