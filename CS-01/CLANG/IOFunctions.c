@@ -27,9 +27,7 @@ int main()
     // putchar()
     // puts()
 
-
     // -------------------------------------
-
     // 2 . Unfomatted  IO Functions
 
     // scanf()
