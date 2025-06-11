@@ -47,12 +47,11 @@ router.get('/', async function (req, res) {
 router.get('/:id', async function (req, res) {
     try {
         const { id } = req.params
-
         const contactUsData = await contactUs.findById(id)
         res.status(200).json({
             success: true,
             message: "Contact Us fetched Successfully",
-            data: [contactUsData]
+            data: contactUsData
         })
     } catch (error) {
         console.log(error);
@@ -63,6 +62,52 @@ router.get('/:id', async function (req, res) {
     }
 })
 
+
+
+router.delete('/:id', async function (req, res) {
+    try {
+        const { id } = req.params
+        console.log(id);
+
+        const contactUsDataDeleted = await contactUs.findByIdAndDelete(id)
+        res.status(200).json({
+            success: true,
+            message: "Contact Us deleted Successfully",
+            data: contactUsDataDeleted
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            success: false,
+            message: "failed to delete data"
+        })
+    }
+})
+
+router.put('/:id', async function (req, res) {
+    try {
+
+        const { id } = req.params;
+        const data = req.body;
+
+
+        const updatedData = await contactUs.findByIdAndUpdate(id, data, { new: true, runValidators: true })
+
+        res.status(200).json({
+            success: true,
+            message: "Contact Us Updated Successfully",
+            data: updatedData
+        })
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            success: false,
+            message: "failed to updated data"
+        })
+
+    }
+})
 
 
 
