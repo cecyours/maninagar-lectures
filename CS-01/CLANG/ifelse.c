@@ -13,7 +13,7 @@ int main()
 
     // logical OR
     // if (marks >= 33 || marks <= 100)
-
+ 
     if (marks >= 33 || marks <= 100)
     {
         printf("Pass");
