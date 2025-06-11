@@ -20,6 +20,21 @@ const ContactUsAdmin = () => {
     fetchContactUs();
   }, []);
 
+  const handleDelete = async (id) => {
+    console.log(id);
+
+    try {
+      const response = await axios.delete(
+        `http://localhost:9000/contact-us/${id}`
+      );
+      if (response.data.success === true) {
+        await fetchContactUs();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="container mt-5">
       <h2 className="text-center mb-4">Contact Us Queries</h2>
@@ -60,8 +75,18 @@ const ContactUsAdmin = () => {
                     >
                       view
                     </Link>
-                    <button className="btn btn-sm btn-info">Edit</button>
-                    <button className="btn btn-sm btn-danger">Delete</button>
+                    <Link
+                      to={`/contact-us/update/${entry._id}`}
+                      className="btn btn-sm btn-info"
+                    >
+                      Edit
+                    </Link>
+                    <button
+                      onClick={() => handleDelete(entry._id)}
+                      className="btn btn-sm btn-danger"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}

@@ -6,6 +6,8 @@ const ContactUsView = () => {
   const { id } = useParams();
 
   const [data, setData] = useState([]);
+
+  
   const fetchContactUsData = async () => {
     try {
       const response = await axios.get(

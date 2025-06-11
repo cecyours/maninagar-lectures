@@ -13,6 +13,7 @@ import NotFound from './components/NotFound';
 import ContactUS from './pages/ContactUs';
 import ContactUsAdmin from './pages/admin-panel/ContactUsAdmin';
 import ContactUsView from './pages/ContactUsView';
+import ContactUsUpdate from './pages/ContactUsUpdate';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           <Route path='/contact-us' element={<ContactUS />} />
           <Route path='/users/:id' element={<UserProfile />} />
           <Route path='/contact-us/view/:id' element={<ContactUsView />} />
+          <Route path='/contact-us/update/:id' element={<ContactUsUpdate />} />
+
+
 
           {/* Routes  for admin panel */}
           <Route path='/admin' element={<Dashboard />} />
