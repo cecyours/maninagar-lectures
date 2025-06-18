@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Language Page</title>
+    <style>
+
+        #cLangHeading
+        {
+            display: flex;
+            justify-content: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #datatypes
+        {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+        .code{
+            background-color: rgba(0, 0, 0, 0.753);
+            color: white;
+            border-radius: 10px;
+        }
+        #IntegerCode
+        {
+            background-color: rgba(0, 0, 0, 0.747);
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="cLangHeading">
+        <h1>C Language Topics</h1>
+    </div>
+
+    <div id="CLangTopics">
+        <ol>
+            <li>Datatypes :
+                <div id="datatypes">
+                    <p>
+                        In C, there are four types of datatypes.
+                        1. Integer
+                        2. Char
+                        3. Bool
+                        4. Float/Double
+                    </p>
+                </div>
+                
+                <div class="code">
+                    <pre>
+                        <span style="color: rgb(154, 252, 154);">// do code wise way</span>
+         int main()
+               {
+                   print();
+                                }
+                    </pre>
+                </div>
+
+                <div id="IntegerCode">
+                    <pre>
+                        Integer :- 
+                        int a1 = 70;
+                    </pre>
+                </div>
+
+                <div id="char">
+                    <p>
+                        Char :- char ch = 'a';
+                    </p>
+                </div>
+
+                <div id="bool">
+                    <p>
+                        Bool :- bool flag = false;    
+                    </p>
+                </div>
+
+                <div id="float">
+                    <p>
+                        Float/Double :- double variable;
+                    </p>
+                </div>
+            </li>
+            <li>Array :
+                <p>
+                    Array is collection of similar data items.
+                    e.g. int arr[10] can store 10 integer numbers.
+                    All these numbers are stored sequentially in continous memory locations.    
+                </p>
+            </li>
+            <li>String :
+                <p>
+                    In C, strings are represented as arrays of characters, terminated by a null character \0.
+                    Unlike some other languages, C doesn't have a built-in string type. .
+                </p>
+            </li>
+            <li>Functions :
+                <p>
+                    In C, a function is a block of code that performs a specific task. 
+                    Functions are essential for structuring programs, promoting reusability, 
+                    and improving code readability.     
+                </p>
+            </li>
+            <li>Pointers :
+                <p>
+                    Pointers in C are variables that store memory addresses. 
+                    Instead of holding a direct value, a pointer contains the location 
+                    in memory where a value is stored. This allows direct manipulation of data 
+                    at specific memory locations.
+                </p>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
