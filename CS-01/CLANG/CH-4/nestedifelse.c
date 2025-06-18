@@ -5,6 +5,7 @@ int main()
     int a, b, c, max;
     printf("Enter Three Numbers :");
     scanf("%d , %d , %d ", &a, &b, &c);
+    // make
 
     if (a > b)
     {
