@@ -11,7 +11,7 @@ int main()
     while (i < 100)
     {
         printf("%d, ", i);
-        i += a; // increment by 5
+        i += a;
     }
 
     return 0;

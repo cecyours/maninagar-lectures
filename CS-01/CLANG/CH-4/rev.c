@@ -6,7 +6,6 @@ int main()
     int rem, num, rev = 0;
     printf("Enter The value : ");
     scanf("%d", &num);
-
     while (num > 0)
     {
         rem = num % 10; // to get last digit
