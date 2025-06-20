@@ -14,38 +14,42 @@ import ContactUS from './pages/ContactUs';
 import ContactUsAdmin from './pages/admin-panel/ContactUsAdmin';
 import ContactUsView from './pages/ContactUsView';
 import ContactUsUpdate from './pages/ContactUsUpdate';
+import FooterComponent from './components/Footer';
 
 function App() {
   return (
     <div className="">
       <Router>
         <NavbarComponents />
-        <Routes>
-          <Route path='/' element={<Home user={"Vishal"} />} />
-          <Route path='/users' element={<User />} />
-          <Route path='/contact-us' element={<ContactUS />} />
-          <Route path='/users/:id' element={<UserProfile />} />
-          <Route path='/contact-us/view/:id' element={<ContactUsView />} />
-          <Route path='/contact-us/update/:id' element={<ContactUsUpdate />} />
+        <div className='min-vh-100'>
+          <Routes>
+            <Route path='/' element={<Home user={"Vishal"} />} />
+            <Route path='/users' element={<User />} />
+            <Route path='/contact-us' element={<ContactUS />} />
+            <Route path='/users/:id' element={<UserProfile />} />
+            <Route path='/contact-us/view/:id' element={<ContactUsView />} />
+            <Route path='/contact-us/update/:id' element={<ContactUsUpdate />} />
 
 
 
-          {/* Routes  for admin panel */}
-          <Route path='/admin' element={<Dashboard />} />
-          <Route path='/admin/users' element={<Users />} />
-          <Route path='/admin/settings' element={<Setting />} />
-          <Route path='/admin/contact-us' element={<ContactUsAdmin />} />
-
-
-
-
-          {/* FOr path less route */}
-          <Route path='*' element={<NotFound />} />
+            {/* Routes  for admin panel */}
+            <Route path='/admin' element={<Dashboard />} />
+            <Route path='/admin/users' element={<Users />} />
+            <Route path='/admin/settings' element={<Setting />} />
+            <Route path='/admin/contact-us' element={<ContactUsAdmin />} />
 
 
 
 
-        </Routes>
+            {/* FOr path less route */}
+            <Route path='*' element={<NotFound />} />
+
+
+
+
+          </Routes>
+        </div>
+        <FooterComponent />
       </Router>
     </div>
   );
