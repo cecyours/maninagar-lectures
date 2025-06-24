@@ -15,6 +15,7 @@ import ContactUsAdmin from './pages/admin-panel/ContactUsAdmin';
 import ContactUsView from './pages/ContactUsView';
 import ContactUsUpdate from './pages/ContactUsUpdate';
 import FooterComponent from './components/Footer';
+import ProductCreate from './pages/admin-panel/ProductCreate';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path='/admin/users' element={<Users />} />
             <Route path='/admin/settings' element={<Setting />} />
             <Route path='/admin/contact-us' element={<ContactUsAdmin />} />
+            <Route path='/admin/products/create' element={<ProductCreate />} />
 
 
 
