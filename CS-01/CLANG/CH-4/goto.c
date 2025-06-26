@@ -19,9 +19,9 @@ END:
     printf("wanna display again ? [y/n] : ");
     scanf("%c", &ch);
     if (ch == 'y' || ch == 'Y')
+    {
         goto END;
+    }
 
-    printf("Line 9\n");
-    printf("Line 10\n");
     return 0;
 }
