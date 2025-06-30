@@ -3,51 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up Page</title>
+    <title>SignUp Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
-
     <style>
-        .signup-box{
-            max-width: 450px;
-            margin: auto;
+        body{
+            background-color: #f8f9fa;
+        }
+        .container{
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 35%;
         }
     </style>
   </head>
   <body>
-    <div class="container rounded shadow py-5">
-        <div class="signup-box p-4">
-            <h1 class="text-center text-primary mb-4">Sign Up</h1>
-            <h6 class="text-secondary text-center mb-4">Sign up to continue</h6>
+    <div class="container rounded shadow mt-5 p-2 bg-white>
+      <div class="signup-box">
+      <h1 class="text-primary text-center mt-3">Sign Up</h1>
+      <h6 class="text-secondary text-center mt-3">Sign up to continue</h6>
 
-            <div class="mb-3">
-                <input type="text" id="txt1" name="txt1" placeholder="Name" class="form-control"/>
-            </div>
+      <div class="m-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          placeholder="Enter your name"
+          class="form-control"
+        />
+      </div>
 
-            <div class="mb-3">
-                <input type="email" id="email1" name="email1" placeholder="Email" class="form-control"/>
-            </div>
+      <div class="m-3">
+        <label for="emailId" class="form-label">Email</label>
+        <input
+          type="email"
+          id="emailId"
+          name="emailId"
+          placeholder="Enter your email"
+          class="form-control"
+        />
+      </div>
 
-            <div class="mb-3">
-                <input type="password" id="passwd1" name="passwd1" placeholder="Password" class="form-control"/>
-            </div>
+      <div class="m-3">
+        <label for="passwd" class="form-label">Password</label>
+        <input
+          type="password"
+          id="passwd"
+          name="passwd"
+          placeholder="Create Password"
+          class="form-control"
+        />
+      </div>
 
-            <div class="mb-3 form-check">
-                <input type="checkbox" id="chk1" name="chk1" />
-                <label class="form-label">Remember me</label>
-            </div>
+      <div class="m-3">
+        <input type="checkbox" name="chk1" id="chk1" />
+        <label for="rememberMe" class="form-label">Remember Me</label>
+      </div>
 
-            <div class="mb-3 text-center">
-                <button id="btnSignUp" class="btn btn-primary text-center form-control">Sign Up</button>
-            </div>
-        </div>
+      <div class="m-3 text-center">
+        <input type="button" id="signupId" name="signupId" value="Sign Up" class="btn btn-primary w-100"/>
+      </div>
+
+      </div>
     </div>
   </body>
 </html>

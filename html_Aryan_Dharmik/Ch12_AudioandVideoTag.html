@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio and Video Attributes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+ 
+  </head>
+  <body class="bg-light">
+
+    <div class="container py-5">
+
+        <div>
+        <h1 class="text-primary text-center mb-5">Audio and Video Example</h1>
+        </div>
+
+        <div class="audioBox bg-white rounded shadow mb-5 text-center p-4 w-50 m-auto">
+            <h4>Audio Player</h4>
+            <div>
+            <audio controls class="w-100">
+                <source src="AudioFile/audioFile.mp3" type="audio/mpeg" />
+                Your browser does not support audio element.
+            </audio>
+            </div>
+        </div>
+
+        <div class="videoBox bg-white rounded shadow mb-5 text-center p-4 w-50 m-auto">
+            <h4>Video Player</h4>
+            <video controls class="w-100 rounded">
+                <source src="VideoFile/VideoSample (2).mp4" type="video/mp4" />
+                Your browser does not support video element.
+            </video>
+        </div>
+
+    </div>
+  
+  </body>
+</html>

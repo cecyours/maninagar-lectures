@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images in HTML</title>
+</head>
+<body>
+    
+    <div class="section">
+        <h1>Basic &lt;Img&gt; Tag</h1>
+        <img src="sanfracisco.png" alt="Sanfrancsco Image">
+    </div>
+
+    <div class="section">
+        <h1>Responsive &lt;Picture&gt; Tag</h1>
+        <picture>
+            <source media="(min-width:600px)" srcset="sanfracisco.png" />
+            <source media="(min-width:300px)" srcset="tableImgrowcolspan.png" />
+            <img src="tableImgrowcolspan.jpg" alt="Responsive Image" />
+        </picture>
+    </div>
+
+    <div class="section">
+        <h1>&lt;a&gt; Tag with Image</h1>
+        <a href="https://www.openai.com/" target="_blank">
+            <img src="tableImgrowcolspan.jpg" alt="Clickable Image"/></a>
+    </div>
+
+    <div class="section">
+        <h2> 4. Image Map</h2>
+        <img src="sanfracisco.png" usemap="#exampleMap" alt="Image Map Example">
+        <map name="#exampleMap">
+            <area shape="rect" coords="50,50,150,150" href="https://www.google.com" alt="Google" target="_blank" />
+            <area shape="circle" coords="300,150,50" href="https://www.bing.com" alt="Bing" target="_blank" />
+        </map>
+        <p>Click on the square (Google) or the circle (Bing).</p>
+    </div>
+</body>
+</html>

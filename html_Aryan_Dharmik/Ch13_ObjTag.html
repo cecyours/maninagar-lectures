@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+
+<body class="bg-light">
+    <!-- PDF example -->
+     <div class="pdfbox rounded shadow w-50 m-auto p-4 d-flex justify-content-center align-items-center mt-5 mb-5 row">
+        <h1 class="text-center">PDF Example</h1>
+    <object data="PDF/PH1-2-33.pdf" type="application/pdf" height="300" width="400">
+        Your browser does not support embedded objects.
+    </object>
+    </div>
+
+    <!-- Image example -->
+    <div class="imagebox rounded shadow w-50 m-auto p-4 d-flex justify-content-center align-items-center mb-5 row">
+        <h1 class="text-center">Image Example</h1>
+    <form id="testForm" class="d-flex justify-content-center align-items-center">
+    <object data="sanfracisco.png" type="image/png" form="testForm" id="v2"></object>
+    </form>
+    </div>
+
+    <!-- Video example -->
+    <div class="videobox rounded shadow w-50 m-auto p-4 d-flex justify-content-center align-items-center mb-5 row">
+        <h1 class="text-center">Video Example</h1>
+    <object data="VideoFile/VideoSample (2).mp4" height="300px" width="200px" type="video/mp4">
+    </object>
+    </div>
+
+    <!-- Audio example -->
+    <div class="audiobox rounded shadow w-50 m-auto p-4 d-flex justify-content-center align-items-center mb-5 row">
+        <h1 class="text-center">Audio Example</h1>
+        <object data="AudioFile/audioFile.mp3" height="300" width="200" type="audio/mpeg"></object>
+    </div>
+    <!-- Webpage example -->
+    <div class="webpagebox rounded shadow w-50 m-auto p-4 d-flex justify-content-center align-items-center mb-5 row">
+        <h1 class="text-center">Webpage Example</h1>
+        <object data="Ch6_Lists.html" height="300" width="100%" type="text/html"></object>
+    </div>
+
+    <!-- Embed a image with image map -->
+    <div class="imageMapBox rounded shadow w-50 m-auto p-4 d-flex justify-content-center align-items-center mb-5 row">
+        <h1 class="text-center">Image Map Example</h1>
+        <img src="tableImgrowcolspan.jpg" width="400" height="200" usemap="#imageMap" ></img>
+        
+        <map name="imageMap">
+            <area shape="rect" coords="18,62,60,95" href ="https://google.com" alt="Google">
+        </map>
+    </div>
+</body>
+</html>
