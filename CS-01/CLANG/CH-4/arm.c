@@ -29,7 +29,7 @@ int main()
         num = num / 10; // to erase the last digit / decrement
         printf("num is %d\n", num);
     }
-
+    
     if (temp == arm)
     {
         printf("%d is an Armstrong number.\n", temp);
