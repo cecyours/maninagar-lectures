@@ -1,0 +1,109 @@
+🧠 What Are CSS Variables?
+CSS Variables (also called custom properties) allow you to store values
+ (like colors, spacing, fonts) in reusable named references.
+
+ 🧾 Syntax
+ --custom-name: value;
+You access a variable using the var() function:
+var(--custom-name)
+
+✅ Basic Example
+:root {
+  --main-color: #3498db;
+  --padding-lg: 20px;
+}
+
+button {
+  background-color: var(--main-color);
+  padding: var(--padding-lg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--main-color);
+}
+Explanation:
+--main-color and --padding-lg are variables
+
+:root means they are globally available
+
+var(--main-color) retrieves the variable's value
+
+📦 Where to Declare Variables
+| Scope  | Selector    | Available To                          |
+| ------ | ----------- | ------------------------------------- |
+| Global | `:root`     | All elements                          |
+| Local  | Any element | Only inside that element and children |
+
+
+🔄 Example of Local Scope
+.card {
+  --card-bg: #f2f2f2;
+  background-color: var(--card-bg);
+}
+
+💡 Why Use CSS Variables?
+| Benefit           | Description                           |
+| ----------------- | ------------------------------------- |
+| ✅ Reusability     | Use the same value in multiple places |
+| ✅ Maintainability | Change value once, updates everywhere |
+| ✅ Theming         | Easy to switch themes (dark/light)    |
+| ✅ DRY principle   | Don't Repeat Yourself in stylesheets  |
+
+🎨 Example: Light/Dark Theme Toggle
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+body.dark-mode {
+  --bg-color: #222;
+  --text-color: #eee;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+When you add .dark-mode to <body>, it updates the theme!
+
+🧪 Fallback Values in var()
+You can provide a fallback value if the variable is not defined:
+color: var(--my-color, blue);
+
+🚫 Invalid Example (Common Mistake):
+--main-color: red; /* ❌ Wrong — must be inside a rule */
+
+div {
+  --main-color: red; /* ✅ Correct */
+}
+
+🛠️ CSS Variables vs. SASS/LESS Variables
+| Feature             | CSS Variables     | Sass/LESS Variables           |
+| ------------------- | ----------------- | ----------------------------- |
+| Runtime             | ✅ Yes             | ❌ No (compiled at build time) |
+| JavaScript Access   | ✅ Yes             | ❌ No                          |
+| Conditional Changes | ✅ Yes             | ❌ No                          |
+| Browser Support     | ✅ Modern browsers | ✅ All (compiled)              |
+
+📚 Real-World Use Case
+:root {
+  --primary: #6200ea;
+  --secondary: #03dac6;
+  --radius: 8px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-radius: var(--radius);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  border-radius: var(--radius);
+}
+Change --radius in one place and it updates all buttons!
+
+📅 Browser Support
+✅ Fully supported in all modern browsers (Chrome, Firefox, Edge, Safari).
+❌ Not supported in Internet Explorer.

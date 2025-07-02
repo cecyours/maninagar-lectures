@@ -1,0 +1,90 @@
+🔹 What is a comment in CSS?
+A comment in CSS is a piece of text meant only for developers. It is ignored by the browser and does not affect styling or layout.
+
+It is used to:
+
+Explain what the CSS code does
+
+Leave notes or reminders
+
+Temporarily disable parts of the code (commenting out)
+
+🔹 Syntax of CSS Comments
+/* This is a CSS comment */
+
+Starts with /*
+
+Ends with */
+
+Can span one or multiple lines
+
+No support for single-line comment syntax like // (unlike JavaScript)
+
+🔸 Examples
+✅ Single-line comment:
+/* Set background color to blue */
+body {
+  background-color: blue;
+}
+
+✅ Multi-line comment:
+/* 
+  Header Styles
+  Used for top section of page
+*/
+header {
+  height: 80px;
+  background-color: #f1f1f1;
+}
+
+✅ Commenting out a property (useful for testing):
+h1 {
+  color: red;
+  /* font-size: 40px; */
+}
+
+🔹 Where Can You Use CSS Comments?
+Inside a .css file
+
+Inside a <style> tag in HTML
+
+Inside inline <style> blocks
+
+Even within CSS rules or selectors
+
+✅ Example inside selectors:
+p /* paragraph tag */ {
+  font-size: 16px;
+}
+
+✅ Example inside rules:
+div {
+  color: black; /* fallback color */
+  /* color: #333; */
+}
+
+ Common Mistakes
+Mistake	Why It's Wrong
+// comment	❌ Not valid in CSS – this is JavaScript-style comment
+Missing */	❌ Comment won't end, breaking the rest of your CSS
+Nesting comments	❌ You can't nest comments inside other comments
+
+/* This is a comment
+   /* This is nested – causes error */
+*/
+
+🧠 Best Practices
+Use comments to organize your stylesheet:
+/* ======= Header Section ======= */
+Comment complex styles for future understanding
+
+Don't overuse comments – keep your code clean and readable
+
+✅ Summary Table
+Feature	Description
+Syntax	/* comment here */
+Used for	Notes, explanations, disabling code
+Browser reads	❌ No – completely ignored
+Nesting	❌ Not allowed
+Single line	✅ Allowed using /* ... */
+Multi-line	✅ Yes

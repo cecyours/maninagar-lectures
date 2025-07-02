@@ -1,0 +1,115 @@
+Here's a detailed explanation of the three main types of CSS: Inline, Internal, and External.
+
+🌟 What is CSS?
+CSS (Cascading Style Sheets) is used to control the look and layout of HTML elements — colors, fonts, spacing, alignment, etc.
+
+There are 3 main ways to apply CSS to an HTML document:
+🔸 1. Inline CSS
+📌 What is it?
+CSS written directly within an HTML element’s style attribute.
+✅ Syntax:
+<h1 style="color: red; font-size: 24px;">Hello Inline CSS</h1>
+
+✔️ Advantages:
+Quick and easy for testing or small changes
+
+Overrides both internal and external CSS due to higher specificity
+
+❌ Disadvantages:
+Hard to maintain in large projects
+
+Code becomes messy
+
+No reusability
+
+🔍 When to Use:
+When you want to apply a style to only one element
+
+For quick debugging or testing
+
+
+🔸 2. Internal CSS
+📌 What is it?
+CSS defined inside the <style> tag within the <head> of the HTML document.
+✅ Syntax:
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    h1 {
+      color: blue;
+      font-family: Arial;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello Internal CSS</h1>
+</body>
+</html>
+
+✔️ Advantages:
+Keeps all styles in one place for a single page
+
+No need for an external file
+
+❌ Disadvantages:
+Styles are not reusable across multiple pages
+
+Increases HTML page size
+
+🔍 When to Use:
+For single-page websites
+
+When you want quick control without linking an external file
+
+🔸 3. External CSS
+📌 What is it?
+CSS is written in a separate .css file and linked to the HTML document using <link>.
+
+✅ Syntax:
+style.css
+
+h1 {
+  color: green;
+  font-size: 30px;
+}
+
+index.html
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+✔️ Advantages:
+Keeps HTML and CSS separate and clean
+
+CSS can be reused across multiple pages
+
+Makes maintenance easy
+
+Great for larger projects
+
+❌ Disadvantages:
+Requires an extra HTTP request to load the CSS file
+
+Styles won't be visible if the CSS file is missing or the link is broken
+
+🔍 When to Use:
+For multi-page websites or large applications
+
+When you want scalable and maintainable styling
+
+
+📋 Comparison Table
+| Feature            | Inline CSS                      | Internal CSS                     | External CSS                    |
+| ------------------ | ------------------------------- | -------------------------------- | ------------------------------- |
+| Where it's written | In `style` attribute of element | Inside `<style>` tag in `<head>` | In separate `.css` file         |
+| Reusability        | ❌ No                            | ❌ No                             | ✅ Yes                           |
+| Maintenance        | ❌ Hard                          | ⚠️ Manageable                    | ✅ Easy                          |
+| Performance        | ✅ Fast (only 1 element)         | ⚠️ Medium                        | ✅ Best for large projects       |
+| Specificity        | ✅ Highest                       | ✅ High                           | ⚠️ Lower (overridden by inline) |
+
+
+🎯 Best Practices
+✅ Use External CSS for most real-world projects
+⚠️ Use Internal CSS for small projects or quick testing
+❌ Avoid Inline CSS except for very small, one-off customizations

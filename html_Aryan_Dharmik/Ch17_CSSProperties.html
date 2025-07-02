@@ -1,0 +1,106 @@
+💡 What Are CSS Properties?
+CSS (Cascading Style Sheets) properties define the style of HTML elements 
+— like color, size, spacing, layout, borders, fonts, animations, etc.
+
+A property is part of a rule that looks like this:
+selector {
+  property: value;
+}
+Example:
+h1 {
+  color: blue;
+  font-size: 24px;
+}
+
+✅ Categories of Common CSS Properties
+🎨 1. Text & Font Properties
+| Property          | Description    | Example                           |
+| ----------------- | -------------- | --------------------------------- |
+| `color`           | Text color     | `color: red;`                     |
+| `font-size`       | Text size      | `font-size: 16px;`                |
+| `font-family`     | Font type      | `font-family: Arial, sans-serif;` |
+| `font-weight`     | Thickness      | `font-weight: bold;`              |
+| `line-height`     | Line spacing   | `line-height: 1.5;`               |
+| `text-align`      | Alignment      | `text-align: center;`             |
+| `text-decoration` | Underline/none | `text-decoration: underline;`     |
+| `text-transform`  | Case           | `text-transform: uppercase;`      |
+
+📦 2. Box Model (Spacing & Sizing)
+| Property          | Description                      | Example                    |
+| ----------------- | -------------------------------- | -------------------------- |
+| `width`, `height` | Dimensions                       | `width: 200px;`            |
+| `padding`         | Inside space                     | `padding: 10px;`           |
+| `margin`          | Outside space                    | `margin: 15px;`            |
+| `border`          | Border line                      | `border: 1px solid black;` |
+| `box-sizing`      | Includes border/padding in width | `box-sizing: border-box;`  |
+
+
+🎯 3. Background & Color
+| Property            | Description      | Example                             |
+| ------------------- | ---------------- | ----------------------------------- |
+| `background-color`  | Background fill  | `background-color: yellow;`         |
+| `background-image`  | Background image | `background-image: url('img.jpg');` |
+| `background-size`   | Size of image    | `background-size: cover;`           |
+| `background-repeat` | Repeat pattern   | `background-repeat: no-repeat;`     |
+
+
+🧱 4. Display & Layout
+| Property                         | Description         | Example                                             |
+| -------------------------------- | ------------------- | --------------------------------------------------- |
+| `display`                        | Element type        | `display: block;`, `inline`, `flex`, `grid`, `none` |
+| `position`                       | Positioning method  | `position: relative;`, `absolute`, `fixed`          |
+| `top`, `left`, `right`, `bottom` | Offset              | `top: 20px;`                                        |
+| `z-index`                        | Stack order         | `z-index: 10;`                                      |
+| `overflow`                       | Scroll/clip content | `overflow: hidden;`                                 |
+
+📐 5. Flexbox & Grid (Modern Layouts)
+| Property                | Description           | Example                           |
+| ----------------------- | --------------------- | --------------------------------- |
+| `display: flex`         | Enables flexbox       | `display: flex;`                  |
+| `justify-content`       | Horizontal alignment  | `justify-content: space-between;` |
+| `align-items`           | Vertical alignment    | `align-items: center;`            |
+| `gap`                   | Spacing between items | `gap: 10px;`                      |
+| `display: grid`         | Enables grid          | `display: grid;`                  |
+| `grid-template-columns` | Column structure      | `grid-template-columns: 1fr 2fr;` |
+
+🖼️ 6. Images & Media
+| Property                  | Description         | Example               |
+| ------------------------- | ------------------- | --------------------- |
+| `object-fit`              | Image fit           | `object-fit: cover;`  |
+| `max-width`, `max-height` | Limit size          | `max-width: 100%;`    |
+| `aspect-ratio`            | Width\:height ratio | `aspect-ratio: 16/9;` |
+
+🌀 7. Transitions & Animations
+| Property     | Description    | Example                       |
+| ------------ | -------------- | ----------------------------- |
+| `transition` | Smooth effect  | `transition: all 0.3s ease;`  |
+| `animation`  | Keyframe-based | `animation: slideIn 2s ease;` |
+
+🧩 8. Other Useful Properties
+| Property        | Description              | Example                                  |
+| --------------- | ------------------------ | ---------------------------------------- |
+| `opacity`       | Transparency             | `opacity: 0.5;`                          |
+| `visibility`    | Show/hide but keep space | `visibility: hidden;`                    |
+| `cursor`        | Mouse pointer style      | `cursor: pointer;`                       |
+| `box-shadow`    | Adds shadow              | `box-shadow: 0 2px 5px rgba(0,0,0,0.2);` |
+| `border-radius` | Round corners            | `border-radius: 10px;`                   |
+
+
+✨ Example: Complete CSS Style Block
+.card {
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
