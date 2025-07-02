@@ -1,0 +1,103 @@
+1. Basic Structure & Syntax
+Entry point: main() function
+
+Use of #include for libraries
+
+Statement ends with ;
+
+printf() for output, scanf() for input
+
+#include <stdio.h>
+int main() {
+    printf("Hello, C!");
+    return 0;
+}
+
+
+2. Data Types & Variables
+Primary types: int, float, char, double
+
+Modifiers: short, long, signed, unsigned
+
+Declared with a type: int a = 10;
+
+
+3. Operators
+Arithmetic: +, -, *, /, %
+
+Relational: ==, !=, >, <
+
+Logical: &&, ||, !
+
+Assignment: =, +=, -=
+
+Increment/Decrement: ++, --
+
+
+4. Control Statements
+Conditional: if, if-else, else if, switch
+
+Loops: for, while, do-while
+
+Jump: break, continue, goto, return
+
+
+5. Functions
+Code reuse: define once, use many times
+
+Syntax: return_type function_name(parameters)
+
+Function call stack-based
+
+int add(int a, int b) {
+    return a + b;
+}
+
+
+6. Arrays & Strings
+Array: collection of same data type
+int arr[5] = {1, 2, 3, 4, 5};
+
+String: array of characters ending with '\0'
+char name[10] = "Pathik";
+
+
+7. Pointers
+Store memory address of a variable
+
+Use * for dereferencing, & for address
+int a = 10;
+int *p = &a;
+
+Important in arrays, functions, and dynamic memory
+
+
+8. Structures & Unions
+Structure: user-defined data type
+struct Student {
+    int id;
+    char name[50];
+};
+Union: memory-efficient, shares same memory block
+
+
+9. File Handling
+Use fopen(), fread(), fwrite(), fprintf(), fscanf(), fclose()
+File modes: "r", "w", "a", "rb", "wb"
+
+FILE *fp = fopen("data.txt", "w");
+
+
+10. Dynamic Memory Allocation
+Allocate memory at runtime using:
+
+malloc(), calloc() → allocate
+
+realloc() → resize
+
+free() → deallocate
+
+int *ptr = (int*) malloc(5 * sizeof(int));
+
+🧠 Bonus: Preprocessor Directives
+#include, #define, #ifdef, #ifndef – handle compilation steps before code runs
