@@ -1,0 +1,97 @@
+🎯 What Is CSS Animation?
+CSS Animation allows you to move, transform, fade, 
+bounce, scale, rotate, or apply other visual changes 
+to HTML elements over time — all using CSS.
+
+🧱 CSS Animation Building Blocks
+✅ 1. @keyframes
+Defines what happens during the animation.
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100px);
+  }
+}
+
+✅ 2. animation Properties
+Used on the element to trigger the animation
+.box {
+  animation-name: slideRight;
+  animation-duration: 2s;
+}
+
+🧰 Complete List of animation-* Properties
+| Property                    | Description                                                                                      |
+| --------------------------- | ------------------------------------------------------------------------------------------------ |
+| `animation-name`            | Name of the `@keyframes`                                                                         |
+| `animation-duration`        | How long the animation takes (e.g., `2s`, `500ms`)                                               |
+| `animation-timing-function` | Speed curve: `linear`, `ease`, `ease-in`, `ease-out`, `cubic-bezier`                             |
+| `animation-delay`           | Delay before starting (e.g., `1s`)                                                               |
+| `animation-iteration-count` | How many times (`1`, `infinite`, `3`, etc.)                                                      |
+| `animation-direction`       | `normal`, `reverse`, `alternate`, `alternate-reverse`                                            |
+| `animation-fill-mode`       | Controls how styles are applied before/after animation (`none`, `forwards`, `backwards`, `both`) |
+| `animation-play-state`      | `running` or `paused` 
+
+🧪 Example: Simple Slide Animation
+<div class="box">Hello</div>
+
+✅ CSS:
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  animation-name: slideRight;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(300px);
+  }
+}
+🧠 The box moves left to right infinitely, alternating direction each time.
+
+
+
+🎨 Example: Fade In Text
+.fade-text {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+🧠 Tips for Using CSS Animations
+| Tip                     | Description                                                  |
+| ----------------------- | ------------------------------------------------------------ |
+| Keep it simple          | Don't overuse animations — they should enhance, not distract |
+| Use `forwards`          | Keeps the final state after animation ends                   |
+| Use `@keyframes` wisely | You can define multiple key points: `0%`, `50%`, `100%`      |
+| Combine                 | You can chain transform, opacity, color etc. in animations   |
+| Responsive              | Test animations on different screen sizes and browsers       |
+
+
+🧰 Shorthand Syntax
+Instead of writing all animation-* properties separately:
+
+animation: slideRight 2s ease-in-out 1s infinite alternate;
+
+animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction];
+
+
+
+
