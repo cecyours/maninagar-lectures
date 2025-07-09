@@ -1,0 +1,148 @@
+🔷 What is Web Scripting?
+
+Web scripting refers to writing code (scripts) that run either in the browser (client-side)
+ or on the server (server-side) to make web pages interactive, dynamic, and functional.
+
+ A web script is a set of instructions embedded in a web page that the browser or server executes.
+
+ 🎯 Why Web Scripting?
+ To make static web pages dynamic
+ To interact with users (e.g., forms, buttons, animations)
+ To validate user input
+ To fetch or send data (e.g., login, fetch news)
+ To build full-featured web applications
+
+ 🔄 Types of Web Scripting
+ | Type       | Where It Runs    | Example Languages             | Usage Example                           |
+| ----------- | ----------------- | ----------------------------- | --------------------------------------- |
+| Client-side | In the browser    | JavaScript, TypeScript        | Form validation, DOM manipulation       |
+| Server-side | On the web server | PHP, Python, Node.js, ASP.NET | Database handling, login authentication |
+
+
+🟡 1. Client-Side Scripting
+✅ Definition:
+Scripts that run in the user's web browser after the page has been downloaded from the server.
+
+🔧 Common Languages:
+JavaScript (most popular)
+
+TypeScript
+
+HTML5 (via attributes)
+
+CSS (animations)
+
+📌 Use Cases:
+Form validation (check email format, password length)
+
+Show/hide elements dynamically
+
+Slide shows, image carousels
+
+Fetch data using fetch() or AJAX
+
+🔍 Example: JavaScript Client Script
+<button onclick="sayHello()">Click Me</button>
+
+<script>
+  function sayHello() {
+    alert("Hello, User!");
+  }
+</script>
+
+
+⚙️ 2. Server-Side Scripting
+✅ Definition:
+Scripts that run on the server, generating HTML before sending it to the client.
+🔧 Common Languages:
+PHP
+
+Python (Django, Flask)
+
+Node.js
+
+Ruby
+
+Java (JSP, Spring)
+
+📌 Use Cases:
+Fetch data from databases
+
+Process user login
+
+Generate pages dynamically
+
+Handle file uploads
+
+🔍 Example: PHP Server Script
+<?php
+  echo "Hello, " . $_GET["name"];
+?>
+URL: http://example.com/script.php?name=Pathik
+Output: Hello, Pathik
+
+🔗 Interaction Flow: Client vs Server
+User loads a webpage.
+
+Server-side script runs → sends HTML + JS.
+
+JS runs in the browser → handles events (click, scroll).
+
+JS can request new data from server → server runs more scripts.
+
+New data appears dynamically without reloading the page.
+
+
+💡 Technologies Involved in Web Scripting
+| Layer         | Tech                     |
+| ------------- | ------------------------ |
+| Markup        | HTML                     |
+| Styling       | CSS                      |
+| Client Script | JavaScript               |
+| Server Script | PHP, Node.js, Python     |
+| Databases     | MySQL, MongoDB, Firebase |
+
+
+🔐 Security Considerations
+Client-side scripting is visible to the user, so don't put sensitive logic there.
+
+Server-side scripting handles security (e.g., passwords, sessions).
+
+Use input validation and sanitization to prevent:
+
+XSS (Cross Site Scripting)
+
+SQL Injection
+
+
+🧠 Web Scripting vs Programming
+| Web Scripting                | General Programming     |
+| ---------------------------- | ----------------------- |
+| Often interpreted            | Often compiled          |
+| Targets web browsers/servers | Targets OS/hardware     |
+| Uses HTML, JS, PHP           | Uses C++, Java, Python  |
+| UI-centric                   | Logic/algorithm-centric |
+
+
+📘 Summary
+| Feature              | Client-Side Scripting | Server-Side Scripting |
+| -------------------- | --------------------- | --------------------- |
+| Where it runs        | In browser            | On web server         |
+| Common languages     | JavaScript            | PHP, Python, Node.js  |
+| Main purpose         | Interactivity         | Logic & data handling |
+| User can view/modify | Yes                   | No                    |
+
+
+🌐 Real-Life Analogy
+HTML = Structure (skeleton)
+
+CSS = Style (clothes)
+
+JavaScript (client) = Actions (movement, gestures)
+
+PHP/Python (server) = Brain (decisions, memory)
+
+
+✅ Conclusion
+Web scripting is the heart of interactive websites.
+It connects frontend and backend, user actions and data, making modern apps possible.
