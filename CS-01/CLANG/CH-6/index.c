@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
+#include "mine.h"
 int main()
 
 {
@@ -17,10 +18,16 @@ int main()
 
     // Run Time
     char name[100];
+    char str6[100];
+
+    printf("Enter the str6 : ");
+    getLineInput(str6, sizeof(str6));  //use of getLineInput
+
     printf("Enter the str1 : ");
     scanf("%s", name);
-
     printf("\n ------------- \n");
+    printf("str6 : %s\n", str6);
+
     printf("str1 : %s\n", name);
 
     return 0;

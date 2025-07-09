@@ -2,6 +2,9 @@
     "files.associations": {
         "stdio.h": "c",
         "mycode.h": "c",
-        "conio.h": "c"
+        "conio.h": "c",
+        "mine.h": "c",
+        "string.h": "c",
+        "algorithm": "c"
     }
 }
