@@ -89,6 +89,7 @@
         border-radius: 14px;
         padding: 12px;
         width: 300px;
+        position: relative;
         background-color: #f9f9f9;
       }
       .img-body {
@@ -109,6 +110,13 @@
         font-size: 14px;
         margin: 10px 0;
       }
+
+      .img-card .heart {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 25px;
+      }
       .action-button {
         background-color: cadetblue;
         color: black;
@@ -119,6 +127,114 @@
         border-radius: 14px;
         padding: 8px;
         margin-top: 5px;
+      }
+
+      /* .content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        padding: 20px;
+        border: 2px solid green;
+        gap: 20px;
+      }
+
+      .box {
+        min-height: 100px;
+        background-color: tomato;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } */
+
+      .contact-us {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 28px;
+      }
+
+      .my-heading {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 28px;
+      }
+
+      .contact-container {
+        display: flex;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin: auto;
+        width: 1200px;
+        position: relative;
+        background-color: black;
+      }
+
+      .contact-form {
+        background-color: rgb(173, 248, 248);
+        padding: 10px;
+        justify-content: end;
+      }
+
+      .info-section {
+        width: 40%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        margin-right: 80px;
+        padding: 30px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .info-box {
+        padding: 20px;
+        height: 180px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.255);
+        text-align: center;
+        background-color: white;
+      }
+
+      .info-box i {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .info-box p {
+        font-size: 12px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        max-width: 80%;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid gray;
+        font-size: 18px;
+      }
+
+      .contact-heading {
+        font-size: 50px;
+        text-align: center;
+        margin: 10px 0px 10px 0px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: transparent;
+        color: black;
+        border: 1px solid white;
+        width: 80px;
+        margin: auto;
+        color: navy;
+        font-size: 14px;
+        font-weight: bold;
+        &:hover {
+          background-color: white;
+        }
       }
     </style>
   </head>
@@ -156,13 +272,15 @@
       </p>
     </section>
 
-    <h2 class="our-service">Our Services</h2>
+    <h2 class="my-heading">Our Services</h2>
     <div class="img-div">
       <div class="img-card">
         <div class="img-body">
           <img src="./assets/dubai.jpeg" alt="Dubai" />
         </div>
         <h3>Dubai</h3>
+        <span class="heart">💗</span>
+
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
           placeat.
@@ -174,6 +292,7 @@
           <img src="./assets/kerala.jpeg" alt="Kerala" />
         </div>
         <h3>Kerala</h3>
+        <span class="heart">💗</span>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
           placeat.
@@ -184,12 +303,72 @@
         <div class="img-body">
           <img src="./assets/vietnam.jpeg" alt="Vietnam" />
         </div>
+        <span class="heart">💗</span>
+
         <h3>Vietnam</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
           placeat.
         </p>
         <button class="action-button">View More..</button>
+      </div>
+    </div>
+
+    <!-- Grid layout  -->
+    <!-- <div class="content">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+    </div> -->
+
+    <div class="contact-container">
+      <div class="info-section">
+        <div class="info-box">
+          <i>📍</i>
+          <h4>OUR MAIN OFFICE</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="info-box">
+          <i>📍</i>
+          <h4>OUR MAIN OFFICE</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="info-box">
+          <i>📍</i>
+          <h4>OUR MAIN OFFICE</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="info-box">
+          <i>📍</i>
+          <h4>OUR MAIN OFFICE</h4>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h2 class="contact-heading">Contact-Us</h2>
+        <div class="form-div">
+          <form action="">
+            <input type="text" placeholder="Enter Your Name" />
+            <input type="text" placeholder="Enter Your Email Address " />
+            <textarea name="" id="" rows="4" cols="65"></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   </body>
