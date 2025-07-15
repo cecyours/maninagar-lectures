@@ -3,6 +3,7 @@
 void display() // function definition
 {
     printf("Hello World\n");
+
 }
 
 int main()
