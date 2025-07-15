@@ -5,6 +5,7 @@
         "conio.h": "c",
         "mine.h": "c",
         "string.h": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "cmath": "c"
     }
 }

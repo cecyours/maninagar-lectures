@@ -1,0 +1,20 @@
+.parant-container {
+  background-color: rgba(220, 20, 60, 0.207);
+  padding: 12px;
+  margin: 15px;
+  min-height: 580px;
+}
+
+.sub-div {
+  background-color: rgb(255, 213, 197);
+  display: flex;
+  min-height: 580px;
+  justify-content: space-around;
+  align-items: end;
+}
+
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}
