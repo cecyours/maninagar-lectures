@@ -1,0 +1,104 @@
+ What is a Variable?
+ A variable in JavaScript is a named container for storing data values.
+
+let name = "Pathik";
+let age = 30;
+
+Variables help you:
+Store values
+Reuse them
+Update them
+Manipulate data dynamically
+
+How to Declare Variables
+JavaScript provides 3 main keywords to declare variables:
+| Keyword | Scope          | Reassignable?        | Redeclarable? | Hoisted?                |
+| ------- | -------------- | -------------------- | ------------- | ----------------------- |
+| `var`   | Function scope | ✅ Yes                | ✅ Yes         | ✅ Yes (but undefined)   |
+| `let`   | Block scope    | ✅ Yes                | ❌ No          | ✅ (but not initialized) |
+| `const` | Block scope    | ❌ No (immutable ref) | ❌ No          | ✅ (but not initialized) |
+
+
+1. var (old, avoid in modern code)
+var message = "Hello";
+console.log(message); // Hello
+
+var title = "Hi again"; // Allowed
+
+Function-scoped (not block-scoped)
+Can lead to bugs due to hoisting & re-declaration
+
+2. let (modern, preferred for changeable values)
+let count = 5;
+count = 10; // ✅ allowed
+
+
+Block-scoped (within {} like in loops or if)
+Cannot be redeclared in same block
+Better control over variable lifetime
+
+ 3. const (constant binding, safest)
+ const PI = 3.14;
+// PI = 3.14159; ❌ Error
+const user = { name: "Pathik" };
+user.name = "Shah";  // ✅ allowed: object is still mutable
+
+Must be assigned during declaration
+Reference is fixed, but object contents can still change
+
+Variable Naming Rules
+Allowed:
+
+Letters (a–z, A–Z)
+Digits (not at start)
+Underscore _ and dollar sign $
+
+Not allowed:
+Reserved words like class, if, while
+Starting with a number
+
+let user1 = "John";
+let $status = "active";
+let _temp = 99;
+
+
+Variable Scope
+| Type       | Where accessible                    |
+| ---------- | ----------------------------------- |
+| **Global** | Declared outside any function       |
+| **Local**  | Inside a function or block          |
+| **Block**  | Between `{}` (via `let` or `const`) |
+
+
+Variable Hoisting (Important!)
+In JavaScript, declarations are hoisted to the top of their scope — but only for var.
+console.log(a); // undefined (due to hoisting)
+var a = 5;
+
+console.log(b); // ❌ ReferenceError
+let b = 5;
+
+
+Good Practices
+Use const by default, only use let if you need to reassign
+Avoid var in modern JavaScript
+Use clear, descriptive names
+Don’t pollute the global scope
+
+Example Summary
+const name = "Pathik";      // constant value
+let score = 10;             // can be updated
+score += 5;
+
+if (true) {
+  let localMessage = "inside block";
+  console.log(localMessage);
+}
+// console.log(localMessage); // ❌ ReferenceError
+
+
+Final Tip:
+const for constants ✅
+let for variables that may change ✅
+var only for legacy code ❌
+

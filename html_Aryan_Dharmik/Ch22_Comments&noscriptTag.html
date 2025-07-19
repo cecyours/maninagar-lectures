@@ -1,0 +1,75 @@
+ 1. HTML Comments
+ <!-- This is a comment -->
+What It Does:
+Tells the browser: “Ignore this section.”
+It’s not displayed on the web page.
+It’s only visible in the source code.
+
+Use Cases:
+| Use                      | Example                                           |
+| ------------------------ | ------------------------------------------------- |
+| 📝 Developer notes       | `<!-- ToDo: Add user validation here -->`         |
+| 👨‍💻 Debugging sections | Comment out part of the page without deleting     |
+| 🔧 Conditional rendering | Wrap with `<!--` ... `-->` to disable temporarily |
+
+Rules:
+Cannot be nested:
+<!-- outer <!-- inner --> outer -->
+Must not start with <!--> or contain -- inside
+
+Example:
+<!-- Header Section -->
+<header>
+  <h1>Welcome to My Site</h1>
+</header>
+
+<!-- <div>Old layout, no longer used</div> -->
+
+
+2. <noscript> Tag
+What It Does:
+Displays fallback content for users who have JavaScript disabled in their browsers.
+Ignored by browsers with JavaScript enabled.
+
+<noscript>
+  <p>Please enable JavaScript to use this site.</p>
+</noscript>
+
+Use Cases:
+| When to use                        | Why                             |
+| ---------------------------------- | ------------------------------- |
+| For users with JS disabled         | Warn them or offer alternative  |
+| For search engine fallback         | Provide SEO-readable content    |
+| In analytics or script-based sites | Notify of missing functionality |
+
+
+ Real-World Example:
+ <script>
+  document.getElementById("output").innerText = "JS is ON!";
+</script>
+
+<noscript>
+  <p>JavaScript is required for this feature.</p>
+</noscript>
+
+| JavaScript is… | Result                                            |
+| -------------- | ------------------------------------------------- |
+| Enabled        | `<script>` runs; `<noscript>` is ignored          |
+| Disabled       | `<noscript>` content is shown; `<script>` ignored |
+
+
+ Summary Table
+ | Feature            | Purpose                           | Visible to users? | Common Use       |
+| ------------------ | --------------------------------- | ----------------- | ---------------- |
+| `<!-- comment -->` | Add developer notes, disable code | ❌ No              | Notes, debugging |
+| `<noscript>`       | Fallback when JS is disabled      | ✅ Yes (if JS off) | Notify user      |
+
+If you’re writing React/JS-heavy apps, include:
+<noscript>
+  <style>
+    body { display: none; }
+  </style>
+  <p>This app requires JavaScript. Please enable it.</p>
+</noscript>
+
+To prevent the blank page from confusing users with JavaScript disabled.
