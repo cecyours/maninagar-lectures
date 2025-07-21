@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const salary = 5000;
+
+      function salaryIncrement(
+        salary,
+        amountToIncrement = 3000,
+        action = "inc"
+      ) {
+        // all logic of increment goes here
+        switch (action) {
+          case "dec":
+            salary -= amountToIncrement;
+            break;
+          case "inc":
+            salary += amountToIncrement;
+            break;
+          default:
+            console.log("Please give proper action");
+            break;
+        }
+        return salary;
+      }
+
+      const emp1 = salaryIncrement(salary, 1000, "dec");
+
+      const emp2 = salaryIncrement(salary, 8000, "inc");
+
+      const emp3 = salaryIncrement(salary);
+
+      console.log(emp1);
+
+      console.log(emp2);
+
+      console.log(emp3);
+    </script>
+  </body>
+</html>
