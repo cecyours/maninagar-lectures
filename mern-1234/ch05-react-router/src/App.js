@@ -1,59 +1,51 @@
-
+// src/App.js
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home';
-import User from './pages/User';
-import NavbarComponents from './components/Navbar';
-import UserProfile from './pages/UserProfile';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotFound from './components/NotFound';
+import AdminLayout from './layout/AdminLayout';
+import UserLayout from './layout/UserLayout';
+import Home from './pages/user/Home';
+import User from './pages/user/User';
+import ContactUS from './pages/user/ContactUs';
+import UserProfile from './pages/user/UserProfile';
+import ContactUsView from './pages/user/ContactUsView';
+import ContactUsUpdate from './pages/user/ContactUsUpdate';
 import Dashboard from './pages/admin-panel/Dashboard';
 import Users from './pages/admin-panel/Users';
 import Setting from './pages/admin-panel/Setting';
-import NotFound from './components/NotFound';
-import ContactUS from './pages/ContactUs';
 import ContactUsAdmin from './pages/admin-panel/ContactUsAdmin';
-import ContactUsView from './pages/ContactUsView';
-import ContactUsUpdate from './pages/ContactUsUpdate';
-import FooterComponent from './components/Footer';
 import ProductCreate from './pages/admin-panel/ProductCreate';
 
 function App() {
   return (
-    <div className="">
-      <Router>
-        <NavbarComponents />
-        <div className='min-vh-100'>
-          <Routes>
-            <Route path='/' element={<Home user={"Vishal"} />} />
-            <Route path='/users' element={<User />} />
-            <Route path='/contact-us' element={<ContactUS />} />
-            <Route path='/users/:id' element={<UserProfile />} />
-            <Route path='/contact-us/view/:id' element={<ContactUsView />} />
-            <Route path='/contact-us/update/:id' element={<ContactUsUpdate />} />
+    <Router>
+      <Routes>
 
+        {/* User Layout */}
+        <Route path='/' element={<UserLayout />}>
+          <Route index element={<Home user={"Vishal"} />} />
+          <Route path="users" element={<User />} />
+          <Route path="contact-us" element={<ContactUS />} />
+          <Route path="users/:id" element={<UserProfile />} />
+          <Route path="contact-us/view/:id" element={<ContactUsView />} />
+          <Route path="contact-us/update/:id" element={<ContactUsUpdate />} />
+        </Route>
 
+        {/* Admin Layout */}
+        <Route path='/admin/*' element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="users" element={<Users />} />
+          <Route path="settings" element={<Setting />} />
+          <Route path="contact-us" element={<ContactUsAdmin />} />
+          <Route path="products/create" element={<ProductCreate />} />
+        </Route>
 
-            {/* Routes  for admin panel */}
-            <Route path='/admin' element={<Dashboard />} />
-            <Route path='/admin/users' element={<Users />} />
-            <Route path='/admin/settings' element={<Setting />} />
-            <Route path='/admin/contact-us' element={<ContactUsAdmin />} />
-            <Route path='/admin/products/create' element={<ProductCreate />} />
+        {/* Not Found Page */}
+        <Route path='*' element={<NotFound />} />
 
-
-
-
-            {/* FOr path less route */}
-            <Route path='*' element={<NotFound />} />
-
-
-
-
-          </Routes>
-        </div>
-        <FooterComponent />
-      </Router>
-    </div>
+      </Routes>
+    </Router>
   );
 }
 
