@@ -1,5 +1,5 @@
 import React from "react";
-import UserData from "../json/user.json";
+import UserData from "../../json/user.json";
 
 const User = () => {
   return (

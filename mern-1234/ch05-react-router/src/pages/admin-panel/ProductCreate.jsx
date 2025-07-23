@@ -15,14 +15,14 @@ const ProductCreate = () => {
     <div className="container-fluid py-2">
       {/* bread crumb */}
       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
             <Link to={"/admin"}>Dashboard</Link>
           </li>
-          <li class="breadcrumb-item">
+          <li className="breadcrumb-item">
             <Link to={"/products"}>Products</Link>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">
+          <li className="breadcrumb-item active" aria-current="page">
             Create
           </li>
         </ol>
