@@ -1,0 +1,155 @@
+Event - dynamic web development
+
+What is an Event in JavaScript?
+An event is a signal that something has happened in the browser
+| Event Type     | Example                        |
+| -------------- | ------------------------------ |
+| Mouse event    | Clicking a button (`click`)    |
+| Keyboard event | Pressing a key (`keydown`)     |
+| Form event     | Submitting a form (`submit`)   |
+| Window event   | Resizing window (`resize`)     |
+| DOM event      | Page load (`DOMContentLoaded`) |
+
+ In simple terms: "Events are user or system actions your JavaScript can react to."
+
+
+ How Do You Handle Events?
+ There are 3 main ways to attach (bind) event handlers:
+
+ HTML Inline Event
+ <button onclick="sayHello()">Click me</button>
+
+<script>
+  function sayHello() {
+    alert("Hello from inline event!");
+  }
+</script>
+
+onclick is the event attribute.
+sayHello() is the function triggered when the event occurs
+Simple, but not recommended for complex apps (mixes JS and HTML).
+
+
+DOM Property (JavaScript-based)
+<button id="btn">Click Me</button>
+
+<script>
+  const btn = document.getElementById("btn");
+
+  btn.onclick = function () {
+    alert("Button clicked!");
+  };
+</script>
+
+Attaches a function to the onclick property of the button element.
+Limitation: Only one event handler can be attached per event using this method (it overrides previous ones).
+
+
+addEventListener() ✅ (Modern & recommended)
+<button id="btn">Click Me</button>
+
+<script>
+  const btn = document.getElementById("btn");
+
+  btn.addEventListener("click", function () {
+    alert("Handled with addEventListener!");
+  });
+</script>
+
+addEventListener(event, function) is flexible, powerful, and supports multiple handlers
+
+Common Event Types in JavaScript
+| Event Type      | Event Name   | Description                      |
+| --------------- | ------------ | -------------------------------- |
+| Mouse Events    | `click`      | User clicks an element           |
+|                 | `dblclick`   | Double click                     |
+|                 | `mouseover`  | Mouse pointer moves over element |
+|                 | `mouseout`   | Mouse leaves the element         |
+| Keyboard Events | `keydown`    | Key is pressed                   |
+|                 | `keyup`      | Key is released                  |
+| Form Events     | `submit`     | Form is submitted                |
+|                 | `change`     | Value of input element changes   |
+| Window Events   | `load`       | Page is fully loaded             |
+|                 | `resize`     | Browser window is resized        |
+|                 | `scroll`     | Page is scrolled                 |
+| Touch Events    | `touchstart` | Finger touches screen (mobile)   |
+|                 | `touchmove`  | Finger moves across screen       |
+
+
+Event Object
+When an event occurs, the browser passes an event object that contains all the information about it.
+
+document.getElementById("btn").addEventListener("click", function (event) {
+  console.log(event);  // full event object
+  console.log("Clicked element:", event.target);
+});
+
+Common properties in the event object:
+event.type → e.g. "click"
+event.target → the element that triggered the event
+event.preventDefault() → stops default behavior (like form submission)
+
+Event Propagation
+JavaScript events go through 3 phases:
+Capturing Phase (top → target)
+Target Phase
+Bubbling Phase (target → top)
+
+<div id="outer">
+  <button id="inner">Click</button>
+</div>
+
+If you click <button>, the event bubbles from button to div
+document.getElementById("outer").addEventListener("click", () => {
+  console.log("Outer clicked");
+});
+
+document.getElementById("inner").addEventListener("click", () => {
+  console.log("Inner clicked");
+});
+
+Inner clicked
+Outer clicked
+
+You can stop this using:
+event.stopPropagation();
+
+Click a button
+<button id="greet">Say Hello</button>
+<script>
+  document.getElementById("greet").addEventListener("click", () => {
+    alert("Hello, Pathik!");
+  });
+</script>
+
+
+Form Submit (Prevent page reload)
+<form id="loginForm">
+  <input type="text" name="username" />
+  <button type="submit">Login</button>
+</form>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // prevents default reload
+    console.log("Form submitted via JS");
+  });
+</script>
+
+
+ Show modal dynamically
+
+ document.getElementById("deleteBtn").addEventListener("click", function (e) {
+  const systemName = e.target.dataset.systemname;
+  document.getElementById("modalSystemName").textContent = systemName;
+});
+
+Summary
+| Concept          | Meaning                                                   |
+| ---------------- | --------------------------------------------------------- |
+| Event            | A signal that something happened (click, type, scroll...) |
+| Handler          | Function that runs when event occurs                      |
+| addEventListener | Preferred way to attach multiple flexible event handlers  |
+| Event Object     | Contains event metadata like target, type, position       |
+| Propagation      | How events flow (bubbling/capturing) through the DOM      |
+
