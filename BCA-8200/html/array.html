@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array in JS</title>
+  </head>
+  <body>
+    <script>
+      const studentArray = ["sania", "dhruv", "mansi", "yuvraj"];
+
+      const studentArray1 = ["mohan", "rohan", "mansi", "yuvraj"];
+
+      //   const jointarray = [...studentArray, ...studentArray1];
+
+      //   console.log({ jointarray });
+
+      //add item in last
+      studentArray.push("suraj");
+
+      //remove item from last index
+      studentArray.pop();
+
+      //   add item from start
+      studentArray.unshift("hetraj");
+
+      //   remove from start
+      studentArray.shift();
+
+      //   combine 2 array in one
+
+      //check length of array
+      console.log(studentArray.length);
+
+      const portion = studentArray.slice(0, 3);
+
+      console.log({ portion });
+
+      console.log(studentArray);
+
+      const newArray = studentArray.concat(studentArray1);
+
+      console.log(newArray);
+
+      //   uppercase using map
+      const arrayWithUppercase = studentArray.map((stu) => stu.toUpperCase());
+
+      //   filter with name start with s
+
+      const filterdArray = studentArray.filter((stu) => stu.startsWith("m"));
+
+      console.log(filterdArray);
+
+      //   find index of perticuler element from array
+      const indexOf = studentArray.findIndex((stu) => stu === "mansi");
+
+      console.log(indexOf);
+
+      console.log(arrayWithUppercase);
+
+      //   input on html page for take a number and one submit button
+    </script>
+  </body>
+</html>
