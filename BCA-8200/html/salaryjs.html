@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=`, initial-scale=1.0" />
+    <title>Salary calculation</title>
+  </head>
+  <body>
+    <script>
+      // season 1
+      //   const Salary = 5000;
+      //   function salaryIncrement(Salary) {
+      //     Salary += 10000;
+      //     return Salary
+      //   }
+
+      //   const emp1 = salaryIncrement(Salary);
+
+      //   console.log(emp1);
+
+      // Season = 2
+
+      //   const Salary = 5000;
+
+      //   function salaryIncrement(Salary, amountToIncrement) {
+      //     Salary += amountToIncrement;
+      //     return Salary;
+      //   }
+
+      //   const emp1 = salaryIncrement(Salary, 2000);
+
+      //   console.log(emp1);
+
+      // season 3  increment/decrement by given case
+
+      //   const Salary = 5000;
+
+      //   function salaryIncrement(Salary, amountToIncrement, action) {
+      //     switch (action) {
+      //       case "inc":
+      //         Salary += amountToIncrement;
+      //         break;
+      //       case "dec":
+      //         Salary -= amountToIncrement;
+      //         break;
+      //       default:
+      //         console.log("Please give proper action");
+
+      //         break;
+      //     }
+      //     return Salary;
+      //   }
+
+      //   const emp1 = salaryIncrement(Salary, 2000, "inc");
+
+      //   const emp2 = salaryIncrement(8000, 2000, "dec");
+
+      //   console.log(emp1);
+
+      //   console.log(emp2);
+
+      // season 4
+
+      const Salary = 5000;
+
+      function salaryIncrement(Salary, amountToIncrement, action) {
+        if (Salary < amountToIncrement) {
+          const str = "Please enter proper amount to action";
+          return str;
+        }
+
+        switch (action) {
+          case "inc":
+            Salary += amountToIncrement;
+            break;
+          case "dec":
+            Salary -= amountToIncrement;
+            break;
+          default:
+            console.log("Please give proper action");
+
+            break;
+        }
+        return Salary;
+      }
+
+      const emp1 = salaryIncrement(Salary, 2000, "inc");
+
+      const emp2 = salaryIncrement(8000, 5000, "dec");
+
+      console.log(emp1);
+
+      console.log(emp2);
+    </script>
+  </body>
+</html>

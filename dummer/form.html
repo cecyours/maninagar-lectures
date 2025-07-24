@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: white;
+        font-family: Roboto;
+      }
+      .form-container{
+        width: 40%;
+        
+        border: 0.5px rgba(255, 143, 14, 0.315) solid;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px rgba(240, 140, 10, 0.281);
+        overflow: hidden;
+      }
+      
+      .title { 
+        padding:5px 20px;
+        color: rgb(238, 135, 0); 
+        background-color: rgba(250, 235, 215, 0.397);
+        
+      }
+      .parent-container{
+        display: inline-flex;
+        justify-content: center; 
+       
+        width: 100%;
+        margin-top: 120px;
+      }
+      .my-heading{
+        font-size: 20px;
+        padding: 0; 
+      }
+      .input-container{
+        display: flex; 
+        align-items: center;
+        gap: 10px;
+        margin: 10px 20px;
+      }
+
+  
+      input{
+        width: 70%;
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: 1px rgba(238, 135, 0, 0.486) solid;
+      }
+
+      input:focus{
+        outline: 2px rgba(0, 0, 255, 0.466) solid;
+        border: 1px rgba(0, 0, 255, 0.466) solid ;
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+      button{
+        padding: 6px 12px;
+        background-color: antiquewhite;
+        border: 1px rgb(255, 191, 108) solid;
+        color: rgb(151, 95, 22);
+        border-radius: 4px;
+        font-size: 18px;
+        width: 120px;
+      }
+
+      .footer-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent-container">
+      <div class="form-container ">
+      <div class="title">
+        <h1 class="my-heading">Login Form</h1>
+      </div>
+      <form style="padding: 20px 40px;">
+        <div class="input-container">
+          <label for="">Username :</label>
+          <input type="text"/>
+        </div>
+
+        <div class="input-container">
+          <label for="">Password :</label>
+          <input type="password"/>
+        </div>
+        <div style="text-align: center;margin: 20px 0px;">
+          <button>Login</button>
+        </div>
+
+        <div class="footer-container">
+          <a href="#">Sign up</a>
+          <a href="#">Forget password ?</a>
+        </div>
+      </form>
+    </div>
+    </div>
+  </body>
+</html>
