@@ -1,0 +1,155 @@
+What is Form Validation?
+Form validation is the process of checking user input before it’s submitted to the server
+
+Ensure correct data is entered
+Prevent incomplete or incorrect form submission
+Improve user experience and security
+
+JavaScript can be used for client-side validation, meaning the check happens before the server sees the data.
+
+ Two Types of Validation
+ | Type               | Description                           | Example                                    |
+| ------------------ | ------------------------------------- | ------------------------------------------ |
+| 1. **Client-side** | Done in browser using JavaScript      | Prevent form submit if "Name" is empty     |
+| 2. **Server-side** | Done on backend (e.g. in Python/Node) | Rechecking input before saving to database |
+
+We’re focusing on Client-side (JavaScript) here.
+
+Basic HTML Form
+<form id="myForm">
+  <label>Name: <input type="text" id="name" /></label><br />
+  <label>Email: <input type="email" id="email" /></label><br />
+  <label>Password: <input type="password" id="password" /></label><br />
+  <button type="submit">Submit</button>
+</form>
+
+JavaScript Validation Script
+<script>
+  // Wait for DOM to be loaded
+  document.getElementById("myForm").addEventListener("submit", function (event) {
+    // Get values from inputs
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    // Validation flags
+    let isValid = true;
+    let errorMessage = "";
+
+    // 1. Check Name
+    if (name === "") {
+      errorMessage += "Name is required.\n";
+      isValid = false;
+    }
+
+    // 2. Check Email using Regex
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+      errorMessage += "Please enter a valid email.\n";
+      isValid = false;
+    }
+
+    // 3. Check Password Length
+    if (password.length < 6) {
+      errorMessage += "Password must be at least 6 characters long.\n";
+      isValid = false;
+    }
+
+    // If invalid, prevent form submission
+    if (!isValid) {
+      alert(errorMessage);
+      event.preventDefault(); // Stops form from submitting
+    }
+  });
+</script>
+
+Explanation of Each Part
+1. document.getElementById("myForm").addEventListener("submit", function...)
+Hooks into the form’s submit event.
+Runs custom code before submitting.
+
+2. .trim()
+Removes whitespace from start/end of input values (like " Pathik " → "Pathik").
+
+3. Regex for Email
+/^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+
+Basic pattern to check if email looks like user@example.com.
+You can customize it as needed.
+
+4. event.preventDefault()
+Stops the form from submitting if validation fails.
+If you don’t call it, the form submits as normal.
+
+
+ Advanced Validation Example (Real-time)
+ You can also validate as the user types:
+ document.getElementById("email").addEventListener("input", function () {
+  const email = this.value;
+  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.match(pattern)) {
+    this.style.border = "2px solid red";
+  } else {
+    this.style.border = "2px solid green";
+  }
+});
+
+
+ Full Working Example (HTML + JS)
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <h2>Register</h2>
+    <form id="myForm">
+      <label>Name: <input type="text" id="name" /></label><br />
+      <label>Email: <input type="email" id="email" /></label><br />
+      <label>Password: <input type="password" id="password" /></label><br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      document.getElementById("myForm").addEventListener("submit", function (event) {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        let isValid = true;
+        let message = "";
+
+        if (name === "") {
+          message += "Name is required.\n";
+          isValid = false;
+        }
+
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!email.match(emailPattern)) {
+          message += "Enter a valid email.\n";
+          isValid = false;
+        }
+
+        if (password.length < 6) {
+          message += "Password must be at least 6 characters.\n";
+          isValid = false;
+        }
+
+        if (!isValid) {
+          alert(message);
+          event.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+Summary
+| Feature                      | Use                   |
+| ---------------------------- | --------------------- |
+| `addEventListener('submit')` | Hook into form submit |
+| `.trim()`                    | Clean input           |
+| Regex                        | Check email pattern   |
+| `preventDefault()`           | Stop form if invalid  |
+| Alerts or DOM feedback       | Show errors to users  |

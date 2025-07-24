@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Practice</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <style>
+        @keyframes slideright {
+            from
+            {
+                transform: translateX(0px);
+            }
+            to
+            {
+                transform: translateX(300px);
+            }
+        }
+        p
+        {
+            animation-name: slideright;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-delay: 1s;
+            animation-iteration-count: 2;
+            animation-direction: normal;
+            animation-fill-mode: both;
+            animation-play-state: running;
+        }
+    </style>
+  </head>
+  <body>
+
+    <p>
+        This is sample animation paragraph,
+        This paragraph will be used for different animation properties.
+    </p>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
