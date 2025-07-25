@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login From</title>
+    <style>
+      * {
+        background-color: rgb(152, 58, 253);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      .container {
+        background-color: rgb(152, 58, 253);
+        display: flex;
+        width: 900px;
+        margin: 60px auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-form {
+        background-color: white;
+        padding: 40px 30px;
+        width: 450px;
+        border-radius: 12px 0px 0 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .login-form h1 {
+        font-size: 26px;
+        font-weight: 600;
+        color: black;
+        margin-bottom: 30px;
+        background-color: white;
+      }
+
+      .login-form form {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .login-form form input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid gray;
+        outline: none;
+        padding: 10px;
+        font-size: 16px;
+        background-color: white;
+      }
+
+      .login-form form input::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .login-link {
+        margin-top: 10px;
+        font-size: 14px;
+        display: inline-block;
+        color: rgb(152, 58, 253);
+        text-decoration: none;
+        background-color: white;
+      }
+
+      .login-form button {
+        width: 100%;
+        background-color: rgb(152, 58, 253);
+        margin-top: 30px;
+        padding: 14px;
+        border: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+
+      .bottom-pera {
+        text-align: center;
+        margin-top: 20px;
+        background-color: white;
+        font-size: 14px;
+      }
+
+      .bottom-pera a {
+        color: rgb(152, 58, 253);
+        text-decoration: none;
+        background-color: white;
+        font-weight: 500;
+      }
+
+      .d-flex {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: white;
+      }
+
+      .login-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0 12px 12px 0;
+      }
+
+      .login-image {
+        width: 450px;
+        height: auto;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-form">
+        <h1>Login</h1>
+
+        <form action="">
+          <div class="d-flex">
+            📧 <input type="email" placeholder="Enter Your Email" />
+          </div>
+
+          <div class="d-flex">
+            🔒 <input type="password" placeholder="Enter Your Password" />
+          </div>
+        </form>
+
+        <a href="" class="login-link">Forgot Password ?</a>
+
+        <button>Login</button>
+
+        <p class="bottom-pera">
+          Don't have an account?
+          <a href="">Signup now</a>
+        </p>
+      </div>
+
+      <div class="login-image">
+        <img src="../assets/cont.png" height="450" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
