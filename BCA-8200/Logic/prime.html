@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Number</title>
+  </head>
+
+  <h1>Prime Number</h1>
+
+  <body>
+    <input type="text" id="number" placeholder="Enter Number" />
+
+    <button onclick="checkPrime()">Submit</button>
+
+    <div id="result"></div>
+  </body>
+  <script>
+    // 1 5 3
+
+    const num1 = 144;
+    // const forPower = 3;
+
+    // console.log(Math.pow(num1, forPower));
+
+    console.log(Math.sqrt(num1));
+
+    function checkPrime() {
+      // input taken from user
+      const number = document.getElementById("number").value;
+      const result = document.getElementById("result");
+
+      if (isNaN(number) || number < 2) {
+        result.innerHTML = "Please enter a valid number grater then 1";
+        result.style.color = "orange";
+        return;
+      }
+
+      let isPrime = true;
+
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+
+      if (isPrime) {
+        result.innerHTML = `${number} is prime number `;
+        result.style.color = "green";
+      } else {
+        result.innerHTML = `${number} is not prime number `;
+        result.style.color = "red";
+      }
+
+      console.log(sum);
+    }
+  </script>
+</html>

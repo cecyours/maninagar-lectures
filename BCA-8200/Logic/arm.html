@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armstrong Number</title>
+  </head>
+
+  <h1>Armstrong Number</h1>
+
+  <body>
+    <input type="text" id="number" placeholder="Enter Number" />
+
+    <button onclick="checkArm()">Submit</button>
+
+    <div id="result"></div>
+  </body>
+  <script>
+    // 1 5 3
+
+    // const num1 = 5;
+    // const forPower = 3;
+
+    // console.log(Math.pow(num1, forPower));
+
+    function checkArm() {
+      // input taken from user
+      const number = document.getElementById("number").value;
+      const result = document.getElementById("result");
+
+      const digits = number.split("").map(Number);
+
+      const pow = digits.length;
+
+      // output after sum
+      const sum = digits.reduce((acc, digit) => acc + Math.pow(digit, pow), 0);
+
+      if (parseInt(number) === sum) {
+        result.innerHTML = `${number} is armstrong number `;
+        result.style.color = "green";
+      } else {
+        result.innerHTML = `${number} is not armstrong number `;
+        result.style.color = "red";
+      }
+
+      console.log(sum);
+    }
+  </script>
+</html>
