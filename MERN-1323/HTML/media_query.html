@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Query Demo</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #f8f8f8;
+      }
+
+      header {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      h1 {
+        color: tomato;
+        font-size: 36px;
+      }
+
+      .container {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .card {
+        background-color: tomato;
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1;
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .card:hover {
+        scale: 1.05;
+        cursor: pointer;
+        background-color: #e44e2f;
+      }
+
+      /* ---------------------- */
+      /* 📱 Tablet Screen (<=768px) */
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+        .card {
+          background-color: skyblue;
+          font-size: 22px;
+        }
+        h1 {
+          color: skyblue;
+          font-size: 28px;
+        }
+      }
+
+      /* 📱 Mobile Screen (<=300px) */
+      @media screen and (max-width: 300px) {
+        .container {
+          flex-direction: column;
+        }
+        .card {
+          background-color: gray;
+          font-size: 15px;
+          box-shadow: 2px 4px 2px black;
+        }
+        h1 {
+          color: gray;
+          font-size: 20px;
+        }
+      }
+
+      .info {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Media Query</h1>
+      <div class="info" id="screen-info">Screen Width: --px</div>
+    </header>
+
+    <section class="container">
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+    </section>
+
+    <script>
+      // Display screen width (for demo purposes)
+      const info = document.getElementById("screen-info");
+      function updateScreenInfo() {
+        info.textContent = `Screen Width: ${window.innerWidth}px`;
+      }
+      updateScreenInfo();
+      window.addEventListener("resize", updateScreenInfo);
+    </script>
+  </body>
+</html>
