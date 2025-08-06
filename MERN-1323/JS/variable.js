@@ -21,7 +21,6 @@ const PI = 3.14
 
 
 // PI = 5.14
-
 console.log(PI);
 
 
