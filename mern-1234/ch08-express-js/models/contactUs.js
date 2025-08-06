@@ -8,7 +8,7 @@ const contactUsSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        match: /.+\@.+\..+/
+        match: /.+\@.+\..+/,
     },
     phoneNumber: {
         type: String,
@@ -20,6 +20,9 @@ const contactUsSchema = new mongoose.Schema({
         required: true,
     }
 }, { timestamps: true });
+
+
+contactUsSchema.index({ email: 1 }, { unique: true })
 
 
 

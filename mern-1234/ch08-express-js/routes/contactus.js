@@ -47,7 +47,18 @@ router.get('/', async function (req, res) {
 router.get('/:id', async function (req, res) {
     try {
         const { id } = req.params
+        // for when user try to fetch record using email
+        // const { email } = req.params
+
         const contactUsData = await contactUs.findById(id)
+
+
+        // for when user try to fetch record using email    
+        // const constactUsByEmail = await contactUs.findOne({
+        //     email: email
+        // })
+
+
         res.status(200).json({
             success: true,
             message: "Contact Us fetched Successfully",
