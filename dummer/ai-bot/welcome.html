@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS IT Company | Single Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: linear-gradient(135deg, #f9f9f9 0%, #f1f1f1 100%);
+            min-height: 100vh;
+        }
+        .navbar {
+            background: rgba(40, 167, 69, 0.95); /* green */
+            box-shadow: 0 2px 12px rgba(40, 167, 69, 0.08);
+            border-radius: 0 0 18px 18px;
+        }
+        .navbar-brand {
+            color: #fff !important;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 2rem; /* increased font size */
+            display: flex;
+            align-items: center;
+        }
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            margin-left: 18px;
+            transition: color 0.2s;
+            font-size: 1.15rem; /* increased font size */
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #e6ffe6 !important;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px 60px 20px;
+            background: linear-gradient(120deg, #fff 60%, #e6ffe6 100%);
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 8px 32px rgba(40, 167, 69, 0.07);
+            margin-bottom: 40px;
+        }
+        .hero .logo-svg {
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: 3.2rem; /* increased font size */
+            font-weight: 700;
+            color: #28a745; /* green */
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+        .hero .lead {
+            font-size: 1.5rem; /* increased font size */
+            color: #155724; /* dark green */
+            margin-bottom: 32px;
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #28a745 60%, #81c784 100%);
+            border: none;
+            font-weight: 600;
+            font-size: 1.25rem; /* increased font size */
+            padding: 14px 40px;
+            border-radius: 30px;
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.10);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-primary:hover, .btn-primary:focus {
+            background: linear-gradient(90deg, #218838 60%, #81c784 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        section {
+            scroll-margin-top: 80px;
+        }
+        .section-title {
+            color: #28a745; /* green */
+            font-weight: 700;
+            margin-bottom: 18px;
+            font-size: 2.3rem; /* increased font size */
+            text-align: center;
+        }
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #155724; /* dark green */
+            font-size: 1.25rem; /* increased font size */
+            text-align: center;
+        }
+        .contact-card, .auth-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(40, 167, 69, 0.07);
+            padding: 40px 28px 32px 28px;
+            margin-bottom: 24px;
+            border: none;
+        }
+        .contact-icon, .auth-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #28a745; /* green */
+            font-size: 1.1rem; /* increased font size */
+        }
+        .form-control:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.15);
+        }
+        .auth-toggle {
+            text-align: center;
+            margin-top: 12px;
+        }
+        .auth-toggle button {
+            background: none;
+            border: none;
+            color: #28a745; /* green */
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 0;
+            font-size: 1.1rem; /* increased font size */
+        }
+        footer {
+            text-align: center;
+            padding: 28px 0 18px 0;
+            background: linear-gradient(90deg, #28a745 60%, #81c784 100%);
+            color: white;
+            font-size: 1.2rem; /* increased font size */
+            letter-spacing: 0.5px;
+            border-radius: 24px 24px 0 0;
+            margin-top: 60px;
+            box-shadow: 0 -2px 12px rgba(40, 167, 69, 0.08);
+        }
+        @media (max-width: 767px) {
+            .hero {
+                padding: 50px 10px 30px 10px;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .contact-card, .auth-card {
+                padding: 24px 10px 18px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <svg width="32" height="32" fill="none" viewBox="0 0 32 32" style="vertical-align:middle;margin-right:8px;">
+                    <circle cx="16" cy="16" r="16" fill="#fff"/>
+                    <text x="50%" y="55%" text-anchor="middle" fill="#28a745" font-size="20" font-family="Inter, Arial, sans-serif" font-weight="bold" dy=".3em">JS</text>
+                </svg>
+                JS IT Company
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="logo-svg">
+            <svg width="90" height="90" fill="none" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="45" fill="#fff"/>
+                <text x="50%" y="55%" text-anchor="middle" fill="#28a745" font-size="44" font-family="Inter, Arial, sans-serif" font-weight="bold" dy=".3em">JS</text>
+            </svg>
+        </div>
+        <h1>Welcome to JS IT Company</h1>
+        <p class="lead">We build fast, scalable, and modern solutions with JavaScript.</p>
+        <a href="#about" class="btn btn-primary btn-lg shadow">Learn More</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container py-5">
+        <div class="card shadow-lg border-0 rounded-4 p-4 p-md-5">
+          <h2 class="fw-bold mb-4 border-start border-4 border-primary ps-3">
+            About Us
+          </h2>
+          <p class="text-muted mb-4">
+            JS IT Company is dedicated to delivering high-quality web and app solutions
+            using the latest JavaScript technologies. Our team of experts crafts scalable,
+            secure, and user-friendly products for businesses of all sizes. We believe in
+            innovation, transparency, and building lasting partnerships with our clients.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#services" class="btn btn-primary px-4">
+              Learn More
+            </a>
+            <a href="#contact" class="btn btn-outline-primary px-4">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="container py-5">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-6">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="40" height="40" fill="none" viewBox="0 0 40 40">
+                            <circle cx="20" cy="20" r="20" fill="#e6ffe6"/>
+                            <path d="M10 14l10 8 10-8" stroke="#28a745" stroke-width="2" fill="none"/>
+                            <rect x="10" y="14" width="20" height="12" rx="3" stroke="#28a745" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="contactName" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="contactEmail" placeholder="you@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMsg" class="form-label">Message</label>
+                            <textarea class="form-control" id="contactMsg" rows="3" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login & Sign Up Section -->
+    <section class="container py-5" id="login">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="auth-card" id="authCard">
+                    <div class="auth-icon">
+                        <svg width="40" height="40" fill="none" viewBox="0 0 40 40">
+                            <circle cx="20" cy="20" r="20" fill="#e6ffe6"/>
+                            <path d="M20 22c3.31 0 6-2.69 6-6s-2.69-6-6-6-6 2.69-6 6 2.69 6 6 6zm0 2c-4 0-12 2-12 6v2h24v-2c0-4-8-6-12-6z" fill="#28a745"/>
+                        </svg>
+                    </div>
+                    <h2 class="section-title" id="authTitle">Login</h2>
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="you@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                    <form id="signupForm" style="display:none;">
+                        <div class="mb-3">
+                            <label for="signupName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="signupName" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="signupEmail" placeholder="you@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                    </form>
+                    <div class="auth-toggle">
+                        <span id="toggleText">Don't have an account?</span>
+                        <button id="toggleAuth" type="button">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="signup"></section> <!-- For anchor scroll -->
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 JS IT Company. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Auth toggle logic
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const authTitle = document.getElementById('authTitle');
+        const toggleText = document.getElementById('toggleText');
+        const toggleAuth = document.getElementById('toggleAuth');
+
+        function showLogin() {
+            loginForm.style.display = '';
+            signupForm.style.display = 'none';
+            authTitle.textContent = 'Login';
+            toggleText.textContent = "Don't have an account?";
+            toggleAuth.textContent = "Sign Up";
+            toggleAuth.setAttribute('data-mode', 'signup');
+        }
+        function showSignup() {
+            loginForm.style.display = 'none';
+            signupForm.style.display = '';
+            authTitle.textContent = 'Sign Up';
+            toggleText.textContent = "Already have an account?";
+            toggleAuth.textContent = "Login";
+            toggleAuth.setAttribute('data-mode', 'login');
+        }
+        toggleAuth.addEventListener('click', function() {
+            if (toggleAuth.getAttribute('data-mode') === 'signup') {
+                showSignup();
+            } else {
+                showLogin();
+            }
+        });
+        // Set initial state
+        // showLogin();
+        // showSignup();
+
+    </script>
+</body>
+</html>
