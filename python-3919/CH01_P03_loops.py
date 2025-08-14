@@ -5,7 +5,7 @@ start = time()
 # for i in range(10_000_000):
 #     lst.append(i+1)
 
-lst = (i for i in range(10_000_000))
+lst = (i for i in range(10_000_000)) 
 end = time()
 print(start,end,end-start)
 
