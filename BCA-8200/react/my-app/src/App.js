@@ -3,6 +3,7 @@ import Card from './components/Card';
 import Welcome from './components/ClassBase';
 import GenerateCard from './components/GenerateCard';
 import MyComp from "./components/MyComp";
+import UserCardApi from './components/UserCardApi';
 import UseState from './components/UseState';
 
 function App() {
@@ -105,7 +106,10 @@ function App() {
       {/* <Card data={userData} /> */}
 
 
-      <GenerateCard />
+      {/* <GenerateCard /> */}
+
+
+      <UserCardApi />
 
     </>
   );
