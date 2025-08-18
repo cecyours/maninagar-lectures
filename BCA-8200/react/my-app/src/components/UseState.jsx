@@ -5,7 +5,6 @@ function UseState() {
 
   const handleMinusClick = () => {
     if (counter <= 0) return;
-
     setCounter(counter - 1);
   };
 
