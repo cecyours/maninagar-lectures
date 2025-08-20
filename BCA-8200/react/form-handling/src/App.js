@@ -1,6 +1,8 @@
 
+import Arithmactic from './components/Arithmactic';
 import './App.css';
 import Event from './components/Event';
+import Uncontrolled from './components/Uncontrolled';
 
 function App() {
 
@@ -10,7 +12,11 @@ function App() {
   return (
     <div className="">
 
-      <Event />
+      {/* <Event /> */}
+
+      {/* <Arithmactic /> */}
+
+      <Uncontrolled />
 
     </div>
   );
