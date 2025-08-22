@@ -3,6 +3,7 @@ import Arithmactic from './components/Arithmactic';
 import './App.css';
 import Event from './components/Event';
 import Uncontrolled from './components/Uncontrolled';
+import Theme from './components/Theme';
 
 function App() {
 
@@ -15,6 +16,10 @@ function App() {
       {/* <Event /> */}
 
       {/* <Arithmactic /> */}
+
+
+
+      <Theme />
 
       <Uncontrolled />
 

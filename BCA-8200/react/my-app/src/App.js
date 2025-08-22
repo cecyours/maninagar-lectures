@@ -94,8 +94,6 @@ function App() {
       <MyComp name={"Sania"} location={"Ahmedabad"} course={"MERN"} /> */}
 
 
-
-
       {/* example of simple class based components */}
       {/* <Welcome /> */}
 

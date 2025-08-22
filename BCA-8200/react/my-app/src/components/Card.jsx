@@ -1,6 +1,10 @@
 import React from "react";
 
 const Card = ({ data }) => {
+
+
+
+  
   return (
     <>
       <div className="d-flex gap-4">
