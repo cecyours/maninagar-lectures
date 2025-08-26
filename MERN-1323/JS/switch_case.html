@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch Case</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .btn-success {
+        background-color: green;
+        color: white;
+        padding: 10px 60px;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+      }
+
+      .btn-danger {
+        background-color: red;
+        color: white;
+        padding: 10px 60px;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+      }
+
+      .btn-warning {
+        background-color: yellow;
+        color: black;
+        padding: 10px 60px;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+      }
+
+      #output {
+        font-size: 3rem;
+        text-align: center;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Switch Case</h1>
+    <div class="container">
+      <button onclick="checkLight('green')" class="btn-success">Green</button>
+      <button onclick="checkLight('yellow')" class="btn-warning">Yellow</button>
+      <button onclick="checkLight('red')" class="btn-danger">Red</button>
+    </div>
+
+    <div id="output"></div>
+  </body>
+
+  <script>
+    const output = document.getElementById("output");
+    function checkLight(color) {
+      switch (color) {
+        case "green":
+          document.body.style.background = "green";
+          output.innerHTML = "You can Go now";
+          console.log("hello");
+
+          break;
+        case "yellow":
+          document.body.style.background = "yellow";
+          output.innerHTML = "Wait , watch and go";
+          break;
+        case "red":
+          document.body.style.background = "red";
+          output.innerHTML = "Stop";
+
+          break;
+        default:
+          console.log("in valid color ");
+          break;
+      }
+    }
+  </script>
+</html>

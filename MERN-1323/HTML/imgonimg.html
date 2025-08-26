@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text on Image Example</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("../assets/download\ \(3\).jpeg") no-repeat center
+          center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        width: 500px;
+        height: 500px;
+        background-color: rgba(255, 0, 0, 0.6);
+        position: relative;
+        margin: 50px auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .container h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+      }
+
+      .page-title {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 36px;
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="page-title">Hello World</h1>
+
+    <div class="container">
+      <h2>In Container</h2>
+    </div>
+  </body>
+</html>

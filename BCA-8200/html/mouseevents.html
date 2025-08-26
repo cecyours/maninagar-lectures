@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+
+  <style>
+    .color-me {
+      background-color: red;
+    }
+
+    #output {
+      background-color: red;
+      height: 400px;
+      width: 400px;
+    }
+  </style>
+
+  <body>
+    <button id="btn" onmouseenter="hoverMe()" onmouseleave="leaveMe()">
+      click me to enter image
+    </button>
+
+    <div id="output"></div>
+  </body>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const output = document.getElementById("output");
+
+    function hoverMe() {
+      btn.style.backgroundColor = "red";
+      btn.style.scale = 1.6;
+      btn.style.transition = "all 1s";
+      // output.style.backgroundImage = "url('./assets/dubai.jpeg')";
+
+      const img = document.createElement("img");
+
+      img.src = "./assets/dubai.jpeg";
+
+      output.appendChild(img);
+    }
+
+    function leaveMe() {
+      console.log("i am out");
+
+      btn.style.backgroundColor = "transparent";
+      btn.style.scale = 1;
+      btn.style.transition = "all 1s";
+    }
+  </script>
+</html>

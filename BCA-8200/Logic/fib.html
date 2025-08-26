@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Series</title>
+  </head>
+  <body>
+    <h1>Fibonacci Series</h1>
+    <input type="text" name="fib" id="number" />
+
+    <button onclick="getSeries()">Calculate</button>
+
+    <div id="result"></div>
+  </body>
+
+  <script>
+    function getSeries() {
+      let number = document.getElementById("number").value;
+      let result = document.getElementById("result");
+
+      let series = [];
+      let a = 0,
+        b = 1;
+
+
+        // 66 , 200
+
+      // 0 , 1 , 2, 3, 5, 8 , 13
+      if (number >= 0) series.push(a);
+
+      for (let i = 1; b <= number; i++) {
+        series.push(b);
+        let temp = b; // 1
+        b = a + b; // 1
+        a = temp; //1
+      }
+
+      result.innerHTML = `This is Fibonacci series ${series}`;
+    }
+  </script>
+</html>
