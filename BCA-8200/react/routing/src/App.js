@@ -1,4 +1,7 @@
 
+
+
+// http://www.omdbapi.com/?i=tt3896198&apikey=46ae5993
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home';
@@ -8,7 +11,9 @@ import User from './pages/User';
 import SingleUser from './pages/SingleUser';
 import NotFound from './pages/NotFound';
 import UserComments from './pages/UserComments';
-import SingleUserComments from './pages/SingleUserComments';
+import Movies from './pages/Movies';
+import Posts from './pages/post/Posts';
+import SinglePost from './pages/post/SinglePost';
 
 function App() {
   return (
@@ -18,8 +23,15 @@ function App() {
           {/* static routes */}
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
+          <Route path='/posts' element={<Posts />} />
+          <Route path='/posts/:id' element={<SinglePost />} />
+
+
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/users' element={<User />} />
+          <Route path='/movies' element={<Movies />} />
+
+
 
           {/* this calles dynamic routes */}
           <Route path='/users/:id' element={<SingleUser />} />
