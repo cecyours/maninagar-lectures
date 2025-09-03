@@ -12,24 +12,34 @@ const SinglePost = () => {
 
   const URL = `https://jsonplaceholder.typicode.com/posts/${id}`;
 
-  const fetchData = async () => {
+  const fetchPost = async () => {
+    setLoading(true);
     try {
-      setLoading(true); // start loading
-      const [postResponse, commentsResponse] = await Promise.all([
-        axios.get(URL),
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`),
-      ]);
-      setPost(postResponse.data);
-      setComments(commentsResponse.data);
+      const response = await axios.get(URL);
+      setPost(response.data);
+      setLoading(false);
     } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setLoading(false); // stop loading
+      console.error("Error fetching post:", error);
+    }
+  };
+
+  const fetchCommentsOfPost = async () => {
+    setLoading(true);
+
+    try {
+      const cmtresponse = await axios.get(
+        `https://jsonplaceholder.typicode.com/posts/${id}/comments`
+      );
+      setComments(cmtresponse.data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching comments:", error);
     }
   };
 
   useEffect(() => {
-    fetchData();
+    fetchPost();
+    fetchCommentsOfPost();
   }, [id]);
 
   const handleNavigate = () => {
