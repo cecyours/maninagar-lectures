@@ -1,15 +1,7 @@
 import React from "react";
-import useCustState from "../hooks/useCustState";
 
 const Home = () => {
-  const [state, setCustState] = useCustState("mine");
-
-  return (
-    <div>
-      This is Home page
-      {state}
-    </div>
-  );
+  return <div>This is Home page</div>;
 };
 
 export default Home;
