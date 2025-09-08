@@ -14,38 +14,49 @@ import UserComments from './pages/UserComments';
 import Movies from './pages/Movies';
 import Posts from './pages/post/Posts';
 import SinglePost from './pages/post/SinglePost';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Product from './pages/products/product';
+import SingleProduct from './pages/products/SingleProduct';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Routes>
-          {/* static routes */}
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/posts' element={<Posts />} />
-          <Route path='/posts/:id' element={<SinglePost />} />
+        <Navbar />
 
-
-          <Route path='/contact-us' element={<ContactUs />} />
-          <Route path='/users' element={<User />} />
-          <Route path='/movies' element={<Movies />} />
-
-
-
-          {/* this calles dynamic routes */}
-          <Route path='/users/:id' element={<SingleUser />} />
-          <Route path='/users/:id/comments' element={<UserComments />} />
-
-
-          {/* <Route path='/users/:id/comments/:id' element={<SingleUserComments />} /> */}
-
-          {/*for not found pages*/}
-          <Route path='*' element={<NotFound />} />
+        <div className=''>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/posts' element={<Posts />} />
+            <Route path='/posts/:id' element={<SinglePost />} />
+            <Route path='/contact-us' element={<ContactUs />} />
+            <Route path='/users' element={<User />} />
+            <Route path='/movies' element={<Movies />} />
+            <Route path='/products' element={<Product />} />
+            <Route path='/products/:id' element={<SingleProduct />} />
 
 
 
-        </Routes>
+
+
+
+
+            {/* this calles dynamic routes */}
+            <Route path='/users/:id' element={<SingleUser />} />
+            <Route path='/users/:id/comments' element={<UserComments />} />
+
+
+            {/* <Route path='/users/:id/comments/:id' element={<SingleUserComments />} /> */}
+
+            {/*for not found pages*/}
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
+
+
+        <Footer />
       </Router>
     </div>
   );
