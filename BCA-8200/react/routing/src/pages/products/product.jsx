@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../redux/cartSlice";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -8,8 +10,6 @@ const Product = () => {
   const fetchProducts = async () => {
     try {
       const response = await axios.get("https://dummyjson.com/products");
-
-      console.log(response.data.products);
 
       setProducts(response.data.products);
     } catch (error) {
@@ -20,6 +20,8 @@ const Product = () => {
   useEffect(() => {
     fetchProducts();
   }, []);
+
+  const dispatch = useDispatch();
 
   return (
     <div className="container my-5">
@@ -55,8 +57,21 @@ const Product = () => {
               </div>
 
               {/* Footer with View More */}
-              <div className="card-footer text-end bg-white    ">
-                <Link className="text-decoration-none " to={`/products/${product.id}`}> View More </Link>
+              <div className="card-footer text-end bg-white d-flex justify-content-between">
+                <Link
+                  className="text-decoration-none "
+                  to={`/products/${product.id}`}
+                >
+                  {" "}
+                  View More{" "}
+                </Link>
+
+                <button
+                  className="btn btn-sm btn-light "
+                  onClick={() => dispatch(addToCart(product))}
+                >
+                  🛒
+                </button>
               </div>
             </div>
           </div>
