@@ -1,9 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const username = "Vishu"; // can be dynamic later
-
+  const { totalQuantity } = useSelector((state) => state.cart);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div className="container-fluid">
@@ -51,8 +52,19 @@ const Navbar = () => {
           </ul>
         </div>
 
+        
+
         {/* Right Side Username */}
-        <div className="d-flex flex-grow-1 justify-content-end">
+        <div className="d-flex flex-grow-1 justify-content-end  align-items-center gap-2">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary position-relative"
+          >
+            Cart
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {totalQuantity}
+            </span>
+          </button>
           <span className="navbar-text fw-semibold">Hello, {username}</span>
         </div>
       </div>
