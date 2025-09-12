@@ -7,20 +7,21 @@
     <title>Document</title>
     <style>
         div {
-            height: 10px;
+            height: 20px;
             width: 100px;
             animation-name: home;
-            animation-duration: 0.5s;
+            animation-duration: 4s;
             animation-iteration-count: infinite;
             animation-direction: alternate;
             background-color: bisque;
-            border-radius: 10px;
-            margin: 10px;
+            /* border-radius: 10px; */
+            margin: 2px;
+            transition: all 1s;
         }
 
         @keyframes home {
             0% {
-                width: 10px;
+                width: 100px;
             }
 
             25% {
@@ -32,11 +33,11 @@
             }
 
             75% {
-                width: 300px;
+                width: 400px;
             }
 
             100% {
-                width: 10px;
+                width: 100px;
             }
         }
     </style>
@@ -45,9 +46,9 @@
 <body>
 
     <div style="background-color: red;"> </div>
-    <div style="background-color: blue;"> </div>
-    <div> </div>
-    <div> </div>
+    <div style="background-color: blue;animation-timing-function: ease-in;"> </div>
+    <div style="background-color: cadetblue;animation-timing-function: ease-in-out;"> </div>
+    <div style="background-color: chocolate;animation-timing-function: ease-out;"> </div>
 
 </body>
 
