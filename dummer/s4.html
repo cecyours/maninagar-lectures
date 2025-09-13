@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Registration</title>
+  <!-- Bootstrap 5.3 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.7);
+      --border: rgba(0, 0, 0, 0.08);
+    }
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      min-height: 100vh;
+      background: radial-gradient(1200px 800px at 10% 10%, #e3f2ff 0%, transparent 60%),
+                  radial-gradient(900px 600px at 90% 20%, #ffe7ec 0%, transparent 60%),
+                  radial-gradient(900px 600px at 30% 90%, #e9ffe8 0%, transparent 60%),
+                  linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+    }
+    .glass {
+      background: var(--glass-bg);
+      border: 1px solid var(--border);
+      backdrop-filter: saturate(160%) blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: rgba(13,110,253,.06);
+      border: 1px solid rgba(13,110,253,.15);
+      font-weight: 600;
+      color: #0d6efd;
+    }
+    .section-title {
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .input-group-text svg { width: 18px; height: 18px; }
+    .form-control, .form-select, .form-check-input {
+      border-radius: 0.8rem;
+    }
+    .card {
+      border-radius: 1.25rem;
+    }
+    .btn {
+      border-radius: .9rem;
+      padding: .7rem 1.1rem;
+      font-weight: 600;
+    }
+    .avatar-preview {
+      width: 84px; height: 84px; border-radius: 16px; object-fit: cover; border: 1px dashed rgba(0,0,0,.15);
+      background: #f8f9fa;
+    }
+    .required::after { content: ' *'; color: #dc3545; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">CampusPortal</a>
+    </div>
+  </nav>
+
+  <header class="container my-5 text-center">
+    <span class="brand-badge mb-2">
+      <!-- Hat SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 10-10-5-10 5 10 5 10-5"/><path d="M6 12v5c4 2 8 2 12 0v-5"/></svg>
+      Student Registration Faizan
+    </span>
+    <h1 class="display-6 section-title mt-2">Enroll for the Academic Year</h1>
+    <p class="text-secondary">Fill out the form below to create your student profile. All fields marked with * are required.</p>
+  </header>
+
+  <main class="container pb-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10 col-xxl-8">
+        <div class="card glass p-3 p-sm-4 p-md-5">
+          <form class="needs-validation" novalidate>
+
+            <!-- Basic Info -->
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label required" for="fullName">Full Name</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <!-- User SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+                  </span>
+                  <input type="text" class="form-control" id="fullName" placeholder="e.g., Aisha Sharma" required>
+                  <div class="invalid-feedback">Please enter the student's full name.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="studentId">Student ID (optional)</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <!-- Badge SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 4v4a4 4 0 1 0 8 0V4"/></svg>
+                  </span>
+                  <input type="text" class="form-control" id="studentId" placeholder="AUTO or enter manually">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label required" for="email">Email</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <!-- Mail SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                  </span>
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                  <div class="invalid-feedback">A valid email is required.</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label required" for="phone">Phone</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <!-- Phone SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.77.66 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.22a2 2 0 0 1 2.11-.45c.83.32 1.7.54 2.6.66A2 2 0 0 1 22 16.92z"/></svg>
+                  </span>
+                  <input type="tel" class="form-control" id="phone" placeholder="10-digit mobile" pattern="^[0-9]{10}$" required>
+                  <div class="invalid-feedback">Enter a valid 10-digit phone number.</div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label required" for="dob">Date of Birth</label>
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <!-- Calendar SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  </span>
+                  <input type="date" class="form-control" id="dob" required>
+                  <div class="invalid-feedback">Please select date of birth.</div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label required" for="gender">Gender</label>
+                <div class="d-flex gap-3 align-items-center">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="genderM" required>
+                    <label class="form-check-label" for="genderM">Male</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="genderF" required>
+                    <label class="form-check-label" for="genderF">Female</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="genderO" required>
+                    <label class="form-check-label" for="genderO">Other</label>
+                  </div>
+                </div>
+                <div class="form-text">Select one option.</div>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label required" for="grade">Class / Grade</label>
+                <select id="grade" class="form-select" required>
+                  <option value="" selected disabled>Choose...</option>
+                  <option>11</option>
+                  <option>12</option>
+                  <option>Undergraduate</option>
+                  <option>Postgraduate</option>
+                </select>
+                <div class="invalid-feedback">Please select a class/grade.</div>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label" for="course">Course / Major</label>
+                <input type="text" class="form-control" id="course" placeholder="e.g., Commerce, Science, Arts, BCA">
+              </div>
+
+              <!-- Address -->
+              <div class="col-12">
+                <label class="form-label required" for="address">Address</label>
+                <textarea class="form-control" id="address" rows="2" placeholder="House no, Street, Area" required></textarea>
+                <div class="invalid-feedback">Address is required.</div>
+              </div>
+
+              <div class="col-sm-6 col-md-4">
+                <label class="form-label required" for="city">City</label>
+                <input type="text" class="form-control" id="city" required>
+                <div class="invalid-feedback">City is required.</div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <label class="form-label required" for="state">State</label>
+                <input type="text" class="form-control" id="state" required>
+                <div class="invalid-feedback">State is required.</div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <label class="form-label required" for="zip">ZIP / PIN</label>
+                <input type="text" class="form-control" id="zip" pattern="^[0-9]{5,6}$" required>
+                <div class="invalid-feedback">Enter a valid 5-6 digit PIN/ZIP.</div>
+              </div>
+
+              <!-- Guardian Info -->
+              <div class="col-md-6">
+                <label class="form-label" for="guardianName">Guardian Name</label>
+                <input type="text" class="form-control" id="guardianName" placeholder="Parent/Guardian full name">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="guardianPhone">Guardian Phone</label>
+                <input type="tel" class="form-control" id="guardianPhone" placeholder="10-digit mobile" pattern="^[0-9]{10}$">
+                <div class="invalid-feedback">Enter a valid 10-digit phone number.</div>
+              </div>
+
+              <!-- Photo Upload -->
+              <div class="col-md-8">
+                <label class="form-label" for="photo">Upload Photo (JPEG/PNG)</label>
+                <input class="form-control" type="file" id="photo" accept="image/*">
+                <div class="form-text">Max 2MB. Square images look best.</div>
+              </div>
+              <div class="col-md-4 d-flex align-items-end">
+                <div class="d-flex gap-3 align-items-center w-100">
+                  <img id="avatarPreview" class="avatar-preview" alt="Preview" />
+                  <div class="small text-secondary">Live preview</div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                  <label class="form-check-label required" for="terms">I confirm that the information provided is accurate.</label>
+                  <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary" type="submit">
+                <!-- Send SVG -->
+                <svg class="me-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                Submit Application
+              </button>
+              <button class="btn btn-outline-secondary" type="reset">Reset</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container text-center text-secondary py-4">
+    <small>© <span id="year"></span> CampusPortal • All rights reserved</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Bootstrap validation
+    (() => {
+      const form = document.querySelector('.needs-validation');
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+
+    // Image preview & basic size check (2MB)
+    const photoInput = document.getElementById('photo');
+    const avatarPreview = document.getElementById('avatarPreview');
+    avatarPreview.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+        <rect width="100%" height="100%" fill="#f1f3f5"/>
+        <circle cx="40" cy="30" r="14" fill="#dee2e6"/>
+        <rect x="18" y="48" width="44" height="22" rx="10" fill="#dee2e6"/>
+      </svg>
+    `);
+
+    photoInput.addEventListener('change', (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      if (file.size > 2 * 1024 * 1024) {
+        alert('File is larger than 2MB. Please choose a smaller image.');
+        photoInput.value = '';
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        avatarPreview.src = ev.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
