@@ -1,0 +1,237 @@
+Header file <iostream> to handle input and output
+cout (character output) - to display data on screen
+cin (character input) - to take input from keyboard
+
+Both are part of std namespace
+
+1. cout (Console output):
+<< - insertion operator
+
+cout << data
+
+cout << "Hello " << name << ", age: " << age;
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age = 25;
+    string name = "Pathik";
+
+    cout << "Hello, " << name << "!" << endl;
+    cout << "You are " << age << " years old." << endl;
+
+    return 0;
+}
+
+
+2. cin(Console input):
+>> - extraction operator
+cin >> variable;
+Reads input until whitespace
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    string name;
+
+    cout << "Enter your name: ";
+    cin >> name;    // will stop at first space
+
+    cout << "Enter your age: ";
+    cin >> age;
+
+    cout << "Hello " << name << "! You are " << age << " years old." << endl;
+    return 0;
+}
+
+
+3. Taking full line input:
+To take full sentences
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    string fullname;
+    cout << "Enter your full name: ";
+    getline(cin, fullname);
+
+    cout << "Welcome, " << fullname << "!" << endl;
+    return 0;
+}
+
+
+4. Multiple Inputs together
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;   // user enters: 10 20
+
+    cout << "Sum = " << (a + b) << endl;
+    return 0;
+}
+
+
+Two special output streams:
+1.cerr(character error)
+to show error messages
+unbuffered - displays immediately
+for urgent error reporting
+
+2.clog(character log)
+to display log/debug msgs.
+buffered - stored in buffer, so msgs appear with delay
+for status/log info.
+
+both are in <iostream> header and belong to std namespace.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Enter a positive number: ";
+    cin >> num;
+
+    if (num < 0) {
+        cerr << "Error: Negative number entered!" << endl;
+    } else {
+        cout << "You entered: " << num << endl;
+    }
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    clog << "Program started..." << endl;
+
+    int a = 10, b = 0;
+
+    if (b == 0) {
+        cerr << "Error: Division by zero!" << endl;
+    } else {
+        cout << "Result = " << (a / b) << endl;
+    }
+
+    clog << "Program ended." << endl;
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Welcome to the program!" << endl;
+    clog << "INFO: Program execution started." << endl;
+
+    int age;
+    cout << "Enter your age: ";
+    cin >> age;
+
+    if (age < 0) {
+        cerr << "ERROR: Age cannot be negative!" << endl;
+    } else {
+        cout << "Your age is: " << age << endl;
+        clog << "INFO: Age input successful." << endl;
+    }
+
+    clog << "INFO: Program finished." << endl;
+    return 0;
+}
+
+
+Type Casting :- converting one datatype to another data Type
+1. Implicit Type Casting (Type promotion):-
+automatically by compiler
+smaller datatype is converted to larger datatype to prevent data loss.
+e.x. int to float, char to int
+
+2. Explicit Type Casting :-
+Done manually by programmers using type cast operators.
+e.x. (float) a / b
+
+Implicit Type Casting
+e.x.- 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10;
+    float b = 3.5;
+
+    // int is promoted to float automatically
+    float result = a + b;   
+
+    cout << "a = " << a << ", b = " << b << endl;
+    cout << "Result (a + b) = " << result << endl;
+
+    char ch = 'A';  // ASCII value of 'A' = 65
+    int num = ch;   // char promoted to int automatically
+    cout << "Character: " << ch << ", ASCII Value: " << num << endl;
+
+    return 0;
+}
+
+
+Explicit type casting
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 5, b = 2;
+
+    // Without type casting
+    float result1 = a / b;  // integer division (5/2 = 2)
+    cout << "Without casting: " << result1 << endl;
+
+    // With explicit type casting
+    float result2 = (float) a / b;   // (5.0 / 2 = 2.5)
+    cout << "With casting: " << result2 << endl;
+
+    // Another example: double to int
+    double pi = 3.14159;
+    int x = (int) pi;   // fraction part discarded
+    cout << "pi = " << pi << ", after casting to int = " << x << endl;
+
+    return 0;
+}
+
+
+Modern C++ explicit casting
+Instaed of c style(type) casting, c++ cast operators are used:
+static_cast<type>(exp) -- conversion like int to float
+dynamic_cast<type>(exp) -- used with polymorphism
+const_cast<type>(exp) -- remove const qualifier
+reinterpret_cast<type>(exp) -- low -level memory re-interpretation
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 7, b = 3;
+
+    // static_cast for safe explicit conversion
+    float div = static_cast<float>(a) / b; 
+    cout << "Division using static_cast = " << div << endl;
+
+    return 0;
+}
+
+
+Implicit type cast -- automatic (safe promotion)
+explicit type cast -- manual, using (type) or (static_cast)
+explicit casting is used when compiler can not perform automatically promotions safely.
