@@ -6,6 +6,7 @@ import InputEvents from "./pages/InputEvents";
 import ButtonEvents from "./pages/ButtonEvents";
 import CH08Compontents from "./pages/CH08Compontents";
 import ReactEvent from "./pages/ReactEvent";
+import EventMulti from "./pages/EventMulti";
 
 function App() {
   const items = [
@@ -24,7 +25,8 @@ function App() {
   ];
   return (
     <>
-      <ReactEvent />  
+      {/* <ReactEvent />   */}
+      <EventMulti />
     </>
   );
 }
