@@ -1,1 +1,0 @@
-this is a basic txt file for read by node js 
