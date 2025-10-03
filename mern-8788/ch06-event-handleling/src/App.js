@@ -10,6 +10,7 @@ import EventMulti from "./pages/EventMulti";
 import Synthetic from "./pages/Synthetic";
 import ArguInlineFun from "./pages/ArguInlineFun";
 import ArguEvent from "./pages/ArguEvent";
+import Argumap from "./pages/Argumap";
 
 function App() {
   // const items = [
@@ -30,9 +31,10 @@ function App() {
     <>
       {/* <ReactEvent />   */}
       {/* <EventMulti /> */}
-      <Synthetic />
+      {/* <Synthetic />
       <ArguInlineFun /> 
-      <ArguEvent />
+      <ArguEvent /> */}
+      <Argumap />
     </>
   );
 }
