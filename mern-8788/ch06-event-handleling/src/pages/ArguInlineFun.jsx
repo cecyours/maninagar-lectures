@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Synthetic() {
+function ArguInlineFun() {
     function click(name) {
         console.log("Hello " + name);
         
@@ -13,4 +13,4 @@ function Synthetic() {
   )
 }
 
-export default Synthetic
+export default ArguInlineFun

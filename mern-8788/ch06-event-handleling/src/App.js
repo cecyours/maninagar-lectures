@@ -9,6 +9,7 @@ import ReactEvent from "./pages/ReactEvent";
 import EventMulti from "./pages/EventMulti";
 import Synthetic from "./pages/Synthetic";
 import ArguInlineFun from "./pages/ArguInlineFun";
+import ArguEvent from "./pages/ArguEvent";
 
 function App() {
   // const items = [
@@ -31,6 +32,7 @@ function App() {
       {/* <EventMulti /> */}
       <Synthetic />
       <ArguInlineFun /> 
+      <ArguEvent />
     </>
   );
 }
