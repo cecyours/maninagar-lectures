@@ -8,6 +8,7 @@ import CH08Compontents from "./pages/CH08Compontents";
 import ReactEvent from "./pages/ReactEvent";
 import EventMulti from "./pages/EventMulti";
 import Synthetic from "./pages/Synthetic";
+import ArguInlineFun from "./pages/ArguInlineFun";
 
 function App() {
   // const items = [
@@ -29,6 +30,7 @@ function App() {
       {/* <ReactEvent />   */}
       {/* <EventMulti /> */}
       <Synthetic />
+      <ArguInlineFun /> 
     </>
   );
 }
