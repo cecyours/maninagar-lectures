@@ -7,26 +7,28 @@ import ButtonEvents from "./pages/ButtonEvents";
 import CH08Compontents from "./pages/CH08Compontents";
 import ReactEvent from "./pages/ReactEvent";
 import EventMulti from "./pages/EventMulti";
+import Synthetic from "./pages/Synthetic";
 
 function App() {
-  const items = [
-    {
-      url: "/input-events",
-      title: "Input Events",
-    },
-    {
-      url: "/button-events",
-      title: "Input Events",
-    },
-    {
-      url: "/ch08-components",
-      title: "CH08 Components",
-    },
-  ];
+  // const items = [
+  //   {
+  //     url: "/input-events",
+  //     title: "Input Events",
+  //   },
+  //   {
+  //     url: "/button-events",
+  //     title: "Input Events",
+  //   },
+  //   {
+  //     url: "/ch08-components",
+  //     title: "CH08 Components",
+  //   },
+  // ];
   return (
     <>
       {/* <ReactEvent />   */}
-      <EventMulti />
+      {/* <EventMulti /> */}
+      <Synthetic />
     </>
   );
 }
