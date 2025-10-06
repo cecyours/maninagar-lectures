@@ -9,6 +9,7 @@ import UserProfile from "./pages/UserProfile";
 import AddUser from "./pages/AddUser";
 import Logout from "./pages/Logout";
 import CountExample from "./pages/CountExample";
+import ThemeToggle from "./pages/ThemeToggle";
 
 function App() {
   const [render, setRender] = useState(0);
@@ -31,6 +32,7 @@ function App() {
         </Routes>
       </BrowserRouter> */}
       <CountExample />
+      < ThemeToggle />
     </div>
   );
 }
