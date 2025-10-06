@@ -8,12 +8,13 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import UserProfile from "./pages/UserProfile";
 import AddUser from "./pages/AddUser";
 import Logout from "./pages/Logout";
+import CountExample from "./pages/CountExample";
 
 function App() {
   const [render, setRender] = useState(0);
   return (
     <div className="container">
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <div className="d-flex gap-5 bg-light p-2 border rounded-3 m-2">
           <Link to={`/`}>Home</Link>
           <Link to={`/prompt`}>User prompt Navigate</Link>
@@ -28,7 +29,8 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/prompt" element={<Logout />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <CountExample />
     </div>
   );
 }
