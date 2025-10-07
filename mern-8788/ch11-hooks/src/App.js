@@ -10,9 +10,10 @@ import AddUser from "./pages/AddUser";
 import Logout from "./pages/Logout";
 import CountExample from "./pages/CountExample";
 import ThemeToggle from "./pages/ThemeToggle";
+import Timer from "./pages/Timer";
 
 function App() {
-  const [render, setRender] = useState(0);
+  // const [render, setRender] = useState(0);
   return (
     <div className="container">
       {/* <BrowserRouter>
@@ -31,8 +32,10 @@ function App() {
           <Route path="/prompt" element={<Logout />} />
         </Routes>
       </BrowserRouter> */}
-      <CountExample />
-      < ThemeToggle />
+      {/* <CountExample />
+      < ThemeToggle /> */}
+
+      <Timer />
     </div>
   );
 }
