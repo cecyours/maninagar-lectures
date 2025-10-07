@@ -11,6 +11,7 @@ import Logout from "./pages/Logout";
 import CountExample from "./pages/CountExample";
 import ThemeToggle from "./pages/ThemeToggle";
 import Timer from "./pages/Timer";
+import TextInput from "./pages/TextInput";
 
 function App() {
   // const [render, setRender] = useState(0);
@@ -35,7 +36,9 @@ function App() {
       {/* <CountExample />
       < ThemeToggle /> */}
 
-      <Timer />
+      {/* <Timer /> */}
+
+      <TextInput />
     </div>
   );
 }
