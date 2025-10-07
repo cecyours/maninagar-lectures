@@ -12,6 +12,7 @@ import CountExample from "./pages/CountExample";
 import ThemeToggle from "./pages/ThemeToggle";
 import Timer from "./pages/Timer";
 import TextInput from "./pages/TextInput";
+import TextInputULR from "./pages/TextInputULR";
 
 function App() {
   // const [render, setRender] = useState(0);
@@ -39,6 +40,7 @@ function App() {
       {/* <Timer /> */}
 
       <TextInput />
+      < TextInputULR />
     </div>
   );
 }
