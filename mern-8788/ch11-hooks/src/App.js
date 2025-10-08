@@ -15,6 +15,7 @@ import TextInput from "./pages/TextInput";
 import TextInputULR from "./pages/TextInputULR";
 import Doubler from "./pages/Doubler";
 import ColorChanger from "./pages/ColorChanger";
+import RandomNumber from "./pages/RandomNumber";
 
 function App() {
   // const [render, setRender] = useState(0);
@@ -43,9 +44,10 @@ function App() {
 
       {/* <TextInput /> */}
       {/* < TextInputULR /> */}
-      < Doubler />
-
-      < ColorChanger />
+      {/* < Doubler /> */}
+      {/* < ColorChanger /> */}
+        <RandomNumber />
+  
     </div>
   );
 }
