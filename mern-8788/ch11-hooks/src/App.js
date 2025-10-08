@@ -16,6 +16,7 @@ import TextInputULR from "./pages/TextInputULR";
 import Doubler from "./pages/Doubler";
 import ColorChanger from "./pages/ColorChanger";
 import RandomNumber from "./pages/RandomNumber";
+import WelcomeMessage from "./pages/WelcomeMessage";
 
 function App() {
   // const [render, setRender] = useState(0);
@@ -100,6 +101,14 @@ function App() {
               <h4 className="card-title text-center text-info mb-3">Theme Toggle</h4>
               <ThemeToggle />
             </div>
+          </div>
+  
+
+          <div className="col">
+              <div className="card shadow p-3 border-0 h-100">
+                <h4 className="card-title text-center text-info mb-3">Welcome Message</h4>
+                <WelcomeMessage />
+              </div>
           </div>
         </div>
 
