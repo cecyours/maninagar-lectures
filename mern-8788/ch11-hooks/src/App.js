@@ -13,6 +13,7 @@ import ThemeToggle from "./pages/ThemeToggle";
 import Timer from "./pages/Timer";
 import TextInput from "./pages/TextInput";
 import TextInputULR from "./pages/TextInputULR";
+import Doubler from "./pages/Doubler";
 
 function App() {
   // const [render, setRender] = useState(0);
@@ -39,8 +40,9 @@ function App() {
 
       {/* <Timer /> */}
 
-      <TextInput />
-      < TextInputULR />
+      {/* <TextInput /> */}
+      {/* < TextInputULR /> */}
+      < Doubler />
     </div>
   );
 }
