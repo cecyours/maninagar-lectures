@@ -17,6 +17,7 @@ import Doubler from "./pages/Doubler";
 import ColorChanger from "./pages/ColorChanger";
 import RandomNumber from "./pages/RandomNumber";
 import WelcomeMessage from "./pages/WelcomeMessage";
+import TodoList from "./pages/TodoList";
 
 function App() {
   // const [render, setRender] = useState(0);
@@ -52,6 +53,13 @@ function App() {
               <h4 className="card-title text-center text-info mb-3">Text Input</h4>
               <TextInput />
             </div>
+          </div>
+
+          <div className="col">
+              <div className="card shadow p-3 border-0 h-100">
+                <h4 className="card-title text-center text-info mb-3">Todo List</h4>
+                <TodoList />
+              </div>
           </div>
 
           <div className="col">
