@@ -14,6 +14,7 @@ import Timer from "./pages/Timer";
 import TextInput from "./pages/TextInput";
 import TextInputULR from "./pages/TextInputULR";
 import Doubler from "./pages/Doubler";
+import ColorChanger from "./pages/ColorChanger";
 
 function App() {
   // const [render, setRender] = useState(0);
@@ -43,6 +44,8 @@ function App() {
       {/* <TextInput /> */}
       {/* < TextInputULR /> */}
       < Doubler />
+
+      < ColorChanger />
     </div>
   );
 }
