@@ -16,7 +16,7 @@ function SignupForm() {
 
   const submitEvent = (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData);
+    console.log("Form Data Submitted:", formData);3
     setSubmitted(true);
     setFormData({ name: "", email: "", password: "", confirmPassword: "" });
   };
