@@ -18,6 +18,8 @@ import ColorChanger from "./pages/ColorChanger";
 import RandomNumber from "./pages/RandomNumber";
 import WelcomeMessage from "./pages/WelcomeMessage";
 import TodoList from "./pages/TodoList";
+import ListUsers from "./ListUsers";
+import ListUserData from "./pages/ListUserData";
 
 function App() {
   // const [render, setRender] = useState(0);
@@ -39,7 +41,7 @@ function App() {
           <Route path="/prompt" element={<Logout />} />
         </Routes>
       </BrowserRouter> */}
-      <div className="app-container py-4">
+      {/* <div className="app-container py-4">
         <div className="text-center mb-4">
           <h1 className="fw-bold text-primary">React Practice Playground</h1>
           <p className="text-secondary">
@@ -123,8 +125,11 @@ function App() {
         <footer className="text-center mt-4 text-muted small">
           Made with by Tanvi Darji
         </footer>
-      </div>
-  
+      </div> */}
+
+
+      {/* <ListUsers /> */}
+      <ListUserData/>
     </>
   );
 }
