@@ -10,11 +10,11 @@ function SignupForm() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
+  const ChangeEvent = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const submitEvent = (e) => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
     setSubmitted(true);
@@ -32,7 +32,7 @@ function SignupForm() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={submitEvent}>
           <div className="mb-3">
             <label className="form-label">Full Name</label>
             <input
@@ -40,7 +40,7 @@ function SignupForm() {
               className="form-control"
               name="name"
               value={formData.name}
-              onChange={handleChange}
+              onChange={ChangeEvent}
               placeholder="Enter your full name"
             />
           </div>
@@ -52,7 +52,7 @@ function SignupForm() {
               className="form-control"
               name="email"
               value={formData.email}
-              onChange={handleChange}
+              onChange={ChangeEvent}
               placeholder="Enter your email"
             />
           </div>
@@ -64,7 +64,7 @@ function SignupForm() {
               className="form-control"
               name="password"
               value={formData.password}
-              onChange={handleChange}
+              onChange={ChangeEvent}
               placeholder="Enter password"
             />
           </div>
@@ -76,7 +76,7 @@ function SignupForm() {
               className="form-control"
               name="confirmPassword"
               value={formData.confirmPassword}
-              onChange={handleChange}
+              onChange={ChangeEvent}
               placeholder="Confirm password"
             />
           </div>
