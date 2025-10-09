@@ -3,6 +3,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Student from "./components/Student";
 import ControllInput from "./components/ControllInput";
+import UncontrolledInput from "./components/UncontrolledInput";
+import SignupForm from "./components/SignupForm";
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
     //   <Student name="Raju" marks ={80}/>
     //   <Student subject="php" marks ={60}/>
     // </div>
-    <ControllInput/>
+    // <ControllInput/>
+    // <UncontrolledInput/>
+    <SignupForm/>
   );
 }
 
