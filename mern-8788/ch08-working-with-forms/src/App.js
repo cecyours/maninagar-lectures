@@ -2,7 +2,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Student from "./components/Student";
-import SimpleForm from "./components/SimpleForm";
+import ControllInput from "./components/ControllInput";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
     //   <Student name="Raju" marks ={80}/>
     //   <Student subject="php" marks ={60}/>
     // </div>
-    <SimpleForm/>
+    <ControllInput/>
   );
 }
 

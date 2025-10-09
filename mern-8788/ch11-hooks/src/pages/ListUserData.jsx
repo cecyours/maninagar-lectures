@@ -26,7 +26,6 @@ const ListUserData = () => {
         {todos.map((todos, index) => (
             <p>{todos.title}</p>
         ))}
-        
     </div>
   )
 }
