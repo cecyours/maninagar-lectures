@@ -5,6 +5,7 @@ import Student from "./components/Student";
 import ControllInput from "./components/ControllInput";
 import UncontrolledInput from "./components/UncontrolledInput";
 import SignupForm from "./components/SignupForm";
+import ContactForm from "./components/ContactForm";
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
     // </div>
     // <ControllInput/>
     // <UncontrolledInput/>
-    <SignupForm/>
+    // <SignupForm/>
+    <ContactForm/>
   );
 }
 
