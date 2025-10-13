@@ -4,5 +4,9 @@ body {
 }
 
 a {
+<<<<<<< HEAD
   color: #00b7ff;
+=======
+  color: #00B7FF;
+>>>>>>> b330280aaa865a04139e67a3c6476726038afd52
 }
