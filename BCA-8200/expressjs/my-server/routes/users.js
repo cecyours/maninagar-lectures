@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-<<<<<<< HEAD
 
 const students = [
   {
@@ -134,11 +133,3 @@ module.exports = router;
 // PUT -> update
 // uPpdate -> update
 // delete -> Delete 
-=======
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-module.exports = router;
->>>>>>> b330280aaa865a04139e67a3c6476726038afd52
