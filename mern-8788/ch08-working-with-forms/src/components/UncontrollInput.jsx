@@ -14,7 +14,7 @@ function UncontrollInput() {
     <div>
       <form onSubmit={submitEvent}>
         <h3>Uncontrolled Component Example</h3>
-        <input type="text" placeholder="Enter something" ref={inputRef}/>
+        <input type="text" defaultValue = "Tanvi" ref={inputRef}/>
         <button type="submit">Submit</button>
     </form>
     </div>
