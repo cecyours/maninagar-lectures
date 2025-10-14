@@ -8,6 +8,7 @@ import ContactForm from "./components/ContactForm";
 import UncontrollInput from "./components/UncontrollInput";
 import ControlledForm from "./components/ControlledForm";
 import RefExample from "./components/RefExample";
+import SignUpWithValidation from "./components/SignUpWithValidation";
 
 
 
@@ -24,7 +25,8 @@ function App() {
     // <ContactForm/>
     // <UncontrollInput/>
     // <ControlledForm />
-    <RefExample/>
+    // <RefExample/>
+    <SignUpWithValidation/>
   );
 }
 

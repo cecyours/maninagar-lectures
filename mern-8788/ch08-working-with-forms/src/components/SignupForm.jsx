@@ -9,6 +9,7 @@ function SignupForm() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const ChangeEvent = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

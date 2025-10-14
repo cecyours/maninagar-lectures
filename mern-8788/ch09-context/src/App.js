@@ -7,13 +7,15 @@ import { useState } from "react";
 import Teacher from "./component/Teacher";
 import SampleUi from "./component/SampleUi";
 import Coint from "./component/Coint";
+import { ThemeProvider } from "./context/ThemeContext";
+import ThemeButton from "./component/ThemeButton";
 
 function App() {
   const [input, setInput] = useState(0);
   const [isPrimaryTheme, setIsPrimaryTheme] = useState(true);
   return (
     <div className="App">
-      <MyInputContext.Provider value={{ input, setInput }}>
+      {/* <MyInputContext.Provider value={{ input, setInput }}>
         <div className="p-2">
           <div className="row">
             <div className="col">
@@ -50,7 +52,10 @@ function App() {
             <SampleUi />
           </themeContext.Provider>
         </div>
-      </MyInputContext.Provider>
+      </MyInputContext.Provider> */}
+      <ThemeProvider >
+        <ThemeButton />
+      </ThemeProvider>
     </div>
   );
 }
