@@ -1,18 +1,22 @@
-import { createContext, useState } from "react"
+import { createContext, useState} from 'react'
+import { Prev } from 'react-bootstrap/esm/PageItem'
 
-export const ThemeContext = createContext()
+export const ThemeContext = createContext ()
 
 export const ThemeProvider = ({ children }) => {
+
     const [theme, setTheme] = useState('light')
 
-    // toggle theme 
     const toggleTheme = () => {
-        setTheme((prev) => (prev === "light" ? "dark" : "light"))
+        setTheme((Prev) => (Prev === "light" ? "dark" : "light"))
     }
 
-    return (
+  return (
+    <div>
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
             {children}
         </ThemeContext.Provider>
-    )
+    </div>
+  )
 }
+

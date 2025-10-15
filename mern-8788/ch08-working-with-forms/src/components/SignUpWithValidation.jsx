@@ -135,9 +135,7 @@ function SignUpWithValidation() {
             <label className="form-label">Confirm Password</label>
             <input
               type="password"
-              className={`form-control ${
-                errors.confirmPassword ? "is-invalid" : ""
-              }`}
+              className={`form-control ${errors.confirmPassword ? "is-invalid" : ""}`}
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={ChangeEvent}
