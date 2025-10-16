@@ -9,6 +9,11 @@ import SampleUi from "./component/SampleUi";
 import Coint from "./component/Coint";
 import { ThemeProvider } from "./context/ThemeContext";
 import ThemeButton from "./component/ThemeButton";
+import Child from "./component/Child";
+import { MyProvider } from "./context/MyContext";
+import { UserProvider } from "./context/UserContext";
+import Header from "./component/Header";
+import Dashboard from "./component/Dashboard";
 
 function App() {
   const [input, setInput] = useState(0);
@@ -53,9 +58,21 @@ function App() {
           </themeContext.Provider>
         </div>
       </MyInputContext.Provider> */}
-      <ThemeProvider >
+      {/* <ThemeProvider >
         <ThemeButton />
-      </ThemeProvider>
+      </ThemeProvider> */}
+
+        {/* <MyProvider>
+            <div style={{ textAlign: "center", marginTop: "50px" }}>
+                <h1>React Context Example</h1>
+                <Child />
+            </div>
+        </MyProvider> */}
+
+        <UserProvider>
+            <Header />
+            {/* <Dashboard /> */}
+        </UserProvider>
     </div>
   );
 }
