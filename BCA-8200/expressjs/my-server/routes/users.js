@@ -6,14 +6,14 @@ const students = [
   {
     "id": 1,
     "name": "Aarav Sharma",
-    "age": 16,
+    "age": 10,
     "grade": "10th",
     "email": "aarav.sharma@example.com"
   },
   {
     "id": 2,
     "name": "Isha Patel",
-    "age": 15,
+    "age": 11,
     "grade": "9th",
     "email": "isha.patel@example.com"
   },
@@ -27,7 +27,7 @@ const students = [
   {
     "id": 4,
     "name": "Sneha Verma",
-    "age": 14,
+    "age": 12,
     "grade": "8th",
     "email": "sneha.verma@example.com"
   },
@@ -48,7 +48,7 @@ const students = [
   {
     "id": 7,
     "name": "Aditya Gupta",
-    "age": 17,
+    "age": 19,
     "grade": "11th",
     "email": "aditya.gupta@example.com"
   },
@@ -69,20 +69,22 @@ const students = [
   {
     "id": 10,
     "name": "Tanya Kapoor",
-    "age": 16,
+    "age": 13,
     "grade": "10th",
     "email": "tanya.kapoor@example.com"
   }
 ]
 
-
 /* GET users listing. */
 // static routes
+// get all students 
 router.get('/', function (req, res, next) {
   res.json(students)
 });
 
 
+// get students by perticuler id 
+// dynamic route
 router.get('/:id', function (req, res, next) {
   const { id } = req.params;
   const filterdStudent = students.filter(stu => stu.id === Number(id))
@@ -90,19 +92,31 @@ router.get('/:id', function (req, res, next) {
 });
 
 // dynamic routes with params
-router.get('/:emailId', function (req, res, next) {
+router.get('/email/:emailId', function (req, res, next) {
   const { emailId } = req.params;
   const filterdStudent = students.filter(stu => stu.email === emailId)
   res.json(filterdStudent)
 });
 
 
-// delete 
+// delete perticuler by id 
 router.delete('/:id', function (req, res, next) {
   const { id } = req.params;
   const filterdStudent = students.filter(stu => stu.id !== Number(id))
   res.json(filterdStudent)
 });
+
+router.delete('/by-email/:emailId', function (req, res) {
+  const { emailId } = req.params
+  const filterdStudent = students.filter(stu => stu.email !== emailId)
+  res.json(filterdStudent)
+})
+
+
+
+// age > 15 
+// /greater-fifteen
+// /lessthen-fifteen
 
 
 
@@ -121,7 +135,7 @@ module.exports = router;
 
 
 
-// in react 
+// in react
 // const { id }  = useParams();
 
 
@@ -129,7 +143,7 @@ module.exports = router;
 
 // API methods
 // GET  -> Get date
-// Post -> create 
+// Post -> create
 // PUT -> update
 // uPpdate -> update
 // delete -> Delete 

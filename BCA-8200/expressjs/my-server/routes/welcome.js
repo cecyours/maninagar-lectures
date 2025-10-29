@@ -7,8 +7,14 @@ router.get('/', function (req, res) {
 })
 
 router.get('/sania', function (req, res) {
+    res.json({ Name: "sania", Course: "CEC" })
+})
+
+router.get('/sania', function (req, res) {
     res.json({ Name: "sania", Course: "MERN" })
 })
+
+
 
 
 
