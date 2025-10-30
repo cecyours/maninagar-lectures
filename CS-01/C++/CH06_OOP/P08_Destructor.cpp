@@ -19,7 +19,7 @@ public:
 int main() {
     Student s1("Tanvi");  
     s1.display();
-    Student s2("Aryan");  
+    Student s2("Harshpreet");  
     s2.display();
     return 0;
 }
