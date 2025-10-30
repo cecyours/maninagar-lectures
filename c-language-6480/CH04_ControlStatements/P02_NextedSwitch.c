@@ -62,7 +62,7 @@ int main(){
                     break;
                 case 2:
                     printf("Your group is (C-3) mentors.\n");
-                    break;
+                    break;  
             }
             break;
         case 'D':
