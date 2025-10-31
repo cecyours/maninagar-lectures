@@ -77,10 +77,22 @@ const students = [
 
 /* GET users listing. */
 // static routes
+
 // get all students 
 router.get('/', function (req, res, next) {
   res.json(students)
 });
+
+
+router.post('/', function (req, res) {
+  try {
+    const body = req.body
+    students.push(body)
+    res.json(students)
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 
 // get students by perticuler id 

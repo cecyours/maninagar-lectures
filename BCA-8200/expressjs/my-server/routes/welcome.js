@@ -1,24 +1,9 @@
 var express = require('express')
-
 var router = express.Router()
 
+
 router.get('/', function (req, res) {
-    res.json({ Name: "Unknown", Course: "unknown" })
+    res.json({ name: "hello", key: "World" })
 })
 
-router.get('/sania', function (req, res) {
-    res.json({ Name: "sania", Course: "CEC" })
-})
-
-router.get('/sania', function (req, res) {
-    res.json({ Name: "sania", Course: "MERN" })
-})
-
-
-
-
-
-
-
-module.exports = router;
-
+module.exports = router
