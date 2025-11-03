@@ -126,10 +126,34 @@ router.delete('/by-email/:emailId', function (req, res) {
 
 
 
+// Id  
+router.put('/:id', function (req, res) {
+  try {
+    const { id } = req.params  // 
+    const data = req.body
+
+    // return index 
+    const studentIndex = students.findIndex(stu => stu.id === Number(id))
+
+    if (studentIndex === -1) {
+      return res.status(400).json({ Message: "Student not found" })
+    }
+
+    students[studentIndex] = { ...students[studentIndex], ...data }
+
+    res.status(200).json({ message: "user updated successfuly", data: students[studentIndex] })
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
 // age > 15 
 // /greater-fifteen
 // /lessthen-fifteen
 
+
+// CRUD 
 
 
 // static routes
