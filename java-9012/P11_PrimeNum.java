@@ -15,11 +15,11 @@ public class P11_PrimeNum {
             }
         }
 
-        if (count == 2) {
+        if (count == 2)
             System.out.print( n + "is a  prime num");
-        }else {
+        else 
             System.out.print( n + "is not a prime num");
-        }
+        
         
     }
 }
