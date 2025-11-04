@@ -11,5 +11,6 @@ public class P10_StringCheck {
         String str2 = sc.nextLine();
         
         System.out.println(" Are they equal ? " + str1.equals(str2) );
+        System.out.println(" hello  ? " + str1 + " " + str2);
     }
 }
