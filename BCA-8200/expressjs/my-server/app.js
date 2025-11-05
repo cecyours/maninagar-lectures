@@ -8,7 +8,8 @@ var logger = require('morgan');
 // /routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var welcomeRouter = require('./routes/welcome')
+var welcomeRouter = require('./routes/welcome');
+const { default: mongoose } = require('mongoose');
 
 
 var app = express();
@@ -33,6 +34,12 @@ app.use('/welcome', welcomeRouter)
 app.use(function (req, res, next) {
   next(createError(404));
 });
+
+
+const DB_STR = "mongodb+srv://rabariv832:bca8200@cluster0.oglwvvx.mongodb.net/?appName=Cluster0"
+
+mongoose.connect(DB_STR).then(() => console.log("✅ Mongodb Connected Successfully")).catch((err) => console.log("Connection Faild", err)
+)
 
 // error handler
 app.use(function (err, req, res, next) {
