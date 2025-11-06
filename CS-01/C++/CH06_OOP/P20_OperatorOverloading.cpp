@@ -13,7 +13,7 @@ public:
         return Complex(real + c.real, imag + c.imag);
     }
     void display() {
-        cout << real << " + " << imag << "i" << endl;
+        cout << real << " + " << imag << "c" << endl;
     }
 };
 
