@@ -1,5 +1,4 @@
 var express = require('express');
-const { default: User } = require('../models/user');
 var router = express.Router();
 
 
@@ -85,10 +84,10 @@ router.get('/', function (req, res, next) {
 });
 
 
-router.post('/', async function (req, res) {
+router.post('/', function (req, res) {
   try {
     const body = req.body
-    const user = await User.create(body)
+    const user = students.push(body)
     res.status(201).json({ Message: "user created Successfully", user: user })
   } catch (error) {
     console.log(error);
