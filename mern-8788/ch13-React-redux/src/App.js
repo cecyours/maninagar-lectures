@@ -1,28 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import ProductList from './components/ProductList';
-// import Counter from './components/Counter';
-// import ListExample from './components/ListExample';
-// import MapExample from './components/MapExample';
-// import SetExample from './components/SetExample';
-// import ImmutableList from './components/ImmutableList';
-// import ImmutableMap from './components/ImmutableMap';
-// import UserInfo from './pages/UserInfo';
+import { useState } from 'react'
+import './App.css'
+import Cart from './components/Cart'
+import ProductList from './components/ProductList'
 
 function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div className="App">
-      {/* <h1>Hello World</h1> */}
-      {/* <UserInfo /> */}
-      {/* <ListExample /> */}
-      {/* <MapExample /> */}
-      {/* <SetExample /> */}
-      {/* <ImmutableMap /> */}
-
-      <ProductList/>
-
-    </div>
-  );
+    <>
+      <div>
+        <h1 style={{ textAlign: "center", background: "#282c34", color: "white", padding: "10px" }}>
+          My Shopping App (Redux Example)
+        </h1>
+        <ProductList />
+        <Cart />
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
