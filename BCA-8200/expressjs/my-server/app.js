@@ -10,6 +10,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var welcomeRouter = require('./routes/welcome');
 var dbUser = require('./routes/dbuser')
+var productRouter = require('./routes/products')
+
 const { default: mongoose } = require('mongoose');
 
 
@@ -29,6 +31,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/welcome', welcomeRouter)
 app.use('/dbuser', dbUser)
+app.use('/products', productRouter)
+
 
 
 
