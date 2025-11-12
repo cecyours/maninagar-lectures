@@ -18,6 +18,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Product from './pages/products/product';
 import SingleProduct from './pages/products/SingleProduct';
+import CreateProduct from './pages/products/CreateProduct';
 
 function App() {
   return (
@@ -35,12 +36,8 @@ function App() {
             <Route path='/users' element={<User />} />
             <Route path='/movies' element={<Movies />} />
             <Route path='/products' element={<Product />} />
+            <Route path='/products/create' element={<CreateProduct />} />
             <Route path='/products/:id' element={<SingleProduct />} />
-
-
-
-
-
 
 
             {/* this calles dynamic routes */}
