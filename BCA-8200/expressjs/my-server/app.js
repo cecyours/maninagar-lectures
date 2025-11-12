@@ -3,6 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const dotenv = require('dotenv')
+const cors = require('cors')
+
+
+dotenv.config()
 
 
 // /routes
@@ -20,6 +25,19 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+
+// this will allow all origins
+// app.use(cors())
+
+
+// this will allow given port only
+app.use(cors({
+  origin: "http://localhost:3000",
+  methods: ['POST', 'GET', 'PUT', 'DELETE'],
+  credentials: true
+}))
+
 
 app.use(logger('dev'));
 app.use(express.json());
