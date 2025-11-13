@@ -59,9 +59,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            
             <Route path="/users" element={<Users />}>
               <Route path=":id" element={<UserDetail />} />
             </Route>
+            
             <Route path="/profile" element={<Navigate to="/users" replace />} />
             <Route path="/form" element={<Form />} />
             <Route path="*" element={<NotFound />} />
