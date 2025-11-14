@@ -7,3 +7,4 @@ emitter.on('work', () => {
 })
 
 emitter.emit("work");
+    
