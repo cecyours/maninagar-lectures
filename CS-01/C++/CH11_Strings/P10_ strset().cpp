@@ -4,11 +4,12 @@ using namespace std;
 
 int main()
 {
-    char str[] = "C++ Programming";
+    char str[] = "Hello World";
+
     cout << "Original String: " << str << endl;
 
-    strrev(str); 
-    cout << "Reversed String: " << str << endl;
+    strset(str, '*'); 
+    cout << "After strset:  " << str << endl;
     
     return 0;
 }
