@@ -103,6 +103,12 @@ router.delete('/:id', function(req, res, next) {
   res.json(filterdStudent)
 })
 
+router.delete('/by-email/:emailId', function (req, res) {
+  const { emailId } = req.params
+  const filterdStudent = students.filter(stu => stu.email !== emailId)
+  res.json(filterdStudent)
+})
+
 
 module.exports = router;
 
