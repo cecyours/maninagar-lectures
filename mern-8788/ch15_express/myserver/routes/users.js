@@ -80,12 +80,29 @@ router.get('/', function(req, res, next) {
   res.send(students);
 });
 
+
 // get student by id
 router.get('/:id', function(req, res, next) {
   const { id } = req.params;
-  const filterdStudent = students.find(std => std.id === Number(id));
+  const filterdStudent = students.find(std => std. id === Number(id));
   res.send(filterdStudent);
 })
+
+
+// dynamic routes with params
+router.get('/email/:emailId', function (req, res, next) {
+  const { emailId } = req.params;
+  const filterdStudent = students.filter(stu => stu.email === emailId)
+  res.json(filterdStudent)
+});
+
+// delete perticuler by id 
+router.delete('/:id', function(req, res, next) {
+  const { id } = req.params;
+  const filterdStudent = students.find(std => std. id !== Number(id));
+  res.json(filterdStudent)
+})
+
 
 module.exports = router;
 
