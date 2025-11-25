@@ -76,17 +76,25 @@ const students =[
 ];
 
 // get all students 
-router.get('/', function(req, res, next) {
-  res.send(students);
+router.get('/', (req, res) => {
+  res.json(students);
 });
 
+router.post('/', (req, res) => {
+  const newStudent = req.body;
+  students.push(newStudent);
+  res.status(201).json({ message: "Student created", data: newStudent });
+});
 
 // get student by id
-router.get('/:id', function(req, res, next) {
-  const { id } = req.params;
-  const filterdStudent = students.find(std => std. id === Number(id));
-  res.send(filterdStudent);
-})
+router.get('/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const student = students.find(std => std.id === id);
+
+  if (!student) return res.status(404).json({ message: "Student not found" });
+
+  res.json(student);
+});
 
 
 // dynamic routes with params
@@ -96,18 +104,33 @@ router.get('/email/:emailId', function (req, res, next) {
   res.json(filterdStudent)
 });
 
-// delete perticuler by id 
-router.delete('/:id', function(req, res, next) {
-  const { id } = req.params;
-  const filterdStudent = students.find(std => std. id !== Number(id));
-  res.json(filterdStudent)
-})
+// DELETE by ID
+router.delete('/:id', (req, res) => {
+  const id = Number(req.params.id);
 
-router.delete('/by-email/:emailId', function (req, res) {
-  const { emailId } = req.params
-  const filterdStudent = students.filter(stu => stu.email !== emailId)
-  res.json(filterdStudent)
-})
+  const index = students.findIndex(std => std.id === id);
+  if (index === -1) return res.status(404).json({ message: "Student not found" });
+
+  const deleted = students.splice(index, 1);
+
+  res.json({
+    message: "Student deleted",
+    deleted: deleted[0],
+    remaining: students
+  });
+});
+
+// DELETE by email
+router.delete('/by-email/:emailId', (req, res) => {
+  const { emailId } = req.params;
+
+  const remaining = students.filter(stu => stu.email !== emailId);
+
+  res.json({
+    message: "Student deleted by email",
+    remaining
+  });
+});
 
 
 module.exports = router;
