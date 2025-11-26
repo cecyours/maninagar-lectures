@@ -1,15 +1,28 @@
-import React, { useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
-const CategoryCreate = () => {
+const CategoryUpdate = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: "",
     description: "",
   });
 
-  const navigate = useNavigate();
+  const fetchCategoryData = async () => {
+    try {
+      const res = await axios.get(`http://localhost:9000/categories/${id}`);
+
+      setFormData(res.data.data);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    fetchCategoryData();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,28 +35,23 @@ const CategoryCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:9000/categories",
+      const res = await axios.put(
+        `http://localhost:9000/categories/${id}`,
         formData
       );
 
-      console.log(response);
-
-      if (response.status === 201) {
-        toast.success("Category created successfully");
+      if (res.status === 200) {
+        toast.success("Category updated successfully");
         navigate("/admin/categories");
       }
-    } catch (error) {
-      console.log(error);
-      alert("Category creation failed");
-    }
+    } catch (error) {}
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
       <div className="w-full max-w-md bg-white shadow-md rounded-lg p-8">
         <h1 className="text-2xl font-semibold mb-6 text-center">
-          Create Category
+          Update Category
         </h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -91,4 +99,4 @@ const CategoryCreate = () => {
   );
 };
 
-export default CategoryCreate;
+export default CategoryUpdate;

@@ -7,6 +7,7 @@ import ProductList from './admin/products/ProductList';
 import ProductCreate from './admin/products/ProductCreate';
 import CategoriesList from './admin/categories/CategoriesList';
 import CategoryCreate from './admin/categories/CategoryCreate';
+import CategoryUpdate from './admin/categories/CategoryUpdate';
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
 
           <Route path='/admin/categories' element={<CategoriesList />} />
           <Route path='/admin/categories/create' element={<CategoryCreate />} />
+          <Route path='/admin/categories/:id' element={<CategoryUpdate />} />
+
 
 
 
@@ -28,6 +31,7 @@ function App() {
 
           <Route path='/admin/products' element={<ProductList />} />
           <Route path='/admin/products/create' element={<ProductCreate />} />
+
 
 
         </Routes>
