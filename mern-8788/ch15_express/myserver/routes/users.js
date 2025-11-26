@@ -132,6 +132,22 @@ router.delete('/by-email/:emailId', (req, res) => {
   });
 });
 
+//PUT
+router.put('/:id', (req, res) => {
+  const id = Number(req.params.id);
+
+  const index = students.findIndex(std => std.id === id);
+  if(index === -1) return res.status(404).json({message: "Student not found"});
+
+  const updatedData = req.body;
+
+  students[index] = { ...students[index], ...updatedData };
+
+  res.json({
+    message: "Student updated successfully",
+    data: students[index]
+  });
+});
 
 module.exports = router;
 
