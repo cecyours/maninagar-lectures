@@ -7,6 +7,6 @@ T maxi(T a, T b){
 } 
 
 int main(){
-    cout<<"Max from "<<maxi<double>(2.5,5.20)<<endl;
-    cout<<"Max from "<<maxi<double>(35.42,20)<<endl;
+    cout<< " Max from " << maxi <double> (2.5,5.20) <<endl;
+    cout<<" Max from "<< maxi <double> (35.42,20) <<endl;
 }
