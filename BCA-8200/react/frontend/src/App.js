@@ -25,10 +25,6 @@ function App() {
           <Route path='/admin/categories/:id' element={<CategoryUpdate />} />
 
 
-
-
-
-
           <Route path='/admin/products' element={<ProductList />} />
           <Route path='/admin/products/create' element={<ProductCreate />} />
 

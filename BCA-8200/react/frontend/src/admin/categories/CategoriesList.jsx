@@ -1,7 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
+import axiosInstance from "../../config/axiosConfig";
 
 const CategoriesList = () => {
   const [categories, setCategories] = useState([]);
@@ -10,7 +10,7 @@ const CategoriesList = () => {
 
   const handleFetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:9000/categories");
+      const res = await axiosInstance.get("/categories");
       setCategories(res.data.data);
     } catch (error) {
       console.log(error);
@@ -23,9 +23,7 @@ const CategoriesList = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(
-        `http://localhost:9000/categories/${id}`
-      );
+      const response = await axiosInstance.delete(`/categories/${id}`);
 
       if (response.status === 200) {
         toast.error("Category deleted successfully");

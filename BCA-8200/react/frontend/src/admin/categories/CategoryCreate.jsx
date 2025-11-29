@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router";
+import axiosInstance from "../../config/axiosConfig";
 
 const CategoryCreate = () => {
   const [formData, setFormData] = useState({
@@ -22,10 +22,7 @@ const CategoryCreate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:9000/categories",
-        formData
-      );
+      const response = await axiosInstance.post("/categories", formData);
 
       console.log(response);
 

@@ -1,7 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router";
+import axiosInstance from "../../config/axiosConfig";
 
 const CategoryUpdate = () => {
   const { id } = useParams();
@@ -14,7 +14,7 @@ const CategoryUpdate = () => {
 
   const fetchCategoryData = async () => {
     try {
-      const res = await axios.get(`http://localhost:9000/categories/${id}`);
+      const res = await axiosInstance.get(`/categories/${id}`);
 
       setFormData(res.data.data);
     } catch (error) {}
@@ -35,10 +35,7 @@ const CategoryUpdate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(
-        `http://localhost:9000/categories/${id}`,
-        formData
-      );
+      const res = await axiosInstance.put(`/categories/${id}`, formData);
 
       if (res.status === 200) {
         toast.success("Category updated successfully");
