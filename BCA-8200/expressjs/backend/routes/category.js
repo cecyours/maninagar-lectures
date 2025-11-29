@@ -13,6 +13,17 @@ router.get('/', async function (req, res, next) {
 });
 
 
+router.get('/select', async function (req, res, next) {
+    try {
+        const categories = await Category.find().select('title')
+        res.status(200).json({ message: "Category fetched Successfully", data: categories })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Category fetching faied", error })
+    }
+});
+
+
 
 // 691d5f3a8a399f7664961f0f
 router.post('/', async function (req, res, next) {
