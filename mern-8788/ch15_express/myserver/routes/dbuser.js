@@ -12,4 +12,29 @@ router.get('/', async function (req, res, next) {
     }
 });
 
+//get user by id
+router.get('/:id', async function (req, res, next) {
+    try {
+        const {id} = req.params
+        const user = await User.findById(id)
+        res.status(200).json({ message: "Get all User Successfully", user:user})
+    }catch(error) {
+        res.status(500).json({ message: "failed to create user", error:error})
+
+    }
+});
+
+// post for create user
+router.post('/', async function (req, res, next) {
+    try {
+        const body = req.body
+        const createUser = await User.create(body)
+        res.status(201).json({ message: "User created Successfully", user:createUser })
+    }catch{
+        console.log(error);
+        res.status(500).json({ message: "failed to create user", error: error })
+    }
+    
+})
+
 module.exports = router;
