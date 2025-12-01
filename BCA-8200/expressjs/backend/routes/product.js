@@ -5,10 +5,8 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', async function (req, res, next) {
     try {
-        const createdProduct = await Product.find().populate('category', 'title ')
-
+        const createdProduct = await Product.find().populate('category', 'title')
         res.status(200).json({ message: "Product Fetched Successfully", createdProduct })
-
     } catch (error) {
         res.status(500).json({ message: "Product fetching faied", error })
     }
