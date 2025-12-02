@@ -15,7 +15,7 @@ int main()
         else
             throw "Unknown input"; 
     }
-    catch (int e)
+    catch (int e)   
     {
         cout << "Caught an integer exception!" << endl;
     }
