@@ -45,10 +45,21 @@ router.put('/:id', async function (req, res, next) {
 
         const user =  await User.findByIdAndUpdate(id, updateUserData, { new: true })
         res.status(200).json({ message: "User Update Successfully", user: user })
-    }catch{
+    }catch (error) {
         console.log(error);
         res.status(500).json({ message: "failed to update user", error: error }) 
     }
 });
 
+// delete for delete user
+router.delete('/:id', async function (req, res, next) {
+    try {
+        const { id } = req.params
+        const deleteUser = await User.findByIdAndDelete(id)
+        res.status(200).json ({ message: "User deleted Successfully", user: deleteUser })
+    }catch (error){
+        console.log(error);
+        res.status(500).json({ message: "failed to dekete user", error:error })
+    }
+});
 module.exports = router;
