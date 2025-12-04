@@ -62,4 +62,5 @@ router.delete('/:id', async function (req, res, next) {
         res.status(500).json({ message: "failed to dekete user", error:error })
     }
 });
+
 module.exports = router;
