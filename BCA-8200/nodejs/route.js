@@ -4,9 +4,6 @@ const fs = require('fs')
 const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
 
-
-
-    
     switch (req.url) {
         case '/':
             res.write("welcome to home page")

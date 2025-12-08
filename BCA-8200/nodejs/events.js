@@ -13,7 +13,7 @@ emitter.on('work', () => {
 
 
 // call the event 
-emitter.emit("work")
+emitter.emit("work")    
 
 
 // MVC
