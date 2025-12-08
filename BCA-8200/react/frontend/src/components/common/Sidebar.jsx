@@ -20,6 +20,8 @@ const Sidebar = () => {
 
   return (
     <div className="h-screen w-64 bg-gray-900 text-white p-5 flex flex-col gap-3">
+      <h1 className="text-center font-semibold text-2xl ">XYZ Store</h1>
+
       {NavLinks.map((link) => {
         const isActive = location.pathname === link.href;
 
