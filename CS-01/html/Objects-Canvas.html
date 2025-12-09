@@ -12,7 +12,7 @@
   <body>
     <!-- <object width="1000" height="1000" data="./bootstrap.html" type=""></object> -->
 
-    <canvas id="myCanvas" width="400" height="200"> </canvas>
+    <canvas id="myCanvas" width="500" height="900"> </canvas>
   </body>
 
   <script>
@@ -29,10 +29,32 @@
     ctx.arc(150, 150, 50, 0, 2 * Math.PI);
     ctx.fillStyle = "red";
     ctx.fill();
-    ctx.stroke(); 
+    ctx.stroke();
 
     ctx.font = "24px Arial";
     ctx.fillStyle = "green";
     ctx.fillText("Hello Canvas!", 100, 50);
+
+
+    // Face Circle
+    ctx.beginPath();
+    ctx.arc(80, 190, 40, 0, Math.PI * 2);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.stroke();
+
+    // Eyes
+    ctx.beginPath();
+    ctx.arc(65, 175, 5, 0, Math.PI * 2); // left eye
+    ctx.arc(95, 175, 5, 0, Math.PI * 2); // right eye
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    // Smile
+    ctx.beginPath();
+    ctx.arc(80, 195, 20, 0, Math.PI); // half circle
+    ctx.stroke();
+
+    
   </script>
 </html>
