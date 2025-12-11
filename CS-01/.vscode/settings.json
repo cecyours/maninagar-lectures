@@ -7,5 +7,6 @@
         "string.h": "c",
         "algorithm": "c",
         "cmath": "c"
-    }
+    },
+    "liveServer.settings.port": 5501
 }
