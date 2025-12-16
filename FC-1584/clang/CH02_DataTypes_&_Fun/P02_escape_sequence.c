@@ -1,6 +1,11 @@
 #include<stdio.h>
 
 int main(){
+    
+    
+    int name = 10;
+
+     
     printf("Hello\tworld\n"); // \t: tab, \n: new line
     printf("123\r456\f78\b90"); 
     
