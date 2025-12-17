@@ -1,5 +1,7 @@
 import './App.css'
 import Button from './components/Button'
+import InputWithArgument from './components/InputWithArgument'
+import KeyBord from './components/KeyBord'
 import Student from './components/Student'
 import StudentList from './components/StudentList'
 
@@ -27,7 +29,11 @@ function App() {
 
         {/* <StudentList students={Students} /> */}
 
-        <Button />
+        {/* <Button /> */}
+
+        {/* <KeyBord /> */}
+
+        <InputWithArgument />
       </div>
     </>
   )
