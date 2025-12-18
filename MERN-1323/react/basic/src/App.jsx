@@ -4,6 +4,7 @@ import InputWithArgument from './components/InputWithArgument'
 import KeyBord from './components/KeyBord'
 import Student from './components/Student'
 import StudentList from './components/StudentList'
+import TypingPlayground from './components/TypingPlayground'
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
         {/* <KeyBord /> */}
 
         <InputWithArgument />
+
+        <TypingPlayground />
       </div>
     </>
   )
