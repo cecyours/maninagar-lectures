@@ -27,4 +27,39 @@ router.post('/', async function (req, res, next) {
     }
 });
 
+router.get('/:id', async function (req, res, next) {
+    try {
+        const { id } = req.params
+        const products = await Product.findById(id)
+        res.status(200).json({ message: "Product fetched Successfully", data: products })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Product fetching faied", error })
+    }
+});
+
+router.put('/:id', async function (req, res, next) {
+    try {
+        const body = req.body
+        const { id } = req.params
+        const products = await Product.findByIdAndUpdate(id, body, { new: true })
+        res.status(200).json({ message: "Product fetched Successfully", data: products })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Product fetching faied", error })
+    }
+});
+
+
+router.delete('/:id', async function (req, res, next) {
+    try {
+        const { id } = req.params
+        const products = await Product.findByIdAndDelete(id)
+        res.status(200).json({ message: "Product deleted Successfully", data: products })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Product fetching faied", error })
+    }
+});
+
 module.exports = router;
