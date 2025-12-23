@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Controlled from './components/Controlled'
 import UnControlled from './components/UnControlled';
+import ContactForm from './components/ContactForm';
 
 function App() {
 
@@ -10,9 +11,11 @@ function App() {
   return (
     <>
       <div>
-         <Controlled />
+         {/* <Controlled /> */}
 
-         <UnControlled />
+         {/* <UnControlled /> */}
+
+         <ContactForm />
       </div>
     </>
   )
