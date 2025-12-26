@@ -1,7 +1,10 @@
+
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router";
 import axiosInstance from "../../config/axiosConfig";
+import { Pen, Trash } from "lucide-react";
+import BreadCrumb from "../../components/common/BreadCrumb";
 
 const CategoriesList = () => {
   const [categories, setCategories] = useState([]);
@@ -39,11 +42,12 @@ const CategoriesList = () => {
     navigate(id);
   };
 
-  return (
-    <div className="p-6">
-      <div className="flex justify-between mb-4 ">
-        <h1 className="text-2xl font-semibold ">List Category</h1>
+  const breadCrumbItems = [{ title: "Categories", link: null }];
 
+  return (
+    <div className="">
+      <div className="flex justify-between mb-4 ">
+        <BreadCrumb items={breadCrumbItems} />
         <Link
           className="bg-green-300 shadow-sm px-4 py-1  rounded-xl"
           to={"create"}
@@ -65,20 +69,20 @@ const CategoriesList = () => {
           <tbody>
             {categories.map((category) => (
               <tr key={category._id} className="hover:bg-gray-50">
-                <td className="p-3 border-b">{category.title}</td>
-                <td className="p-3 border-b">{category.description}</td>
+                <td className="p-2 border-b">{category.title}</td>
+                <td className="p-2 border-b">{category.description}</td>
                 <td className="flex justify-center border-b  p-3 gap-2 font-semibold   ">
                   <button
                     onClick={() => handleEdit(category._id)}
-                    className="bg-blue-300 rounded-xl shadow-sm px-3  cursor-pointer"
+                    className="text-blue-500  "
                   >
-                    Edit
+                    <Pen size={16} />
                   </button>
                   <button
                     onClick={() => handleDelete(category._id)}
-                    className="bg-red-300 rounded-xl shadow-sm px-3 cursor-pointer"
+                    className="text-red-500"
                   >
-                    Delete
+                    <Trash size={16} />
                   </button>
                 </td>
               </tr>

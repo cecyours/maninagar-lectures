@@ -14,15 +14,6 @@ const ProductUpdate = () => {
     category: "",
   });
 
-//   const fetchProductData = async () => {
-//     try {
-//       const res = await axiosInstance.get(`/products/${id}`);
-//       setFormData(res.data.product); // <- use "product" instead of "createdProduct"
-//     } catch (error) {
-//       console.log(error);
-//       toast.error("Failed to fetch product data");
-//     }
-//   };
 
   const fetchProductData = async () => {
     try {
