@@ -11,11 +11,11 @@ function App() {
   return (
     <>
       <div>
-         {/* <Controlled /> */}
+         <Controlled />
 
          {/* <UnControlled /> */}
 
-         <ContactForm />
+         {/* <ContactForm /> */}
       </div>
     </>
   )
