@@ -10,4 +10,5 @@ void main(){
     c = a ^ b;
     
     printf("%d ^ %d = %d\n", a, b, c);
+    
 }
