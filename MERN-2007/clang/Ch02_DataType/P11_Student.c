@@ -7,7 +7,7 @@ int main()
     float marks;
 
     printf("Enter name of student: ");
-    scanf("%s", name);
+    scanf("%s", &name);
 
     printf("Enter roll number: ");
     scanf("%d", &rollNo);
