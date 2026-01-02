@@ -9,9 +9,16 @@ import CategoryCreate from './admin/categories/CategoryCreate';
 import CategoryUpdate from './admin/categories/CategoryUpdate';
 import Sidebar from './components/common/Sidebar';
 import ProductUpdate from './admin/products/ProductUpdate';
+import UserProducts from './user/pages/UserProducts';
+
+import { Toaster } from "react-hot-toast";
+
+
 
 function App() {
   return (
+    <>
+    <Toaster />
     <Router>
       <div className="flex min-h-screen bg-gray-100">
         
@@ -28,11 +35,13 @@ function App() {
             <Route path="/admin/products" element={<ProductList />} />
             <Route path="/admin/products/create" element={<ProductCreate />} />
             <Route path="/admin/products/:id" element={<ProductUpdate />} />
+            <Route path="/user/products" element={<UserProducts />} />
           </Routes>
         </div>
 
       </div>
     </Router>
+    </>
   );
 }
 

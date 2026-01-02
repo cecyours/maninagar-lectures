@@ -9,9 +9,17 @@ const ProductCreate = () => {
     description: "",
     category: "",
     price: "",
+    image: "",
   });
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
+  
+  const [image, setImage] = useState(null);
+
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
+  };
+
 
   const handleChange = (e) => {
     const { name, value, checked } = e.target;
@@ -30,25 +38,55 @@ const ProductCreate = () => {
 
       console.log(res.data.data);
       setCategories(res.data.data);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   useEffect(() => {
     fetchCategories();
   }, []);
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const res = await axiosInstance.post("/products", formData);
+  //     if (res.status === 201) {
+  //       toast.success("Product created successfully");
+  //       navigate("/admin/products");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.category) {
+      toast.error("Please select a category");
+      return;
+    }
+
+    const data = new FormData();
+    data.append("title", formData.title);
+    data.append("description", formData.description);
+    data.append("category", formData.category);
+    data.append("price", formData.price);
+    data.append("images", image);
+
     try {
-      const res = await axiosInstance.post("/products", formData);
+      const res = await axiosInstance.post("/products", data); 
       if (res.status === 201) {
         toast.success("Product created successfully");
         navigate("/admin/products");
       }
     } catch (error) {
-      console.log(error);
+      toast.error(error.response?.data?.message || "Something went wrong");
     }
   };
+
+
+
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
@@ -99,12 +137,15 @@ const ProductCreate = () => {
             <select
               name="category"
               onChange={handleChange}
-              value={formData.category}
-              id=""
+              value={formData.category || ''}
               className="w-full border border-gray-300 px-3 py-2 rounded-md outline-none focus:ring-2 focus:ring-blue-500"
+              required
             >
+              <option value="">Select a category</option>
               {categories.map((category) => (
-                <option value={category._id}>{category.title}</option>
+                <option key={category._id} value={category._id}>
+                  {category.title}
+                </option>
               ))}
             </select>
           </div>
@@ -124,6 +165,19 @@ const ProductCreate = () => {
               onChange={handleChange}
             />
           </div>
+
+          <div>
+            <label className="block text-gray-700 font-medium mb-1">
+              Product Image
+            </label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="w-full border border-gray-300 px-3 py-2 rounded-md"
+            />
+          </div>
+
 
           <button
             type="submit"
