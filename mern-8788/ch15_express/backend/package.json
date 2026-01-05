@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "cloudinary": "^1.41.3",
     "cookie-parser": "~1.4.4",
     "cor": "^0.0.0",
     "cors": "^2.8.5",
@@ -15,6 +16,8 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "mongoose": "^9.0.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "multer": "^2.0.2",
+    "multer-storage-cloudinary": "^4.0.0"
   }
 }

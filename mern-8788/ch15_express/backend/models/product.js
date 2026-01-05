@@ -16,8 +16,18 @@ const productSchema = new mongoose.Schema({
     price: {
         type: Number,
         required: true
-    }
-})
+    },
+    images: [{
+        url: {
+            type: String,
+            required: true
+        },
+        public_id: {
+            type: String,
+            required: true
+        }
+    }],
+});
 
 const Product = mongoose.model('Product', productSchema)
 
