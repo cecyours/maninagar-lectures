@@ -8,45 +8,66 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
     />
+    <style>
+      body {
+        background: #f9fafb;
+      }
+      h1, h4 {
+        font-weight: 700;
+      }
+      .card {
+        border: none;
+        border-radius: 10px;
+      }
+      .card img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      .media-title {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    </style>
   </head>
+
   <body class="bg-light">
     <div class="container py-5">
-      <h1 class="mb-4 text-center">Media Examples in HTML</h1>
+
+      <h1 class="mb-5 text-center text-primary">Media Examples in HTML</h1>
 
       <!-- Image Examples Row -->
       <div class="row g-4 mb-5">
+
         <!-- Standard Image -->
         <div class="col-md-4">
-          <div class="card shadow-sm">
+          <div class="card shadow h-100">
             <img
               src="./media/media1.jpg"
               alt="Sample Image"
-              class="img-fluid rounded"
+              class="img-fluid"
             />
             <div class="card-body">
-              <p class="card-text text-center">
-                Standard Image using &lt;img&gt;
-              </p>
+              <p class="media-title text-center">Standard Image using &lt;img&gt;</p>
             </div>
           </div>
         </div>
 
         <!-- Picture Element -->
         <div class="col-md-4">
-          <div class="card shadow-sm">
+          <div class="card shadow h-100">
             <picture>
               <source
-                srcset="https://via.placeholder.com/300x200.png?text=High+Res"
+                srcset="https://via.placeholder.com/600x350.png?text=High+Res+Image"
                 media="(min-width: 800px)"
               />
               <img
                 src="./media/download (2).jpeg"
-                alt="Responsive image"
-                class="img-fluid rounded"
+                alt="Responsive Picture"
+                class="img-fluid"
               />
             </picture>
             <div class="card-body">
-              <p class="card-text text-center">
+              <p class="media-title text-center">
                 Responsive Image using &lt;picture&gt;
               </p>
             </div>
@@ -55,33 +76,36 @@
 
         <!-- Linked Image -->
         <div class="col-md-4">
-          <div class="card shadow-sm">
+          <div class="card shadow h-100">
             <a
               href="https://newsroom.gettyimages.com/en/getty-images/getty-images-statement"
               target="_blank"
             >
               <img
                 src="./media/media2.jpeg"
-                alt="Linked image"
-                class="img-fluid rounded"
+                alt="Linked Image"
+                class="img-fluid"
               />
             </a>
             <div class="card-body">
-              <p class="card-text text-center">Linked Image using &lt;a&gt;</p>
+              <p class="media-title text-center">
+                Linked Image using &lt;a&gt;
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Image Map Example -->
+      <!-- Image Map Section -->
       <div class="text-center">
-        <h4 class="mb-3">Image Map Example</h4>
+        <h4 class="mb-3 text-success">Image Map Example</h4>
+
         <img
           src="./media/worldmap.jpg"
           alt="World Map"
           usemap="#worldmap"
-          width="600"
-          class="img-fluid"
+          width="650"
+          class="img-fluid border rounded shadow"
         />
 
         <map name="worldmap">
@@ -98,7 +122,10 @@
             alt="Europe"
           />
         </map>
-        <p class="text-muted mt-2">Click on America or Europe</p>
+
+        <p class="text-muted mt-3">
+          Click on the highlighted areas: America or Europe
+        </p>
       </div>
     </div>
 

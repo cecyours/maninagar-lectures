@@ -9,7 +9,7 @@ class DataPrinter
 private:
     Container<int> data;
 
-public:
+public: 
     DataPrinter(initializer_list<int> lst) : data(lst) {}
     void display()
     {
