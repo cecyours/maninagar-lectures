@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const dotenv = require('dotenv')
 const cors = require('cors')
+const { default: mongoose } = require('mongoose');
 
 
 dotenv.config()
@@ -13,7 +14,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var categoryRouter = require('./routes/category')
 var productRouter = require('./routes/product')
-const { default: mongoose } = require('mongoose');
+var todosRouter = require('./routes/todos')
 
 var app = express();
 
@@ -25,7 +26,7 @@ app.set('view engine', 'jade');
 
 // this will allow given port only
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGIN,
+  origin: "http://localhost:3000",
   methods: ['POST', 'GET', 'PUT', 'DELETE'],
   credentials: true
 }))
@@ -42,6 +43,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/categories', categoryRouter)
 app.use('/products', productRouter)
+app.use('/todos', todosRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
