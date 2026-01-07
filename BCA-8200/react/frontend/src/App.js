@@ -9,6 +9,7 @@ import CategoriesList from './admin/categories/CategoriesList';
 import CategoryCreate from './admin/categories/CategoryCreate';
 import CategoryUpdate from './admin/categories/CategoryUpdate';
 import Sidebar from './components/common/Sidebar';
+import TodoList from './admin/todo/TodoList';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/admin/categories/:id' element={<CategoryUpdate />} />
             <Route path='/admin/products' element={<ProductList />} />
             <Route path='/admin/products/create' element={<ProductCreate />} />
+            <Route path='/admin/todos' element={<TodoList />} />
           </Routes>
         </div>
       </div>

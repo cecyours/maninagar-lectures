@@ -1,5 +1,5 @@
 import React from "react";
-import { Database, Grid } from "lucide-react";
+import { CheckCircle, Database, Grid } from "lucide-react";
 import { Link, useLocation } from "react-router";
 
 const Sidebar = () => {
@@ -15,6 +15,11 @@ const Sidebar = () => {
       title: "Product",
       icon: <Database className="w-5 h-5" />,
       href: "/admin/products",
+    },
+    {
+      title: "Todos",
+      icon: <CheckCircle className="w-5 h-5" />,
+      href: "/admin/todos",
     },
   ];
 
