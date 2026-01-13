@@ -22,7 +22,7 @@ int main(){
     while (num > 0)
     {
         /* code */
-        rem = num%10;
+        rem = num%10;   
         arm = arm+pow(rem,digits);
         num = num/10;
     }
