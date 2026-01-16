@@ -1,41 +1,36 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { useEffect, useState } from 'react';
+import "./App.css";
+
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar";
+import Users from "./pages/Users";
+import UserView from "./pages/UserView";
+import NotFound from "./components/NotFound";
 
 function App() {
-
-  const [todos, setTodos] = useState([])
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
-      .then(response => response.json())
-      .then(json => setTodos(json))
-  }, [])
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={reactLogo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-          {todos.map((t, index) => (
-            <div>
-              {t.title}
-              < hr />
-            </div>
-          ))}
-          Learn React
-        </a>
-      </header>
+          {/* static routes */}
+          <Route path="/about-us" element={<About />} />
+          <Route path="/contact-us" element={<Contact />} />
+          <Route path="/users" element={<Users />} />
+
+          {/* dynamic routes */}
+          <Route path="/users/:id" element={<UserView />} />
+
+          {/* path-less */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
