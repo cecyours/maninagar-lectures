@@ -14,6 +14,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var categoryRouter = require('./routes/category');
 var productRouter = require('./routes/product');
+var todosRouter = require('./routes/todos');
+
+
+
 
 var app = express();
 
@@ -39,6 +43,9 @@ app.use('/users', usersRouter);
 app.use('/categories', categoryRouter);
 app.use('/products', productRouter);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/todos', todosRouter);
+
+
 
 // error handler
 app.use((err, req, res, next) => {
