@@ -12,6 +12,7 @@ import ProductUpdate from './admin/products/ProductUpdate';
 import UserProducts from './user/pages/UserProducts';
 
 import { Toaster } from "react-hot-toast";
+import TodoList from './admin/todo/TodoList';
 
 
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/admin/products/create" element={<ProductCreate />} />
             <Route path="/admin/products/:id" element={<ProductUpdate />} />
             <Route path="/user/products" element={<UserProducts />} />
+            <Route path='/admin/todos' element={<TodoList />} />
           </Routes>
         </div>
 

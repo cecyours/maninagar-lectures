@@ -1,5 +1,5 @@
 import React from "react";
-import { Database, Grid, ShoppingCart } from "lucide-react";
+import { CheckCircle, Database, Grid, ShoppingCart } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
@@ -16,6 +16,11 @@ const Sidebar = () => {
       icon: <Database className="w-5 h-5" />,
       href: "/admin/products",
     },
+    {
+      title: "Todos",
+      icon: <CheckCircle className="w-5 h-5" />,
+      href: "/admin/todos",
+    },
   ];
 
   const userLinks = [
@@ -28,7 +33,6 @@ const Sidebar = () => {
 
   return (
     <div className="h-screen w-64 bg-gray-900 text-white p-5 flex flex-col gap-6">
-
       {/* ADMIN SECTION */}
       <div>
         <h3 className="text-gray-400 text-sm mb-2">ADMIN</h3>
@@ -68,7 +72,6 @@ const Sidebar = () => {
           );
         })}
       </div>
-
     </div>
   );
 };
