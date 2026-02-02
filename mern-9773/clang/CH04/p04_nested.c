@@ -9,7 +9,7 @@ void main()
    
     if (a > b){              
         if (a > c) 
-        {S
+        {
             max = a;
         }else{
             max = c;
