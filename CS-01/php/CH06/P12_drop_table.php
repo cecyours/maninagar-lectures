@@ -10,12 +10,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
+$sql = "DROP TABLE MyGuests";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
+    echo "Table MyGuests dropped successfully";
 } else {
-    echo "Error updating record: " . $conn->error;
+    echo "Error dropping table: " . $conn->error;
 }
 
 $conn->close();

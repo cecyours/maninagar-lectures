@@ -24,3 +24,6 @@ if ($result->num_rows > 0) {
 }
 
 $conn->close();
+
+
+// $sql = "SELECT * FROM Orders LIMIT 10 OFFSET 15";
