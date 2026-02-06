@@ -8,8 +8,9 @@ void main()
     int status;
     
     printf("Enter password : ");
-    gets(input);
-
+    // gets(input);
+    scanf("%s", input);
+    
     status = strcmp(input, password);
     printf("status : %d\n", status);
 
