@@ -80,4 +80,9 @@ router.get("/", (req, res, next) => {
   res.json(students);
 });
 
+router.post('/', (req, res) => {
+  const newStudent = req.body;
+  res.status(201).json({ message: "Student created", data: newStudent });
+});
+
 module.exports = router;
