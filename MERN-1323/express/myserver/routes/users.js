@@ -74,15 +74,31 @@ const students = [
   },
 ];
 
-
 /* GET users listing. */
 router.get("/", (req, res, next) => {
   res.json(students);
 });
 
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   const newStudent = req.body;
   res.status(201).json({ message: "Student created", data: newStudent });
+});
+
+// get student by id
+router.get("/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const student = students.find((std) => std.id === id);
+
+  if (!student) return res.status(404).json({ message: "Student not found" });
+
+  res.json(student);
+});
+
+// dynamic routes with params
+router.get("/email/:emailId", function (req, res, next) {
+  const { emailId } = req.params;
+  const filterdStudent = students.filter((stu) => stu.email === emailId);
+  res.json(filterdStudent);
 });
 
 module.exports = router;
