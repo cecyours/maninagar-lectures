@@ -9,9 +9,9 @@ struct Student
 };
 
 void main(){
-    struct Student s1 = { "Rosewin", 99, 89.66 };
+    struct Student s1 = { "Mishva", 99, 89.66 };
 
-    // strcpy(s1.name, "Rosewin");
+    // strcpy(s1.name, "Mishva");
     // s1.rollno = 01;
     // s1.marks = 92.5;
 
