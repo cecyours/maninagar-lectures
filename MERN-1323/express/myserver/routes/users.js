@@ -101,4 +101,33 @@ router.get("/email/:emailId", function (req, res, next) {
   res.json(filterdStudent);
 });
 
+// DELETE by ID
+router.delete("/:id", (req, res) => {
+  const id = Number(req.params.id);
+
+  const index = students.findIndex((std) => std.id === id);
+  if (index === -1)
+    return res.status(404).json({ message: "Student not found" });
+
+  const deleted = students.splice(index, 1);
+
+  res.json({
+    message: "Student deleted",
+    deleted: deleted[0],
+    remaining: students,
+  });
+});
+
+// DELETE by email
+router.delete("/by-email/:emailId", (req, res) => {
+  const { emailId } = req.params;
+
+  const remaining = students.filter((stu) => stu.email !== emailId);
+
+  res.json({
+    message: "Student deleted by email",
+    remaining,
+  });
+});
+
 module.exports = router;
