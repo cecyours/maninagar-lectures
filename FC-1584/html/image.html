@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Example</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Media Example (Image, Video, Audio)</h1>
+
+    <div class="container">
+
+        <!-- Image Section -->
+        <div class="card">
+            <h2>Image Example</h2>
+            <img src="media/media1.jpg" alt="Sample Image">
+            <p>This is a sample image.</p>
+        </div>
+
+        <!-- Video Section -->
+        <div class="card">
+            <h2>Video Example</h2>
+            <video controls>
+                <source src="https://youtu.be/-tJW8ZgyYIM?si=Wo_NMhNP22NG79gm" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+
+        <!-- Audio Section -->
+        <div class="card">
+            <h2>Audio Example</h2>
+            <audio controls>
+                <source src="media/file_example_MP3_700KB (1).mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+        </div>
+
+    </div>
+
+</body>
+</html>
