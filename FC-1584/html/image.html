@@ -1,87 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Media Example</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        h1 {
-            color: #333;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #eef2f3, #d9e4f5);
+        padding: 30px;
+        text-align: center;
+      }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
+      h1 {
+        margin-bottom: 25px;
+        color: #222;
+        font-size: 28px;
+      }
 
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+      .container {
+        max-width: 900px;
+        margin: auto;
+        display: grid;
+        gap: 20px;
+      }
 
-        img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-        }
+      .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
 
-        video {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
+      h2 {
+        margin-bottom: 15px;
+        color: #444;
+      }
 
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
+      img {
+        width: 100%;
+        max-width: 350px;
+        border-radius: 12px;
+        margin-top: 10px;
+      }
+
+      video,
+      audio {
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 10px;
+      }
+
+      p {
+        margin-top: 10px;
+        color: #666;
+        font-size: 14px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h1>Media Example (Image, Video, Audio)</h1>
 
     <div class="container">
+      <div class="card">
+        <h2>Image Example</h2>
+        <img src="media/media1.jpg" alt="Image" />
+        <p>This is an image example.</p>
+      </div>
 
-        <!-- Image Section -->
-        <div class="card">
-            <h2>Image Example</h2>
-            <img src="media/media1.jpg" alt="Sample Image">
-            <p>This is a sample image.</p>
-        </div>
+      <div class="card">
+        <h2>Video Example</h2>
+        <video controls>
+          <source
+            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support video.
+        </video>
+        <p>Local video file example.</p>
+      </div>
 
-        <!-- Video Section -->
-        <div class="card">
-            <h2>Video Example</h2>
-            <video controls>
-                <source src="https://youtu.be/-tJW8ZgyYIM?si=Wo_NMhNP22NG79gm" type="video/mp4">
-                Your browser does not support video.
-            </video>
-        </div>
-
-        <!-- Audio Section -->
-        <div class="card">
-            <h2>Audio Example</h2>
-            <audio controls>
-                <source src="media/file_example_MP3_700KB (1).mp3" type="audio/mpeg">
-                Your browser does not support audio.
-            </audio>
-        </div>
-
+      <div class="card">
+        <h2>Audio Example</h2>
+        <audio controls>
+          <source
+            src="media/file_example_MP3_700KB (1).mp3"
+            type="audio/mpeg"
+          />
+          Your browser does not support audio.
+        </audio>
+        <p>Audio playback example.</p>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>
