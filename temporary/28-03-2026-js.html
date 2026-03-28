@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiya ! (HTML+CSS+JS)</title>
+
+    <style>
+        .container{
+            display: flex;
+            gap: 50px;
+        }
+        
+        .box {
+
+            /* box design */
+            background-color: rgba(0, 64, 255, 0.544);
+            margin: 10px;
+            padding: 10px;
+            color: blue;
+            width: 200px;
+            height: 200px;
+
+            /* font-design */
+            font-family: 'Chiller';
+            font-size: 30px;
+            border-radius: 50%;
+
+            /* center content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* transition */
+            transition: all 1s;
+        }
+
+        .box:hover{
+            background-color: rgba(255, 0, 0, 0.429);
+            color: red;
+            font-size: 100px;
+        }
+        
+        .box:active{
+            background-color: black;
+        }
+
+        #box1{
+            background-color: aqua;
+            color: red;
+        }
+        
+        #box2{
+            background-color: beige;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+   <div class="container">
+     <div class="box" id="box1" onclick="wish('Progamming',this)">
+        Progamming
+    </div>
+    <div class="box" id="box2" onclick="wish('Scriting',this)">
+        Scriting
+    </div>
+    <div class="box" onclick="wish('Marup',this)">
+        Markup
+    </div>
+   </div>
+   <div>
+    
+   </div>
+   <script>
+        console.log("Hello World");
+        console.log("Hello HTML !")
+        
+        function wish(name,tag)
+        {
+            var data = document.getElementById("box2");
+            console.log(tag)
+            tag.innerHTML='gk'
+            // alert("Hello World "+name);
+            // console.log("you just click me !!");
+        }
+   </script>
+</body>
+
+</html>
