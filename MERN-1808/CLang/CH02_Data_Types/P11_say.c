@@ -2,5 +2,5 @@
 #include "mycode.h"
 
 void main(){
-    display("Mishwa");
+    display("Jiya");
 }
