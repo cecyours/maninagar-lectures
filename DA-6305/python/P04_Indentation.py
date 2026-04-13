@@ -19,7 +19,6 @@ if num > 0:
     print("This is inside the if block")
 print("This is outside the if block")
 
-for i in range(1, 4):
-    print("Iteration:", i)
-    print("Inside the loop")
-print("Loop ended")
+for i in range(1, 11):
+    print( i)
+ 
