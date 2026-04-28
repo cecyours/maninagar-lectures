@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Form</title>
+
+    <!-- Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body class="bg-dark">
+    <div class="container mt-5">
+      <form class="p-4 border rounded-4 bg-white shadow">
+        
+        <!-- Username -->
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control" placeholder="Enter username" />
+        </div>
+
+        <!-- Phone Number -->
+        <div class="mb-3">
+          <label class="form-label">Phone Number</label>
+          <input type="number" class="form-control" placeholder="Enter phone number" />
+        </div>
+
+        <!-- Birthdate -->
+        <div class="mb-3">
+          <label class="form-label">Date of Birth</label>
+          <input type="datetime-local" class="form-control" />
+        </div>
+
+        <!-- Hobbies -->
+        <h5>Hobbies</h5>
+        <div class="mb-3">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="cricket" />
+            <label class="form-check-label" for="cricket">Cricket</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="music" />
+            <label class="form-check-label" for="music">Music</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="singing" />
+            <label class="form-check-label" for="singing">Singing</label>
+          </div>
+        </div>
+
+        <!-- Color -->
+        <div class="mb-3">
+          <label class="form-label">Select your favorite color</label>
+          <input type="color" class="form-control form-control-color" />
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="Enter email" />
+        </div>
+
+        <!-- File Upload -->
+        <div class="mb-3">
+          <label class="form-label">Upload File</label>
+          <input type="file" class="form-control" />
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" placeholder="Enter password" />
+        </div>
+
+        <!-- Gender -->
+        <div class="mb-3">
+          <label class="form-label d-block">Gender</label>
+
+          <div class="form-check form-check-inline">
+            <input type="radio" name="gender" class="form-check-input" />
+            <label class="form-check-label">Male</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input type="radio" name="gender" class="form-check-input" />
+            <label class="form-check-label">Female</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input type="radio" name="gender" class="form-check-input" />
+            <label class="form-check-label">Other</label>
+          </div>
+        </div>
+
+        <!-- Range -->
+        <div class="mb-3">
+          <label class="form-label">Range</label>
+          <input type="range" class="form-range" />
+        </div>
+
+        <!-- City Select -->
+        <div class="mb-3">
+          <label class="form-label">Select City</label>
+          <select class="form-select">
+            <option>Ahmedabad</option>
+            <option>Rajkot</option>
+            <option>Gandhinagar</option>
+            <option>Bharuch</option>
+          </select>
+        </div>
+
+        <hr />
+
+        <!-- Description -->
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea class="form-control" rows="4" placeholder="Write something..."></textarea>
+        </div>
+
+        <!-- Datalist -->
+        <div class="mb-3">
+          <label class="form-label">Choose a browser</label>
+          <input list="browsers" class="form-control" placeholder="Type browser name" />
+          <datalist id="browsers">
+            <option value="Chrome"></option>
+            <option value="Firefox"></option>
+            <option value="Safari"></option>
+            <option value="Edge"></option>
+          </datalist>
+        </div>
+
+        <!-- Submit -->
+         <div class="d-flex justify-content-center mt-3">
+        <button class="btn btn-primary w-20 mt-3">Submit</button>
+
+         </div>
+
+      </form>
+    </div>
+  </body>
+</html>
