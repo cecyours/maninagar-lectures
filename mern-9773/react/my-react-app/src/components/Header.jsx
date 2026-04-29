@@ -15,6 +15,7 @@ function Header() {
         >
             <h1>My React App</h1>
             <p>Learning React Components</p>
+            <button>Hey</button>
         </header>
     </div>
   );
