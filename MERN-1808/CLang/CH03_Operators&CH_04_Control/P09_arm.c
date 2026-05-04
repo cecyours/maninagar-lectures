@@ -10,26 +10,29 @@ int main(){
 
     temp = num;
 
-    while (temp > 0)
-    {
-        /* code */
-        digits++;
-        temp /=10;
+    // Handle 0 case
+    if (temp == 0) {
+        digits = 1;
+    } else {
+        while (temp > 0)
+        {
+            digits++;
+            temp /= 10;
+        }
     }
 
     temp = num;
 
     while (num > 0)
     {
-        /* code */
-        rem = num%10;   
-        arm = arm+pow(rem,digits);
-        num = num/10;
+        rem = num % 10;   
+        arm = arm + (int)pow(rem, digits);
+        num = num / 10;
     }
 
     if(temp == arm) {
         printf("%d is an armstrong number.\n", temp);
-    }else {
+    } else {
         printf("%d is not an armstrong number.\n", temp);
     }
     
