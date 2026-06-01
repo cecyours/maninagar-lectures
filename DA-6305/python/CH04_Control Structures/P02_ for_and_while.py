@@ -36,4 +36,23 @@ number = 0
 while number != 5:
     number = int(input("Enter number (5 to stop): "))
     
+# Nested Loops
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(i, j)
+
+# break    
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
     
+# continue
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+
+# Infinite Loops 
+# while True:
+#     print("Running...")
