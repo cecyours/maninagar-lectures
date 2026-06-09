@@ -4,7 +4,7 @@ console.log(typeof number);
 
 // -----------------------
 
-let carName = "Dhaval";
+let carName = "Mishva";
 // print datatype of carName
 console.log(typeof carName);
 
