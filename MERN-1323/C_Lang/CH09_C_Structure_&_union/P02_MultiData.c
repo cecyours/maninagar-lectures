@@ -16,7 +16,7 @@ void main(){
         {"Shanvi", 56, 23.66}, 
     };
 
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 4; i++) 
     {
         printf("Student Details:\n", i+1);
         printf("Student Name : %s\n",  students[i].name );
