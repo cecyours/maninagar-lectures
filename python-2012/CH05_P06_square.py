@@ -1,6 +1,6 @@
 
 def s(num):
-    return num*num*num
+    return num*num
 
 
 for i in range(1,11):
