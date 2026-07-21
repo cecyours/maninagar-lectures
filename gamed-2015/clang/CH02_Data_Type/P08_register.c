@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+
+    register int speed = 100;
+    
+    printf("Speed = %d km/h\n", speed);
+
+    return 0;
+
+}
