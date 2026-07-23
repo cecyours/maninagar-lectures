@@ -1,0 +1,7 @@
+name : gpk, email : wke@d.s
+name : mohan, email : k@gmail.com
+name : pappu, email : kites@gmail.com
+name : ll, email : 11
+name : kka, email : s
+name : kites, email : we
+name : dfsdf, email : sd
