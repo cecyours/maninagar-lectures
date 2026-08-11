@@ -14,3 +14,5 @@ class Book(Library):
 
 b = Book("kites")
 b.display()
+
+print(b)

@@ -1,0 +1,10 @@
+Aarav Patel, 101, 9876543210, A
+Diya Shah, 102, 9876543211, A
+Rohan Mehta, 103, 9876543212, B
+Anaya Desai, 104, 9876543213, B
+Vivaan Joshi, 105, 9876543214, A
+Kavya Trivedi, 106, 9876543215, C
+Arjun Modi, 107, 9876543216, C
+Meera Shah, 108, 9876543217, A
+Reyansh Patel, 109, 9876543218, B
+Isha Mehta, 110, 9876543219, C
