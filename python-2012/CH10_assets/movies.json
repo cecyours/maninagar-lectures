@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "year": 2010,
+    "genre": "Sci-Fi",
+    "rating": 8.8,
+    "director": "Christopher Nolan"
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "year": 2008,
+    "genre": "Action",
+    "rating": 9.0,
+    "director": "Christopher Nolan"
+  },
+  {
+    "id": 3,
+    "title": "Interstellar",
+    "year": 2014,
+    "genre": "Sci-Fi",
+    "rating": 8.7,
+    "director": "Christopher Nolan"
+  },
+  {
+    "id": 4,
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "genre": "Drama",
+    "rating": 9.3,
+    "director": "Frank Darabont"
+  },
+  {
+    "id": 5,
+    "title": "Avengers: Endgame",
+    "year": 2019,
+    "genre": "Action",
+    "rating": 8.4,
+    "director": "Anthony Russo"
+  },
+  {
+    "id": 6,
+    "title": "3 Idiots",
+    "year": 2009,
+    "genre": "Comedy",
+    "rating": 8.4,
+    "director": "Rajkumar Hirani"
+  },
+  {
+    "id": 7,
+    "title": "Dangal",
+    "year": 2016,
+    "genre": "Sports",
+    "rating": 8.3,
+    "director": "Nitesh Tiwari"
+  },
+  {
+    "id": 8,
+    "title": "The Matrix",
+    "year": 1999,
+    "genre": "Sci-Fi",
+    "rating": 8.7,
+    "director": "The Wachowskis"
+  },
+  {
+    "id": 9,
+    "title": "Parasite",
+    "year": 2019,
+    "genre": "Thriller",
+    "rating": 8.5,
+    "director": "Bong Joon Ho"
+  },
+  {
+    "id": 10,
+    "title": "RRR",
+    "year": 2022,
+    "genre": "Action",
+    "rating": 7.8,
+    "director": "S. S. Rajamouli"
+  }
+]
