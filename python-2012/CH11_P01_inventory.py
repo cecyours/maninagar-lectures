@@ -1,8 +1,9 @@
 import pandas as pd
-data = {
-    "laptop":{"qnt":10,"price":3000},
-    "cpu":{"qnt":10,"price":1500},
-}
+import json
+filename = "./assets/data.json"
+
+with open(filename,"r") as file:
+    data = json.loads(file.read())
 
 df = pd.DataFrame(data)
 print("default : ")
@@ -41,13 +42,24 @@ def sell_item():
     print(f"total selling : {price}")
     data[item_name]['qnt']-=item_qnt
 
+def buy_item():
+    item_name = input("Enter Item name : ")
+    if not data.get(item_name):
+        print(f"{item_name} not found please try again")
+        return
+    item_qnt = int(input("enter qnt to sell : "))
+    price = item_qnt*data[item_name]['price'] 
+    print(f"total cost : {price}")
+    data[item_name]['qnt']+=item_qnt
+
 choice = 0
 
 while choice!=-1:
     print("\nEnter 1 for add new item ")
     print("Enter 2 for display ")
     print("Enter 3 for remove item ")
-    print("Enter 4 for sell ")
+    print("Enter 4 for sell qnt")
+    print("Enter 5 for buy qnt")
     print("Enter -1 for exit")
     try:
         choice = int(input("Enter your choice : "))
@@ -65,3 +77,10 @@ while choice!=-1:
         remove_item()
     elif choice==4:
         sell_item()
+    elif choice==5:
+        buy_item()
+
+
+with open(filename,"w") as file:
+    file.write(json.dumps(data))
+    print("records save successfully")

@@ -1,0 +1,14 @@
+{
+    "laptop": {
+        "qnt": 10,
+        "price": 3000
+    },
+    "keyboard": {
+        "qnt": 48,
+        "price": 150
+    },
+    "monitor": {
+        "qnt": 90,
+        "price": 500.0
+    }
+}
