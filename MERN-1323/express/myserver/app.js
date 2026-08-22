@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 const dotenv = require('dotenv');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -47,7 +48,7 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-const DB_STR = "mongodb://localhost:27017/rosewindb"
+const DB_STR = "mongodb://localhost:27017/dhavaldb"
 
 mongoose.connect(DB_STR)
   .then(() => console.log("Mongodb Connected Successfully"))
