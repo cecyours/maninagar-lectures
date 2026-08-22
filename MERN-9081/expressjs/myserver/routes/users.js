@@ -96,4 +96,9 @@ router.get("/email/:emailId", function (req, res, next) {
   res.json(filterdStudent);
 });
 
+router.post("/", function (req, res) {
+  const newStudent = req.body;
+  res.status(201).json({ message: "Student created", data: newStudent });
+});
+
 module.exports = router;
