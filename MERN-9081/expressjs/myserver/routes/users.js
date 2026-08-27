@@ -75,8 +75,13 @@ const students = [
 ];
 
 /* GET users listing. */
-router.get("/", function (req, res, next) {
+router.get("/", (req, res, next) => {
   res.json(students);
+});
+
+router.post("/", (req, res) => {
+  const newStudent = req.body;
+  res.status(201).json({ message: "Student created", data: newStudent });
 });
 
 // get student by id
@@ -96,9 +101,51 @@ router.get("/email/:emailId", function (req, res, next) {
   res.json(filterdStudent);
 });
 
-router.post("/", function (req, res) {
-  const newStudent = req.body;
-  res.status(201).json({ message: "Student created", data: newStudent });
+// DELETE by ID
+router.delete("/:id", (req, res) => {
+  const id = Number(req.params.id);
+
+  const index = students.findIndex((std) => std.id === id);
+  if (index === -1)
+    return res.status(404).json({ message: "Student not found" });
+
+  const deleted = students.splice(index, 1);
+
+  res.json({
+    message: "Student deleted",
+    deleted: deleted[0],
+    remaining: students,
+  });
+});
+
+// DELETE by email
+router.delete("/by-email/:emailId", (req, res) => {
+  const { emailId } = req.params;
+
+  const remaining = students.filter((stu) => stu.email !== emailId);
+
+  res.json({
+    message: "Student deleted by email",
+    remaining,
+  });
+});
+
+//PUT
+router.put("/:id", (req, res) => {
+  const id = Number(req.params.id);
+
+  const index = students.findIndex((std) => std.id === id);
+  if (index === -1)
+    return res.status(404).json({ message: "Student not found" });
+
+  const updatedData = req.body;
+
+  students[index] = { ...students[index], ...updatedData };
+
+  res.json({
+    message: "Student updated successfully",
+    data: students[index],
+  });
 });
 
 module.exports = router;
