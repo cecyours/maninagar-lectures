@@ -1,3 +1,4 @@
 Hello, this is a Python file handling example.
 Python makes file operations simple.
 This line is added using append mode.
+New line added using r+ mode.
