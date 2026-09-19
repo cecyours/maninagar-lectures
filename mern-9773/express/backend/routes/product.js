@@ -18,20 +18,57 @@ router.get('/', async (req, res, next) => {
   }
 });
 
-router.post('/', async function (req, res, next) {
-    try {
-        const data = req.body
-        const createdProduct = await Product.create(data)
+// router.post('/', async function (req, res, next) {
+//     try {
+//         const data = req.body
+//         const createdProduct = await Product.create(data)
 
-        res.status(201).json({ message: "Product Created Successfully", createdProduct })
+//         res.status(201).json({ message: "Product Created Successfully", createdProduct })
 
-    } catch (error) {
-        res.status(500).json({ message: "Product Creation faied", error })
-        console.log(error);
+//     } catch (error) {
+//         res.status(500).json({ message: "Product Creation faied", error })
+//         console.log(error);
 
+//     }
+// });
+
+
+router.post('/', upload.array('images', 5), async (req, res, next) => {
+  try {
+    const { title, description, category, price } = req.body;
+
+    if (!req.files || req.files.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: "At least one image is required"
+      });
     }
-});
 
+    // Create relative paths for the database
+    const images = req.files.map(file => ({
+      url: `/uploads/${file.filename}`,
+      public_id: file.filename
+    }));
+
+    const product = new Product({
+      title,
+      description,
+      category,
+      price,
+      images
+    });
+
+    await product.save();
+
+    res.status(201).json({
+      success: true,
+      data: product
+    });
+  } catch (error) {
+    console.error('Error creating product:', error);
+    next(error);
+  }
+});
 
 
 router.get('/:id', async function (req, res, next) {
