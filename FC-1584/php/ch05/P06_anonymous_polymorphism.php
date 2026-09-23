@@ -20,7 +20,7 @@ class Calc
 
 
 $c = new Calc();
-echo "Add: " . $c->add(5, 5) . "<br>";
+echo "Add: " . $c->add(15, 5) . "<br>";
 
 
 // DYNAMIC POLYMORPHISM (Method Overriding)
