@@ -24,3 +24,11 @@ for num in numbers:
 print("Total =", total)
 add_numbers(2, 4, 6, 8)
 
+# Return Values
+def calculate_average(a, b, c, d):
+    total = a + b + c + d
+    avg = total / 4
+    return avg
+
+result = calculate_average(12, 45, 78, 56)
+print("Avg: ", result)
