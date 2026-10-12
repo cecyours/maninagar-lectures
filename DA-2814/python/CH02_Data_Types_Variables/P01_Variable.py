@@ -37,3 +37,31 @@ has_license = False
 
 print(is_student, type(is_student))
 print(has_license, type(has_license))
+
+# Type Conversion
+num = 10.89
+num_int = int(num)
+print(num, "->", num_int)
+
+num2 = 89
+num_float = float(num2)
+print(num2, "->", num_float)
+
+age = 20
+age_str = str(age)
+print(age, "->", age_str, type(age_str))
+
+# Program to calculate BMI (Body Mass Index)
+name = input("Enter your name: ")
+weight = float(input("Enter your weight in kg: "))
+height = float(input("Enter your height in meters: "))
+# BMI calculation
+bmi = weight / (height ** 2)
+print(f"{name}, your BMI is {bmi:.2f}")
+# Check BMI category
+if bmi < 18.5:
+    print("You are underweight.")
+elif 18.5 <= bmi < 25:
+    print("You have a normal weight.")
+else:
+    print("You are overweight.")
