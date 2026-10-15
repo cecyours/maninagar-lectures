@@ -1,7 +1,7 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
-spend = pd.Series([12, 12, 25, 25, 40, 40, 40, 999])
+spend = pd.Series([12, 12, 25, 25, 40, 40, 40, 200])
 
 q1 = spend.quantile(0.25)
 q3 = spend.quantile(0.75)
