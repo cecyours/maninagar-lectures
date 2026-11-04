@@ -1,8 +1,5 @@
 # Dynamic Typing 
 
-from narwhals import Object
-
-
 var = 10
 # print(var, type(var))
 
