@@ -1,0 +1,6 @@
+file = open("sample.txt", "r+")
+content = file.read()
+print("File content: ")
+print(content)
+file.write("Hello")
+file.close()
