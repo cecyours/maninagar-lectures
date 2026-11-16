@@ -49,8 +49,8 @@ print(lst)
 x = 1000
 print(x)
 
-del x
-print(x)
+# del x
+# print(x)
 
 # Variables and Memory Behavior
 a = 50

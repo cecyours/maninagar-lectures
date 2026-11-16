@@ -1,5 +1,3 @@
-# Darshan, Sidhraj
-
 # Variables of different types
 a = 10 # integer
 b = 3.14 # float
